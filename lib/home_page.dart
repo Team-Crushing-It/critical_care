@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'authentication_bloc.dart';
 import 'authentication_event.dart';
+import 'line-chart.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -22,9 +23,16 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Text("Welcome to Critical Care"),
+            //LiveLineChart(),
           ],
         )),
       ),
     );
   }
+}
+
+Map<String, dynamic> getSampleWidget() {
+  return <String, dynamic>{
+    'real_time_line_chart': (Key key) => LiveLineChart(key)
+  };
 }
