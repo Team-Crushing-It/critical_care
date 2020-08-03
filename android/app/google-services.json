@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "642588961203",
+    "firebase_url": "https://critical-care-test.firebaseio.com",
+    "project_id": "critical-care-test",
+    "storage_bucket": "critical-care-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:642588961203:android:14cc839b93505628a943c6",
+        "android_client_info": {
+          "package_name": "com.example.critical_care"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "642588961203-du9ra8q54p96rpmbdd0rm4v66bm93lvj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyd5yeKlpJbuWksr_bR1BaZjO380HuQS4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "642588961203-du9ra8q54p96rpmbdd0rm4v66bm93lvj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

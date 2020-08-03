@@ -12,16 +12,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: Center(
-          child: Container(
-            child: Text("Welcome to Critical Care"),
-          )
-        ),
+            child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Text("Welcome to Critical Care"),
+          ],
+        )),
       ),
     );
   }
