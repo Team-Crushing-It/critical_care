@@ -7,7 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart';
 
 /// Local import
-import '../sample_list.dart';
+import '../home_page.dart';
 import 'sample_view.dart';
 
 /// WidgetCategory of the each control as Data Visualization, Editors,etc.,
@@ -258,17 +258,20 @@ class SampleModel extends Listenable {
 
   //ignore: prefer_collection_literals
   final Set<VoidCallback> _listeners = Set<VoidCallback>();
-  @override  
- /// [listener] will be invoked when the model changes.
+  @override
+
+  /// [listener] will be invoked when the model changes.
   void addListener(VoidCallback listener) {
     _listeners.add(listener);
   }
-  
-    @override    
+
+  @override
+
   /// [listener] will no longer be invoked when the model changes.
-    void removeListener(VoidCallback listener) {
+  void removeListener(VoidCallback listener) {
     _listeners.remove(listener);
   }
+
   /// Should be called only by [Model] when the model has changed.
   @protected
   void notifyListeners() {
@@ -346,9 +349,9 @@ Future<void> updateControl() async {
     subItems = <SubItem>[];
   }
 
-  /// Sorting the controls based on control id.  
-    SampleModel.controlList1
-        .sort((Control a, Control b) => a.controlId.compareTo(b.controlId));
+  /// Sorting the controls based on control id.
+  SampleModel.controlList1
+      .sort((Control a, Control b) => a.controlId.compareTo(b.controlId));
 
   /// Setting control's category.
   final List<String> categoryNames = <String>[];

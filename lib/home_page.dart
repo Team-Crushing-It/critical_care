@@ -7,6 +7,8 @@ import 'authentication_bloc.dart';
 import 'authentication_event.dart';
 import 'line-chart.dart';
 
+final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -23,7 +25,7 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Text("Welcome to Critical Care"),
-            //LiveLineChart(),
+            LiveLineChart(scaffoldKey),
           ],
         )),
       ),
