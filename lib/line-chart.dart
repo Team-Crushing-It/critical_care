@@ -20,6 +20,28 @@ class LiveLineChart extends SampleView {
   _LiveLineChartState createState() => _LiveLineChartState();
 }
 
+List<int> chartDataListTemp = [
+  42,
+  47,
+  33,
+  49,
+  54,
+  41,
+  58,
+  51,
+  98,
+  41,
+  53,
+  72,
+  86,
+  52,
+  94,
+  92,
+  86,
+  72,
+  94
+];
+
 /// State class of the realtime line chart.
 class _LiveLineChartState extends SampleViewState {
   _LiveLineChartState() {
@@ -28,25 +50,25 @@ class _LiveLineChartState extends SampleViewState {
 
   Timer timer;
   List<_ChartData> chartData = <_ChartData>[
-    _ChartData(0, 42),
-    _ChartData(1, 47),
-    _ChartData(2, 33),
-    _ChartData(3, 49),
-    _ChartData(4, 54),
-    _ChartData(5, 41),
-    _ChartData(6, 58),
-    _ChartData(7, 51),
-    _ChartData(8, 98),
-    _ChartData(9, 41),
-    _ChartData(10, 53),
-    _ChartData(11, 72),
-    _ChartData(12, 86),
-    _ChartData(13, 52),
-    _ChartData(14, 94),
-    _ChartData(15, 92),
-    _ChartData(16, 86),
-    _ChartData(17, 72),
-    _ChartData(18, 94),
+    _ChartData(0, chartDataListTemp[0]),
+    _ChartData(1, chartDataListTemp[1]),
+    _ChartData(2, chartDataListTemp[2]),
+    _ChartData(3, chartDataListTemp[3]),
+    _ChartData(4, chartDataListTemp[4]),
+    _ChartData(5, chartDataListTemp[5]),
+    _ChartData(6, chartDataListTemp[6]),
+    _ChartData(7, chartDataListTemp[7]),
+    _ChartData(8, chartDataListTemp[8]),
+    _ChartData(9, chartDataListTemp[9]),
+    _ChartData(10, chartDataListTemp[10]),
+    _ChartData(11, chartDataListTemp[11]),
+    _ChartData(12, chartDataListTemp[12]),
+    _ChartData(13, chartDataListTemp[13]),
+    _ChartData(14, chartDataListTemp[14]),
+    _ChartData(15, chartDataListTemp[15]),
+    _ChartData(16, chartDataListTemp[16]),
+    _ChartData(17, chartDataListTemp[17]),
+    _ChartData(18, chartDataListTemp[18]),
   ];
   int count = 19;
   ChartSeriesController _chartSeriesController;
