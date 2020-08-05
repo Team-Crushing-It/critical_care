@@ -1,11 +1,11 @@
 import 'package:authentication_repository/authentication_repository.dart';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_firebase_login/app.dart';
-import 'package:flutter_firebase_login/authentication/authentication.dart';
-import 'package:flutter_firebase_login/home/home.dart';
-import 'package:flutter_firebase_login/login/login.dart';
-import 'package:flutter_firebase_login/splash/splash.dart';
+import 'package:criticalcare/app.dart';
+import 'package:criticalcare/authentication/authentication.dart';
+import 'package:criticalcare/home/home.dart';
+import 'package:criticalcare/login/login.dart';
+import 'package:criticalcare/splash/splash.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 

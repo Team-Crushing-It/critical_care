@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_firebase_login/authentication/authentication.dart';
-import 'package:flutter_firebase_login/home/widgets/avatar.dart';
+import 'package:criticalcare/authentication/authentication.dart';
+import 'package:criticalcare/home/widgets/avatar.dart';
 
 class HomePage extends StatelessWidget {
   static Route route() {

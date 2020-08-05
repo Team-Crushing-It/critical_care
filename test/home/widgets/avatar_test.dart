@@ -2,7 +2,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_firebase_login/home/home.dart';
+import 'package:criticalcare/home/home.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
