@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'authentication_bloc.dart';
 import 'authentication_event.dart';
 import 'line-chart.dart';
+import 'spline-chart.dart';
 
 final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 

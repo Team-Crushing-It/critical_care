@@ -115,7 +115,7 @@ class _LiveLineChartState extends SampleViewState {
 
   void updateDataSource(Timer timer) {
     if (isCardView != null) {
-      chartData.add(_ChartData(count, getRandomInt(10, 100)));
+      chartData.add(_ChartData(count, getNextNewInt(10, 100)));
       if (chartData.length == 20) {
         chartData.removeAt(0);
         _chartSeriesController.updateDataSource(
@@ -131,7 +131,7 @@ class _LiveLineChartState extends SampleViewState {
     }
   }
 
-  num getRandomInt(num min, num max) {
+  num getNextNewInt(num min, num max) {
     final math.Random _random = math.Random();
     return min + _random.nextInt(max - min);
   }
