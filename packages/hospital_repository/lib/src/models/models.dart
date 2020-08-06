@@ -1,0 +1,1 @@
+export 'hospital.dart';
