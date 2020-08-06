@@ -27,12 +27,7 @@ List<ChartSampleData> chartData1 = <ChartSampleData>[
   ChartSampleData(x: 2, y: 2),
   ChartSampleData(x: 3, y: 0)
 ];
-List<ChartSampleData> chartData2 = <ChartSampleData>[
-  ChartSampleData(x: 0, y: 0),
-  ChartSampleData(x: 1, y: 2),
-  ChartSampleData(x: 2, y: -2),
-  ChartSampleData(x: 3, y: 0)
-];
+
 bool canStopTimer = false;
 int wave1;
 int wave2, count = 1;
@@ -49,15 +44,12 @@ class _LiveUpdateState extends SampleViewState {
     chartData1 = <ChartSampleData>[
       ChartSampleData(x: 0, y: 0),
     ];
-    chartData2 = <ChartSampleData>[
-      ChartSampleData(x: 0, y: 0),
-    ];
+
     super.initState();
     wave1 = 0;
     wave2 = 180;
-    if (chartData1.isNotEmpty && chartData2.isNotEmpty) {
+    if (chartData1.isNotEmpty) {
       chartData1.clear();
-      chartData2.clear();
     }
     updateLiveData();
   }
@@ -94,15 +86,6 @@ class _LiveUpdateState extends SampleViewState {
           xValueMapper: (ChartSampleData sales, _) => sales.x,
           yValueMapper: (ChartSampleData sales, _) => sales.y,
           width: 2),
-      SplineSeries<ChartSampleData, num>(
-        // onRendererCreated: (ChartSeriesController controller2) {
-        //       _chartSeriesController2 = controller2;
-        //     },
-        dataSource: chartData2,
-        width: 2,
-        xValueMapper: (ChartSampleData sales, _) => sales.x,
-        yValueMapper: (ChartSampleData sales, _) => sales.y,
-      )
     ];
   }
 
@@ -137,11 +120,6 @@ class _LiveUpdateState extends SampleViewState {
           x: wave1,
           y: math.sin(wave1 * (math.pi / 180.0)),
         ));
-        chartData2.removeAt(0);
-        chartData2.add(ChartSampleData(
-          x: wave1,
-          y: math.sin(wave2 * (math.pi / 180.0)),
-        ));
         wave1++;
         wave2++;
       });
@@ -154,10 +132,7 @@ class _LiveUpdateState extends SampleViewState {
           .add(ChartSampleData(x: i, y: math.sin(wave1 * (math.pi / 180.0))));
       wave1++;
     }
-
     for (int i = 0; i < 180; i++) {
-      chartData2
-          .add(ChartSampleData(x: i, y: math.sin(wave2 * (math.pi / 180.0))));
       wave2++;
     }
 

@@ -16,6 +16,7 @@ final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 final GlobalKey<ScaffoldState> scaffoldKey2 = GlobalKey<ScaffoldState>();
 final GlobalKey<ScaffoldState> scaffoldKey3 = GlobalKey<ScaffoldState>();
 final GlobalKey<ScaffoldState> scaffoldKey4 = GlobalKey<ScaffoldState>();
+final GlobalKey<ScaffoldState> scaffoldKey5 = GlobalKey<ScaffoldState>();
 
 class HomePage extends StatefulWidget {
   @override
@@ -34,9 +35,10 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             Text("Welcome to Critical Care"),
             ArtGraph(scaffoldKey),
-            LapGraph(scaffoldKey2),
+            //LapGraph(scaffoldKey2),
             //HeartGraph(scaffoldKey3),
-            //O2FiChart(scaffoldKey4),
+            LiveUpdate(scaffoldKey4),
+            //O2FiChart(scaffoldKey5),
           ],
         )),
       ),
