@@ -8,9 +8,12 @@ import 'authentication_event.dart';
 import 'line-chart.dart';
 import 'spline-chart.dart';
 import 'o2fi-graph.dart';
+import 'heart-graph.dart';
+import 'art-graph.dart';
 
 final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 final GlobalKey<ScaffoldState> scaffoldKey2 = GlobalKey<ScaffoldState>();
+final GlobalKey<ScaffoldState> scaffoldKey3 = GlobalKey<ScaffoldState>();
 
 class HomePage extends StatefulWidget {
   @override
@@ -28,8 +31,9 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Text("Welcome to Critical Care"),
-            LiveLineChart(scaffoldKey),
-            O2FiChart(scaffoldKey2),
+            HeartGraph(scaffoldKey),
+            ArtGraph(scaffoldKey2),
+            //O2FiChart(scaffoldKey3),
           ],
         )),
       ),
