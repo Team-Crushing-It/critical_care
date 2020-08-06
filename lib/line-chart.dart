@@ -20,6 +20,7 @@ class LiveLineChart extends SampleView {
   _LiveLineChartState createState() => _LiveLineChartState();
 }
 
+int currentindex = 0;
 List<int> chartDataListTemp = [
   42,
   47,
@@ -132,8 +133,11 @@ class _LiveLineChartState extends SampleViewState {
   }
 
   num getNextNewInt(num min, num max) {
-    final math.Random _random = math.Random();
-    return min + _random.nextInt(max - min);
+    currentindex += 1;
+    if (currentindex >= 19) {
+      currentindex = 0;
+    }
+    return chartDataListTemp[currentindex];
   }
 }
 

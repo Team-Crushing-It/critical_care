@@ -137,7 +137,11 @@ class _LiveUpdateState extends SampleViewState {
           x: wave1,
           y: math.sin(wave1 * (math.pi / 180.0)),
         ));
-
+        chartData2.removeAt(0);
+        chartData2.add(ChartSampleData(
+          x: wave1,
+          y: math.sin(wave2 * (math.pi / 180.0)),
+        ));
         wave1++;
         wave2++;
       });
