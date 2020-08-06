@@ -10,6 +10,7 @@ import 'spline-chart.dart';
 import 'o2fi-graph.dart';
 
 final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+final GlobalKey<ScaffoldState> scaffoldKey2 = GlobalKey<ScaffoldState>();
 
 class HomePage extends StatefulWidget {
   @override
@@ -28,7 +29,7 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             Text("Welcome to Critical Care"),
             LiveLineChart(scaffoldKey),
-            O2FiChart(scaffoldKey),
+            O2FiChart(scaffoldKey2),
           ],
         )),
       ),

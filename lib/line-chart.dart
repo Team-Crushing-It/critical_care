@@ -22,25 +22,25 @@ class LiveLineChart extends SampleView {
 
 int currentindex = 0;
 List<int> chartDataListTemp = [
-  20,
-  20,
-  20,
-  30,
-  20,
+  50,
+  50,
+  50,
+  65,
+  50,
   100,
-  0,
-  20,
-  30,
-  20,
-  20,
-  20,
-  20,
-  20,
-  20,
-  20,
-  20,
-  20,
-  20
+  15,
+  65,
+  50,
+  50,
+  50,
+  50,
+  50,
+  50,
+  50,
+  50,
+  50,
+  50,
+  50
 ];
 
 /// State class of the realtime line chart.
