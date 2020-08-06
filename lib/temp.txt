@@ -132,7 +132,7 @@ class _LiveUpdateState extends SampleViewState {
           .add(ChartSampleData(x: i, y: math.sin(wave1 * (math.pi / 180.0))));
       wave1++;
     }
-    for (int i = 0; i < 180; i++) {
+   for (int i = 0; i < 180; i++) {
       wave2++;
     }
 

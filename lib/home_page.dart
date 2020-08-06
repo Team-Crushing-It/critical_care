@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'authentication_bloc.dart';
 import 'authentication_event.dart';
 import 'line-chart.dart';
-import 'spline-chart.dart';
+import 'resp-graph.dart';
 import 'o2fi-graph.dart';
 import 'heart-graph.dart';
 import 'art-graph.dart';
@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
             ArtGraph(scaffoldKey),
             //LapGraph(scaffoldKey2),
             //HeartGraph(scaffoldKey3),
-            LiveUpdate(scaffoldKey4),
+            RespGraph(),
             //O2FiChart(scaffoldKey5),
           ],
         )),
