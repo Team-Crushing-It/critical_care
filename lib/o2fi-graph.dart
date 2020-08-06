@@ -13,8 +13,8 @@ import 'package:syncfusion_flutter_charts/charts.dart';
 import './model/sample_view.dart';
 
 /// Renders the realtime line chart sample.
-class LiveLineChart extends SampleView {
-  const LiveLineChart(Key key) : super(key: key);
+class O2FiChart extends SampleView {
+  const O2FiChart(Key key) : super(key: key);
 
   @override
   _LiveLineChartState createState() => _LiveLineChartState();
@@ -22,25 +22,25 @@ class LiveLineChart extends SampleView {
 
 int currentindex = 0;
 List<int> chartDataListTemp = [
-  20,
-  20,
-  20,
-  30,
-  20,
-  100,
-  0,
-  20,
-  30,
-  20,
-  20,
-  20,
-  20,
-  20,
-  20,
-  20,
-  20,
-  20,
-  20
+  25,
+  25,
+  25,
+  25,
+  25,
+  25,
+  25,
+  25,
+  25,
+  25,
+  25,
+  25,
+  25,
+  25,
+  25,
+  25,
+  25,
+  25,
+  25
 ];
 
 /// State class of the realtime line chart.
