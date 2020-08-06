@@ -29,6 +29,57 @@ class HospitalModel {
         name: '2-a',
         patientId: 'patient-2',
       ),
+      RoomModel(
+        id: 'room-3',
+        name: '2-b',
+        patientId: 'patient-3',
+      ),
+      RoomModel(
+        id: 'room-4',
+        name: '3-a',
+        patientId: 'patient-4',
+      ),
+      RoomModel(
+        id: 'room-5',
+        name: '3-b',
+        patientId: 'patient-5',
+      ),
+      RoomModel(
+        id: 'room-6',
+        name: '5',
+        patientId: 'patient-6',
+      ),
+      RoomModel(
+        id: 'room-7',
+        name: '6',
+        patientId: 'patient-7',
+      ),
+      RoomModel(
+        id: 'room-8',
+        name: '7',
+        patientId: 'patient-8',
+      ),
+      RoomModel(
+        id: 'room-9',
+        name: '8',
+        patientId: 'patient-9',
+      ),
+      RoomModel(
+        id: 'room-10',
+        name: '9',
+        patientId: 'patient-10',
+      ),
+      RoomModel(
+        id: 'room-11',
+        name: '10',
+        patientId: 'patient-11',
+      ),
+      RoomModel(
+        id: 'room-12',
+        name: '11',
+        patientId: 'patient-12',
+      ),
+
     ]);
   }
 
@@ -39,7 +90,10 @@ class HospitalModel {
   final List<RoomModel> rooms;
 }
 
+/// Room Object
 class RoomModel {
+
+/// Room Object is [id], [name]
   const RoomModel({
     @required this.id,
     @required this.name,

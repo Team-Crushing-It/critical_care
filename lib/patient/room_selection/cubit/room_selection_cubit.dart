@@ -20,10 +20,20 @@ class RoomSelectionCubit extends Cubit<RoomSelectionState> {
   Future<void> changeRoom(String roomId) async {
     if (state.selectedRoom.id == roomId) return;
     if (state.status == RoomSelectionStatus.success) {
+      
       // do local search
-    } else {
-      // pull from API and do regular search
+      final newRoom = state.rooms.firstWhere(
+        (room) => room.id == roomId,
+        orElse: () => null,
+      );
+      
+      emit(state.copyWith(selectedRoom: newRoom));
+      
     }
+    // assume you never download in the first place
+    // } else {
+    //   // pull from API and do regular search
+    // }
   }
 
   Future<void> getRooms(String hospitalId) async {

@@ -78,7 +78,6 @@ class _RoomSelectionSuccessView extends StatelessWidget {
                   room: room,
                   onTap: () {
                     context.bloc<RoomSelectionCubit>().changeRoom(room.id);
-                    print(room.status);
                   },
                   selectedRoom: selectedRoom,
                 ),
@@ -104,6 +103,25 @@ class _RoomView extends StatelessWidget {
     final isSelected = room.id == selectedRoom.id;
     final status = room.status;
 
+    Color _getColor() {
+      Color color;
+      switch (status) {
+        case RoomStatus.green:
+          color = Colors.green;
+          break;
+        case RoomStatus.yellow:
+          color = Colors.yellow;
+          break;
+        case RoomStatus.red:
+          color = Colors.red;
+          break;
+        case RoomStatus.none:
+          color = Colors.black;
+          break;
+      }
+      return color;
+    }
+
     return Material(
       child: InkWell(
         onTap: onTap,
@@ -116,7 +134,7 @@ class _RoomView extends StatelessWidget {
               DecoratedBox(
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: status.toColor,
+                    color: _getColor(),
                     width: 2,
                   ),
                   shape: BoxShape.circle,
@@ -151,21 +169,5 @@ class _RoomSelectionFailureView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(child: Text('Something went wrong!'));
-  }
-}
-
-extension on RoomStatus {
-  Color get toColor {
-    switch (this) {
-      case RoomStatus.green:
-        return Colors.green;
-      case RoomStatus.yellow:
-        return Colors.yellow;
-      case RoomStatus.red:
-        return Colors.red;
-      case RoomStatus.none:
-      default:
-        return Colors.black;
-    }
   }
 }

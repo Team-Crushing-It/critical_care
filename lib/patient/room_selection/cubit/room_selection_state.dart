@@ -28,3 +28,4 @@ class RoomSelectionState extends Equatable {
     );
   }
 }
+
