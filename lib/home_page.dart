@@ -10,10 +10,12 @@ import 'spline-chart.dart';
 import 'o2fi-graph.dart';
 import 'heart-graph.dart';
 import 'art-graph.dart';
+import 'lap-graph.dart';
 
 final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 final GlobalKey<ScaffoldState> scaffoldKey2 = GlobalKey<ScaffoldState>();
 final GlobalKey<ScaffoldState> scaffoldKey3 = GlobalKey<ScaffoldState>();
+final GlobalKey<ScaffoldState> scaffoldKey4 = GlobalKey<ScaffoldState>();
 
 class HomePage extends StatefulWidget {
   @override
@@ -31,9 +33,10 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Text("Welcome to Critical Care"),
-            HeartGraph(scaffoldKey),
-            ArtGraph(scaffoldKey2),
-            //O2FiChart(scaffoldKey3),
+            ArtGraph(scaffoldKey),
+            LapGraph(scaffoldKey2),
+            //HeartGraph(scaffoldKey3),
+            //O2FiChart(scaffoldKey4),
           ],
         )),
       ),
