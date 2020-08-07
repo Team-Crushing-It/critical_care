@@ -29,6 +29,7 @@ class RoomCarousel extends StatelessWidget {
     );
   }
 }
+
 class RoomCarouselView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -73,9 +74,13 @@ class _RoomCarouselSuccessView extends StatelessWidget {
     return Column(
       children: [
         Container(
-          height: 30,
-          child: const Text('text'),
-        ),
+            height: 30,
+            child: RichText(
+              text: TextSpan(
+                text: 'Emergency Care Unit - West Wing',
+                style: Theme.of(context).textTheme.headline6,
+              ),
+            )),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
@@ -124,39 +129,69 @@ class _RoomView extends StatelessWidget {
     return Material(
       child: InkWell(
         onTap: onTap,
-        child: ColoredBox(
-          color: isSelected ? Colors.blue[400] : Colors.grey[300],
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              //decoration around the circle avatar for status
-              DecoratedBox(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: status.toColor,
-                    width: 2,
+        child: Container(
+          decoration: BoxDecoration(
+            color: isSelected
+                ? Theme.of(context).toggleableActiveColor
+                : Colors.grey[300],
+            border: Border.all(
+              color: Theme.of(context)
+                  .primaryColor, //                   <--- border color
+              width: 1.0,
+            ),
+          ),
+          child: Center(
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Visibility(
+                  visible: isSelected,
+                  child: SizedBox(
+                    width: 63,
+                    height: 63,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.4),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(3)),
+                      ),
+                    ),
                   ),
-                  shape: BoxShape.circle,
                 ),
-                position: DecorationPosition.foreground,
-                child: CircleAvatar(
-                  backgroundImage: NetworkImage(room.imageUrl),
-                ),
-              ),
-              RichText(
-                text: TextSpan(
-                  style: DefaultTextStyle.of(context).style,
-                  children: <TextSpan>[
-                    TextSpan(
-                      text: room.name,
-                      style: isSelected
-                          ? const TextStyle(color: Colors.white)
-                          : TextStyle(color: Colors.black.withOpacity(0.6)),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    //decoration around the circle avatar for status
+                    DecoratedBox(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: status.toColor,
+                          width: 2,
+                        ),
+                        shape: BoxShape.circle,
+                      ),
+                      position: DecorationPosition.foreground,
+                      child: CircleAvatar(
+                        backgroundImage: NetworkImage(room.imageUrl),
+                      ),
+                    ),
+                    RichText(
+                      text: TextSpan(
+                        style: DefaultTextStyle.of(context).style,
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: room.name,
+                            style: isSelected
+                                ? Theme.of(context).textTheme.bodyText1
+                                : Theme.of(context).textTheme.bodyText2,
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
