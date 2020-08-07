@@ -11,6 +11,7 @@ import 'authentication_state.dart';
 import 'home_page.dart';
 import 'loading_indicator.dart';
 import 'login_page.dart';
+import 'package:syncfusion_flutter_core/core.dart';
 
 class SimpleBlocDelegate extends BlocDelegate {
   @override
@@ -33,6 +34,9 @@ class SimpleBlocDelegate extends BlocDelegate {
 }
 
 void main() {
+  SyncfusionLicense.registerLicense(
+      "NT8mJyc2IWhia31hfWN9Z2doanxlfGFjYWNzYmlmYWljYXMDHmg+ODIwOyE8PGFqEzQ+Mjo/fTA8Pg==");
+
   BlocSupervisor.delegate = SimpleBlocDelegate();
   final userRepository = UserRepository();
   runApp(
