@@ -35,9 +35,9 @@ flutter:
   assets:
     - assets/
   fonts:
-   - family: Din Alternate
+   - family: Din
      fonts:
-       - asset: fonts/DinAlternateRegular.otf
+       - asset: fonts/DINAlternateRegular.otf
    - family: Varela Round
      fonts:
        - asset: fonts/VarelaRound-Regular.ttf

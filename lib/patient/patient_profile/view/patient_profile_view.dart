@@ -41,7 +41,11 @@ class _PatientProfileSuccessView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [Text(patientProfile.id)],
+      children: [
+        Text(patientProfile.id),
+        Text(patientProfile.age.toString()),
+        Text(patientProfile.dob)
+      ],
     );
   }
 }
