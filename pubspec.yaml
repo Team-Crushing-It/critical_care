@@ -34,3 +34,14 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+  fonts:
+   - family: Din Alternate
+     fonts:
+       - asset: fonts/DinAlternateRegular.otf
+   - family: Varela Round
+     fonts:
+       - asset: fonts/VarelaRound-Regular.ttf
+   - family: Verdana
+     fonts:
+       - asset: fonts/verdana.ttf
+  

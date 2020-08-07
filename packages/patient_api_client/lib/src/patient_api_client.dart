@@ -16,7 +16,7 @@ class PatientApiClient {
   Future<PatientEntity> getPatient(String patientId) {
     /// TODO: Integrate with real API
     return Future.delayed(
-      const Duration(seconds: 1),
+      const Duration(seconds: 0),
       () => PatientEntity(id: patientId),
     );
   }
