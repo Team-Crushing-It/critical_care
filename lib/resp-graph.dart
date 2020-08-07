@@ -1,3 +1,5 @@
+//Uses the oscilloscope library to create repeating oscilloscope graph
+
 /// Dart imports
 import 'dart:async';
 import 'dart:math' as math;

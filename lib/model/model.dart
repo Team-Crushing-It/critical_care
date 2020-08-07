@@ -1,3 +1,6 @@
+//Model.dart copied from syncfusion's flutter example. It holds all of the styling and graph-making information about the charts
+//Every single graph is connected to this file and uses it to create its animations and data
+
 /// Dart import
 import 'dart:convert';
 

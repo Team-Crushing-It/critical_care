@@ -1,3 +1,6 @@
+//Uses the syncfusion library to create graph
+//Put into repetetive cycle that repeats the same 20 first values stored in chartDataListTemp
+
 /// Dart imports
 import 'dart:async';
 import 'dart:math' as math;
@@ -20,6 +23,7 @@ class O2FiChart extends SampleView {
   _LiveLineChartState createState() => _LiveLineChartState();
 }
 
+//The chart data that repeats itself
 int currentindex = 0;
 List<int> chartDataListTemp = [
   25,

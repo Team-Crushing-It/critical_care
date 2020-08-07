@@ -1,3 +1,6 @@
+//Uses the syncfusion library to create graph
+//Put into repetetive cycle that repeats the same 20 first values stored in chartDataListTemp
+
 /// Dart imports
 import 'dart:async';
 import 'dart:math' as math;

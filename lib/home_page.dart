@@ -12,11 +12,11 @@ import 'heart-graph.dart';
 import 'art-graph.dart';
 import 'lap-graph.dart';
 
+//Creates seperate scaffold keys
 final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 final GlobalKey<ScaffoldState> scaffoldKey2 = GlobalKey<ScaffoldState>();
 final GlobalKey<ScaffoldState> scaffoldKey3 = GlobalKey<ScaffoldState>();
 final GlobalKey<ScaffoldState> scaffoldKey4 = GlobalKey<ScaffoldState>();
-final GlobalKey<ScaffoldState> scaffoldKey5 = GlobalKey<ScaffoldState>();
 
 class HomePage extends StatefulWidget {
   @override
@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
             //LapGraph(scaffoldKey2),
             //HeartGraph(scaffoldKey3),
             RespGraph(),
-            //O2FiChart(scaffoldKey5),
+            //O2FiChart(scaffoldKey4),
           ],
         )),
       ),

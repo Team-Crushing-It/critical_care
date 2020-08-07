@@ -1,11 +1,12 @@
+//This graph creates the sampleview class which is used by all the graphs to appear
+
 /// Package import
 import 'package:flutter/material.dart';
 
 /// Local import
 import 'model.dart';
 
-
-/// Render the sampleview. 
+/// Render the sampleview.
 abstract class SampleView extends StatefulWidget {
   const SampleView({Key key}) : super(key: key);
 }
@@ -22,16 +23,15 @@ abstract class SampleViewState extends State<SampleView> {
   }
 
   @override
+
   /// Must call super.
   void dispose() {
     model.isCardView = true;
     super.dispose();
   }
 
-
   /// Get the settings panel content.
   Widget buildSettings(BuildContext context) {
     return null;
   }
-
 }
