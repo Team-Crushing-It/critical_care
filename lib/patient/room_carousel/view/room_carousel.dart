@@ -74,13 +74,18 @@ class _RoomCarouselSuccessView extends StatelessWidget {
     return Column(
       children: [
         Container(
-            height: 30,
+          width: double.infinity,
+          height: 24,
+          color: Theme.of(context).highlightColor,
+          child: Center(
             child: RichText(
               text: TextSpan(
                 text: 'Emergency Care Unit - West Wing',
                 style: Theme.of(context).textTheme.headline6,
               ),
-            )),
+            ),
+          ),
+        ),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
@@ -136,7 +141,7 @@ class _RoomView extends StatelessWidget {
                 : Colors.grey[300],
             border: Border.all(
               color: Theme.of(context)
-                  .primaryColor, //                   <--- border color
+                  .backgroundColor, //                   <--- border color
               width: 1.0,
             ),
           ),

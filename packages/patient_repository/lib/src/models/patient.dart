@@ -42,6 +42,9 @@ enum Gender { male, female, other }
 
 enum Race {
   latino,
+  white,
+  black,
+  asian,
   other,
 }
 

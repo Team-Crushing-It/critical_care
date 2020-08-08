@@ -47,6 +47,7 @@ extension on PatientModel {
       gender: profile.gender.toString(),
       dob: profile.dateOfBirth.toString(),
       language: profile.language,
+      race: profile.race.toString(),
     );
   }
 }

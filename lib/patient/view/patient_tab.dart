@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:patient_repository/patient_repository.dart';
 
+
 class PatientTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class PatientTab extends StatelessWidget {
               children: [
                 RoomCarousel(),
                 PatientProfileView(),
-                // ReatltimeView(),
+                // ReatltimeDataView(),
                 // RecordView(),
               ],
             ),

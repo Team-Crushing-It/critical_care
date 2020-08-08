@@ -42,9 +42,38 @@ class _PatientProfileSuccessView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(patientProfile.id),
-        Text(patientProfile.age.toString()),
-        Text(patientProfile.dob)
+        Container(
+          width: double.infinity,
+          height: 24,
+          color: Theme.of(context).highlightColor,
+          child: Center(
+            child: RichText(
+              text: TextSpan(
+                text:
+                    '${patientProfile.name} - ${patientProfile.gender} - Age: ${patientProfile.age} ',
+                style: Theme.of(context).textTheme.headline6,
+              ),
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              Text('Language: ${patientProfile.language}',
+                  style: Theme.of(context).textTheme.bodyText1),
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              Text('Date of Birth: ${patientProfile.dob}',
+                  style: Theme.of(context).textTheme.bodyText1),
+            ],
+          ),
+        ),
       ],
     );
   }

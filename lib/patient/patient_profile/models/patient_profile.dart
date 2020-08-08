@@ -9,6 +9,7 @@ class PatientProfile extends Equatable {
     @required this.dob,
     @required this.gender,
     @required this.language,
+    @required this.race,
   });
 
   final String id;
@@ -17,6 +18,7 @@ class PatientProfile extends Equatable {
   final String dob;
   final String gender;
   final String language;
+  final String race;
 
   PatientProfile copyWith({
     String id,
@@ -25,6 +27,7 @@ class PatientProfile extends Equatable {
     String dob,
     String gender,
     String language,
+    String race,
   }) {
     return PatientProfile(
       id: id ?? this.id,
@@ -33,10 +36,11 @@ class PatientProfile extends Equatable {
       dob: dob ?? this.dob,
       gender: gender ?? this.gender,
       language: language ?? this.language,
+      race: race ?? this.race,
     );
   }
 
   @override
   //compare different instances of patient profile
-  List<Object> get props => [id, name, age, dob, gender, language];
+  List<Object> get props => [id, name, age, dob, gender, language, race];
 }
