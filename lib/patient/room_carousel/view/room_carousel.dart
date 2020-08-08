@@ -91,8 +91,8 @@ class _RoomCarouselSuccessView extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 0),
                   child: Container(
-                    width: 70,
-                    height: 70,
+                    width: 60,
+                    height: 60,
                     child: _RoomView(
                       room: room,
                       // handle the changing of rooms in the cubit
@@ -147,8 +147,8 @@ class _RoomView extends StatelessWidget {
                 Visibility(
                   visible: isSelected,
                   child: SizedBox(
-                    width: 63,
-                    height: 63,
+                    width: 54,
+                    height: 54,
                     child: Container(
                       decoration: BoxDecoration(
                         color: Colors.white.withOpacity(0.4),

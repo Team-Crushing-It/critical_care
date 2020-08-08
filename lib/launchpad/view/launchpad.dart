@@ -20,6 +20,10 @@ class _LaunchpadState extends State<Launchpad> {
     return Scaffold(
       body: _LaunchpadBody(tab: Tab.values[_currentIndex]),
       bottomNavigationBar: BottomNavigationBar(
+        // backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Colors.grey,
+        type: BottomNavigationBarType.fixed,
+
         currentIndex: _currentIndex,
         onTap: (index) => setState(() => _currentIndex = index),
         items: [
