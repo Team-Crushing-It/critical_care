@@ -1,6 +1,8 @@
 import 'package:criticalcare/patient/patient.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:criticalcare/authentication/authentication.dart';
+import 'package:criticalcare/home/home.dart';
 
 class PatientProfileView extends StatelessWidget {
   @override
@@ -74,6 +76,21 @@ class _PatientProfileSuccessView extends StatelessWidget {
             ],
           ),
         ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              IconButton(
+                key: const Key('homePage_logout_iconButton'),
+                icon:
+                    const Text("Logout", style: TextStyle(color: Colors.white)),
+                onPressed: () => context
+                    .bloc<AuthenticationBloc>()
+                    .add(AuthenticationLogoutRequested()),
+              )
+            ],
+          ),
+        )
       ],
     );
   }
