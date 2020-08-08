@@ -1,7 +1,7 @@
 import 'dart:async';
 
-// import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:google_sign_in/google_sign_in.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:meta/meta.dart';
 
 import 'models/models.dart';
@@ -23,31 +23,23 @@ class LogOutFailure implements Exception {}
 /// {@endtemplate}
 class AuthenticationRepository {
   /// {@macro authentication_repository}
-  // AuthenticationRepository({
-  //   FirebaseAuth firebaseAuth,
-  //   GoogleSignIn googleSignIn,
-  // })  : _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance,
-  //       _googleSignIn = googleSignIn ?? GoogleSignIn.standard();
+  AuthenticationRepository({
+    FirebaseAuth firebaseAuth,
+    GoogleSignIn googleSignIn,
+  })  : _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance,
+        _googleSignIn = googleSignIn ?? GoogleSignIn.standard();
 
-  // final FirebaseAuth _firebaseAuth;
-  // final GoogleSignIn _googleSignIn;
+  final FirebaseAuth _firebaseAuth;
+  final GoogleSignIn _googleSignIn;
 
   /// Stream of [User] which will emit the current user when
   /// the authentication state changes.
   ///
   /// Emits [User.empty] if the user is not authenticated.
   Stream<User> get user {
-    return Stream.value(
-      const User(
-        id: '0',
-        email: 'test@gmail.com',
-        photo: null,
-        name: null,
-      ),
-    );
-    // return _firebaseAuth.onAuthStateChanged.map((firebaseUser) {
-    //   return firebaseUser == null ? User.empty : firebaseUser.toUser;
-    // });
+    return _firebaseAuth.onAuthStateChanged.map((firebaseUser) {
+      return firebaseUser == null ? User.empty : firebaseUser.toUser;
+    });
   }
 
   /// Creates a new user with the provided [email] and [password].
@@ -58,31 +50,31 @@ class AuthenticationRepository {
     @required String password,
   }) async {
     assert(email != null && password != null);
-    // try {
-    //   await _firebaseAuth.createUserWithEmailAndPassword(
-    //     email: email,
-    //     password: password,
-    //   );
-    // } on Exception {
-    //   throw SignUpFailure();
-    // }
+    try {
+      await _firebaseAuth.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+    } on Exception {
+      throw SignUpFailure();
+    }
   }
 
   /// Starts the Sign In with Google Flow.
   ///
   /// Throws a [LogInWithEmailAndPasswordFailure] if an exception occurs.
   Future<void> logInWithGoogle() async {
-    // try {
-    //   final googleUser = await _googleSignIn.signIn();
-    //   final googleAuth = await googleUser.authentication;
-    //   final credential = GoogleAuthProvider.getCredential(
-    //     accessToken: googleAuth.accessToken,
-    //     idToken: googleAuth.idToken,
-    //   );
-    //   await _firebaseAuth.signInWithCredential(credential);
-    // } on Exception {
-    //   throw LogInWithGoogleFailure();
-    // }
+    try {
+      final googleUser = await _googleSignIn.signIn();
+      final googleAuth = await googleUser.authentication;
+      final credential = GoogleAuthProvider.getCredential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+      await _firebaseAuth.signInWithCredential(credential);
+    } on Exception {
+      throw LogInWithGoogleFailure();
+    }
   }
 
   /// Signs in with the provided [email] and [password].
@@ -93,14 +85,14 @@ class AuthenticationRepository {
     @required String password,
   }) async {
     assert(email != null && password != null);
-    // try {
-    //   await _firebaseAuth.signInWithEmailAndPassword(
-    //     email: email,
-    //     password: password,
-    //   );
-    // } on Exception {
-    //   throw LogInWithEmailAndPasswordFailure();
-    // }
+    try {
+      await _firebaseAuth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+    } on Exception {
+      throw LogInWithEmailAndPasswordFailure();
+    }
   }
 
   /// Signs out the current user which will emit
@@ -108,19 +100,19 @@ class AuthenticationRepository {
   ///
   /// Throws a [LogOutFailure] if an exception occurs.
   Future<void> logOut() async {
-    // try {
-    //   await Future.wait([
-    //     _firebaseAuth.signOut(),
-    //     _googleSignIn.signOut(),
-    //   ]);
-    // } on Exception {
-    //   throw LogOutFailure();
-    // }
+    try {
+      await Future.wait([
+        _firebaseAuth.signOut(),
+        _googleSignIn.signOut(),
+      ]);
+    } on Exception {
+      throw LogOutFailure();
+    }
   }
 }
 
-// extension on FirebaseUser {
-//   User get toUser {
-//     return User(id: uid, email: email, name: displayName, photo: photoUrl);
-//   }
-// }
+extension on FirebaseUser {
+  User get toUser {
+    return User(id: uid, email: email, name: displayName, photo: photoUrl);
+  }
+}

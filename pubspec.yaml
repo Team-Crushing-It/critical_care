@@ -23,6 +23,8 @@ dependencies:
     path: packages/hospital_repository
   patient_repository:
     path: packages/patient_repository
+  firebase_auth: ^0.16.1
+  google_sign_in: ^4.5.1
 
 dev_dependencies:
   flutter_test:
@@ -35,13 +37,12 @@ flutter:
   assets:
     - assets/
   fonts:
-   - family: Din
-     fonts:
-       - asset: fonts/DINAlternateRegular.otf
-   - family: Varela Round
-     fonts:
-       - asset: fonts/VarelaRound-Regular.ttf
-   - family: Verdana
-     fonts:
-       - asset: fonts/verdana.ttf
-  
+    - family: Din
+      fonts:
+        - asset: fonts/DINAlternateRegular.otf
+    - family: Varela Round
+      fonts:
+        - asset: fonts/VarelaRound-Regular.ttf
+    - family: Verdana
+      fonts:
+        - asset: fonts/verdana.ttf
