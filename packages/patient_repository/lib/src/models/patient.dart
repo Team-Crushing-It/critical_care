@@ -13,10 +13,11 @@ class PatientModel {
     @required this.id,
     @required this.profile,
     @required this.status,
-    this.records = const <PatientRecordModel>[],
+    @required this.records,
   })  : assert(id != null),
         assert(profile != null),
-        assert(status != null);
+        assert(status != null),
+        assert(records != null);
 
   /// Converts [PatientEntity] into [PatientModel].
   factory PatientModel.fromEntity(PatientEntity entity) {
@@ -24,6 +25,8 @@ class PatientModel {
       id: entity.id,
       profile: getPatientProfile(entity.id),
       status: PatientStatusModel.values[Random().nextInt(3)],
+      records: getPatientRecords(entity.id),
+
     );
   }
 
@@ -34,7 +37,9 @@ class PatientModel {
 
   final PatientStatusModel status;
 
-  final List<PatientRecordModel> records;
+  // final List<PatientRecordModel> records;
+
+  final PatientRecordModel records;
 
 }
 
@@ -75,12 +80,20 @@ class PatientProfileModel {
 
 enum PatientStatusModel { critical, needsAttention, stable }
 
-abstract class PatientRecordModel {}
 
-class AllergyRecord extends PatientRecordModel {}
+/// {@template patient}
+/// Patient Record Domain Model
+/// {@endtemplate}
+class PatientRecordModel {
+///{@macro patient record}
+  const PatientRecordModel({
 
-class MedicationRecord extends PatientRecordModel {}
+    @required this.type,
+    @required this.info,
+    @required this.status,
+  });
 
-class ImmunizationRecord extends PatientRecordModel {}
-
-class LabRecord extends PatientRecordModel {}
+  final String type;
+  final String info;
+  final String status;
+}

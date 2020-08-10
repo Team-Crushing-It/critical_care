@@ -5,6 +5,82 @@ PatientProfileModel getPatientProfile(String patientId) {
   return _fakePatientsProfile[patientId];
 }
 
+/// important stuff
+PatientRecordModel getPatientRecords(String patientId) {
+  return _fakePatientsRecord[patientId];
+}
+
+
+final _fakePatientsRecord = <String, PatientRecordModel>{
+  'patient-0': const PatientRecordModel(
+    type: 'Allergies',
+    info: 'Peanut Allergy',
+    status: 'recorded',
+  ),
+  'patient-1': const PatientRecordModel(
+    type: 'Allergies',
+    info: 'Peanut Allergy',
+    status: 'recorded',
+  ),
+  'patient-2': const PatientRecordModel(
+    type: 'Allergies',
+    info: 'Peanut Allergy',
+    status: 'recorded',
+  ),
+  'patient-3': const PatientRecordModel(
+    type: 'Allergies',
+    info: 'Peanut Allergy',
+    status: 'recorded',
+  ),
+  'patient-4': const PatientRecordModel(
+    type: 'Allergies',
+    info: 'Peanut Allergy',
+    status: 'recorded',
+  ),
+   'patient-5': const PatientRecordModel(
+    type: 'Allergies',
+    info: 'Peanut Allergy',
+    status: 'recorded',
+  ),
+  'patient-6': const PatientRecordModel(
+    type: 'Allergies',
+    info: 'Peanut Allergy',
+    status: 'recorded',
+  ),
+  'patient-7': const PatientRecordModel(
+    type: 'Allergies',
+    info: 'Peanut Allergy',
+    status: 'recorded',
+  ),
+  'patient-8': const PatientRecordModel(
+    type: 'Allergies',
+    info: 'Peanut Allergy',
+    status: 'recorded',
+  ),
+  'patient-9': const PatientRecordModel(
+    type: 'Allergies',
+    info: 'Peanut Allergy',
+    status: 'recorded',
+  ),
+  'patient-10': const PatientRecordModel(
+    type: 'Allergies',
+    info: 'Peanut Allergy',
+    status: 'recorded',
+  ),
+  'patient-11': const PatientRecordModel(
+    type: 'Allergies',
+    info: 'Peanut Allergy',
+    status: 'recorded',
+  ),
+  'patient-12': const PatientRecordModel(
+    type: 'Allergies',
+    info: 'Peanut Allergy',
+    status: 'recorded',
+  ),
+};
+
+//=====================================================
+
 final _fakePatientsProfile = <String, PatientProfileModel>{
   'patient-0': PatientProfileModel(
     name: 'Juan Alvaro',

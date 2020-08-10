@@ -17,6 +17,6 @@ final theme = ThemeData(
     headline5: TextStyle(
         fontFamily: 'Varela Round', color: Color(0xFFDEDEE3), fontSize: 16),
     headline6: TextStyle(
-        fontFamily: 'Verdana', fontSize: 10, color: Color(0xFFDEDEE3)),
+        fontFamily: 'Verdana', fontSize: 16, color: Color(0xFFDEDEE3)),
   ),
 );

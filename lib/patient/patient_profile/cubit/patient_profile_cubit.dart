@@ -23,11 +23,12 @@ class PatientProfileCubit extends Cubit<PatientProfileState> {
     try {
       // hey repo give me the patient model for this id
       final patient = await _patientRepository.getPatient(patientId);
-      // update status and convert model to profile
+      // update state and convert model to profile
       emit(
         state.copyWith(
           status: PatientProfileStatus.success,
           patientProfile: patient.toPatientProfile,
+          patientRecord: patient.toPatientRecord,
         ),
       );
       // in case things go wrong, call 911
@@ -48,6 +49,19 @@ extension on PatientModel {
       dob: profile.dateOfBirth.toString(),
       language: profile.language,
       race: profile.race.toString(),
+      doctor: profile.primaryCareDoctorId,
     );
   }
 }
+
+extension on PatientModel {
+  PatientRecord get toPatientRecord {
+//convert patient model to patient profile
+    return PatientRecord(
+      type: records.type,
+      info: records.info,
+      status: records.status,
+    );
+  }
+}
+

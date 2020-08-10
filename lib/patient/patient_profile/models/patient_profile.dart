@@ -2,15 +2,15 @@ import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 
 class PatientProfile extends Equatable {
-  PatientProfile({
-    @required this.id,
-    @required this.name,
-    @required this.age,
-    @required this.dob,
-    @required this.gender,
-    @required this.language,
-    @required this.race,
-  });
+  PatientProfile(
+      {@required this.id,
+      @required this.name,
+      @required this.age,
+      @required this.dob,
+      @required this.gender,
+      @required this.language,
+      @required this.race,
+      @required this.doctor});
 
   final String id;
   final String name;
@@ -19,6 +19,7 @@ class PatientProfile extends Equatable {
   final String gender;
   final String language;
   final String race;
+  final String doctor;
 
   PatientProfile copyWith({
     String id,
@@ -28,6 +29,7 @@ class PatientProfile extends Equatable {
     String gender,
     String language,
     String race,
+    String doctor,
   }) {
     return PatientProfile(
       id: id ?? this.id,
@@ -37,10 +39,12 @@ class PatientProfile extends Equatable {
       gender: gender ?? this.gender,
       language: language ?? this.language,
       race: race ?? this.race,
+      doctor: doctor ?? this.doctor,
     );
   }
 
   @override
   //compare different instances of patient profile
-  List<Object> get props => [id, name, age, dob, gender, language, race];
+  List<Object> get props =>
+      [id, name, age, dob, gender, language, race, doctor];
 }

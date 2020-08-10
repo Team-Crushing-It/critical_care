@@ -35,14 +35,20 @@ class RoomCarouselCubit extends Cubit<RoomCarouselState> {
   }
 
   Future<void> getRooms(String hospitalId) async {
+    //initially say things are loading
     emit(state.copyWith(status: RoomCarouselStatus.loading));
     try {
+      // get info from hospital
       final hospital = await _hospitalRepository.getHospital(hospitalId);
+      // get info for patients
       final patients = await Future.wait(
+        //  map the hospitals to rooms with patients. 
+        //  Here we are filling the rooms of the hospital
         hospital.rooms.map(
           (room) => _patientRepository.getPatient(room.patientId),
         ),
       );
+      // what is this doing??
       final rooms = hospital.rooms.map((room) {
         final patient = patients.firstWhere(
           (patient) => patient.id == room.patientId,
@@ -50,6 +56,8 @@ class RoomCarouselCubit extends Cubit<RoomCarouselState> {
         );
         return room.toRoom(patient);
       }).toList();
+      //  looks like we are creating a list of rooms. 
+      //  Are we correlating the ID's?
       emit(state.copyWith(
         status: RoomCarouselStatus.success,
         rooms: rooms,
