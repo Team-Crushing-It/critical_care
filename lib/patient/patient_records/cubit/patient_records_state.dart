@@ -5,11 +5,11 @@ enum PatientRecordsStatus { loading, success, failure }
 class PatientRecordsState extends Equatable {
   const PatientRecordsState({
     this.status = PatientRecordsStatus.loading,
-    this.patientRecords,
+    this.patientRecords = const <PatientRecords>[],
   });
 
   final PatientRecordsStatus status;
-  final PatientRecords patientRecords;
+  final List<PatientRecords> patientRecords;
 
   @override
   List<Object> get props => [status, patientRecords];
@@ -17,7 +17,7 @@ class PatientRecordsState extends Equatable {
 
   PatientRecordsState copyWith({
     PatientRecordsStatus status,
-    PatientRecords patientRecords,
+    List<PatientRecords> patientRecords,
   }) {
     return PatientRecordsState(
       status: status ?? this.status,

@@ -10,22 +10,229 @@ List<PatientRecordsModel> getPatientRecords(String patientId) {
   return _fakePatientRecords[patientId];
 }
 
-
 final _fakePatientRecords = <String, List<PatientRecordsModel>>{
-  'patient-0': [const PatientRecordsModel(
-    type: 'Medications',
-    info: 'Peanut Allergy',
-    status: 'recorded',
-  ), const PatientRecordsModel(
-    type: 'Medications',
-    info: 'Peanut Allergy',
-    status: 'recorded',
-  ), const PatientRecordsModel(
-    type: 'Medications',
-    info: 'Peanut Allergy',
-    status: 'recorded',
-  ),]  
-  
+  'patient-0': [
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+  ],
+  'patient-1': [
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+  ],
+  'patient-2': [
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+  ],
+  'patient-3': [
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+  ],
+
+  'patient-4': [
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+  ],
+  'patient-5': [
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+  ],
+  'patient-6': [
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+  ],
+  'patient-7': [
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+  ],
+  'patient-8': [
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+  ],
+  'patient-9': [
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+  ],
+  'patient-10': [
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+  ],
+  'patient-11': [
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+  ],
+  'patient-12': [
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+    const PatientRecordsModel(
+      type: 'Medications',
+      info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+  ],
   // PatientRecordsModel(
   //   type: 'Medications',
   //   info: 'Peanut Allergy',
@@ -161,7 +368,8 @@ final _fakePatientsProfile = <String, PatientProfileModel>{
     primaryCareDoctorId: 'doctor-0',
     photoUrl:
         'https://cdn.discordapp.com/attachments/703406022953533552/741451538647613460/unknown.png',
-  ),'patient-6': PatientProfileModel(
+  ),
+  'patient-6': PatientProfileModel(
     name: 'Juan Alvaro',
     age: 41,
     dateOfBirth: DateTime(1979, 12, 03),
@@ -236,6 +444,6 @@ final _fakePatientsProfile = <String, PatientProfileModel>{
     gender: Gender.male,
     primaryCareDoctorId: 'doctor-0',
     photoUrl:
-       'https://cdn.discordapp.com/attachments/703406022953533552/741451483698167828/unknown.png',
+        'https://cdn.discordapp.com/attachments/703406022953533552/741451483698167828/unknown.png',
   ),
 };

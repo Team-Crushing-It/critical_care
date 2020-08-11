@@ -36,24 +36,41 @@ class _PatientRecordsSuccessView extends StatelessWidget {
     @required this.patientRecords,
   }) : super(key: key);
 
-  final PatientRecords patientRecords;
+  final List<PatientRecords> patientRecords;
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
-        Container(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                Text('Date of Birth: ${patientRecords.type}',
-                    style: Theme.of(context).textTheme.bodyText1),
-              ],
+      children: patientRecords.map(
+        (record) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 0),
+            child: Container(
+              width: 60,
+              height: 60,
+              child: _RecordView(
+                record: record,
+              ),
             ),
-          ),
-        ),
-      ],
+          );
+        },
+      ).toList(),
+    );
+  }
+}
+
+class _RecordView extends StatelessWidget {
+  const _RecordView({
+    Key key,
+    @required this.record,
+  }) : super(key: key);
+
+  final PatientRecords record;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Text(record.type),
     );
   }
 }
