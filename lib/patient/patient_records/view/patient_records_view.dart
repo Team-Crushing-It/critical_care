@@ -47,7 +47,7 @@ class _PatientRecordsSuccessView extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 0),
             child: Container(
-              width: 100,
+              width: 200,
               height: 100,
               child: _RecordView(
                 record: record,
@@ -73,9 +73,9 @@ class _RecordView extends StatelessWidget {
     return Column(children: [
       Text('type: ${record.type}',
           style: Theme.of(context).textTheme.bodyText1),
-          Text('type: ${record.info}',
+          Text('info: ${record.info}',
           style: Theme.of(context).textTheme.bodyText1),
-          Text('type: ${record.status}',
+          Text('status: ${record.status}',
           style: Theme.of(context).textTheme.bodyText1),
     ]);
   }

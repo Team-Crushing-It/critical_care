@@ -13,47 +13,63 @@ List<PatientRecordsModel> getPatientRecords(String patientId) {
 final _fakePatientRecords = <String, List<PatientRecordsModel>>{
   'patient-0': [
     const PatientRecordsModel(
-      type: 'Medications',
+      type: 'Allergies',
       info: 'Peanut Allergy',
       status: 'recorded',
     ),
     const PatientRecordsModel(
       type: 'Medications',
-      info: 'Peanut Allergy',
+      info: 'Albuterol HFA 90mcg',
+      status: 'ordered',
+    ),
+    const PatientRecordsModel(
+      type: 'Immunizations',
+      info: 'COVID-19',
       status: 'recorded',
     ),
     const PatientRecordsModel(
-      type: 'Medications',
-      info: 'Peanut Allergy',
+      type: 'Lab Results',
+      info: 'HDL Cholesterol 53.5',
       status: 'recorded',
     ),
   ],
   'patient-1': [
+
     const PatientRecordsModel(
       type: 'Medications',
+      info: 'Albuterol HFA 90mcg',
+      status: 'ordered',
+    ),
+     const PatientRecordsModel(
+      type: 'Allergies',
       info: 'Peanut Allergy',
       status: 'recorded',
     ),
     const PatientRecordsModel(
-      type: 'Medications',
-      info: 'Peanut Allergy',
+      type: 'Immunizations',
+      info: 'COVID-19',
       status: 'recorded',
     ),
     const PatientRecordsModel(
-      type: 'Medications',
-      info: 'Peanut Allergy',
+      type: 'Lab Results',
+      info: 'HDL Cholesterol 53.5',
       status: 'recorded',
     ),
   ],
   'patient-2': [
     const PatientRecordsModel(
-      type: 'Medications',
-      info: 'Peanut Allergy',
+      type: 'Immunizations',
+      info: 'COVID-19',
       status: 'recorded',
     ),
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
+      status: 'recorded',
+    ),
+  const PatientRecordsModel(
+      type: 'Immunizations',
+      info: 'COVID-19',
       status: 'recorded',
     ),
     const PatientRecordsModel(
@@ -63,6 +79,16 @@ final _fakePatientRecords = <String, List<PatientRecordsModel>>{
     ),
   ],
   'patient-3': [
+    const PatientRecordsModel(
+      type: 'Immunizations',
+      info: 'COVID-19',
+      status: 'recorded',
+    ),
+    const PatientRecordsModel(
+      type: 'Lab Results',
+      info: 'HDL Cholesterol 53.5',
+      status: 'recorded',
+    ),
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
@@ -87,13 +113,13 @@ final _fakePatientRecords = <String, List<PatientRecordsModel>>{
       status: 'recorded',
     ),
     const PatientRecordsModel(
-      type: 'Medications',
-      info: 'Peanut Allergy',
+      type: 'Immunizations',
+      info: 'COVID-19',
       status: 'recorded',
     ),
     const PatientRecordsModel(
-      type: 'Medications',
-      info: 'Peanut Allergy',
+      type: 'Lab Results',
+      info: 'HDL Cholesterol 53.5',
       status: 'recorded',
     ),
   ],
