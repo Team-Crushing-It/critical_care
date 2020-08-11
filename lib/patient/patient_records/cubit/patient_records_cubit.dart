@@ -13,7 +13,7 @@ class PatientRecordsCubit extends Cubit<PatientRecordsState> {
   final PatientRepository _patientRepository;
 
   Future<void> getPatientRecords(String patientId) async {
-    // check if we loaded patient data. Have we loaded data? 
+    // check if we loaded patient data. Have we loaded data?
     // make sure we are asked to get new information.
     // if (state.patientRecords?.id == patientId) return state;
 
@@ -22,18 +22,13 @@ class PatientRecordsCubit extends Cubit<PatientRecordsState> {
     // this can fail, so we wrap it in try catch
 
     try {
-      // hey repo give me the patient model for this id
+      // info from patient
       final patient = await _patientRepository.getPatientRecords(patientId);
 
-      final records = patient.records.map((record){
-         
-      }).toList();
-
-      // update state and convert model to Records
       emit(
         state.copyWith(
           status: PatientRecordsStatus.success,
-          patientRecords: records,
+          patientRecords: patient.records,
         ),
       );
       // in case things go wrong, call 911
@@ -43,16 +38,14 @@ class PatientRecordsCubit extends Cubit<PatientRecordsState> {
   }
 }
 
-
 // extension on PatientModel {
 //   PatientRecords get toPatientRecords {
 // //convert patient model to patient Records
-//     return PatientRecords(
+//     return PatientRecordsModel(
 //       id: id,
-//       type: records.
+//       type: records.,
 //       info: records.info,
 //       status: records.status,
 //     );
 //   }
 // }
-

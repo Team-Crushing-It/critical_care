@@ -1,6 +1,7 @@
 import 'package:criticalcare/patient/patient.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:patient_repository/patient_repository.dart';
 
 class PatientRecordsView extends StatelessWidget {
   @override
@@ -36,7 +37,7 @@ class _PatientRecordsSuccessView extends StatelessWidget {
     @required this.patientRecords,
   }) : super(key: key);
 
-  final List<PatientRecords> patientRecords;
+  final List<PatientRecordsModel> patientRecords;
 
   @override
   Widget build(BuildContext context) {
@@ -46,8 +47,8 @@ class _PatientRecordsSuccessView extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 0),
             child: Container(
-              width: 60,
-              height: 60,
+              width: 100,
+              height: 100,
               child: _RecordView(
                 record: record,
               ),
@@ -65,13 +66,18 @@ class _RecordView extends StatelessWidget {
     @required this.record,
   }) : super(key: key);
 
-  final PatientRecords record;
+  final PatientRecordsModel record;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text(record.type),
-    );
+    return Column(children: [
+      Text('type: ${record.type}',
+          style: Theme.of(context).textTheme.bodyText1),
+          Text('type: ${record.info}',
+          style: Theme.of(context).textTheme.bodyText1),
+          Text('type: ${record.status}',
+          style: Theme.of(context).textTheme.bodyText1),
+    ]);
   }
 }
 

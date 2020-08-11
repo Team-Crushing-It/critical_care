@@ -93,6 +93,14 @@ class PatientRecordsModel {
     @required this.status,
   });
 
+/// Converts [PatientRecordsEntity] into [PatienRecordstModel].
+  factory PatientRecordsModel.fromEntity(PatientRecordsEntity entity) {
+    return PatientRecordsModel(
+      info: entity.id,
+      type: entity.id,
+      status: entity.id,
+    );
+  }
   final String type;
   final String info;
   final String status;
