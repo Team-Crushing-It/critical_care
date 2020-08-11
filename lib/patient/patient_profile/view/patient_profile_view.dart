@@ -15,7 +15,7 @@ class PatientProfileView extends StatelessWidget {
           case PatientProfileStatus.success:
             return _PatientProfileSuccessView(
               patientProfile: state.patientProfile,
-              patientRecord: state.patientRecord,
+         
             );
           case PatientProfileStatus.failure:
           default:
@@ -37,12 +37,10 @@ class _PatientProfileSuccessView extends StatelessWidget {
   const _PatientProfileSuccessView({
     Key key,
     @required this.patientProfile,
-    @required this.patientRecord,
 
   }) : super(key: key);
 
   final PatientProfile patientProfile;
-  final PatientRecord patientRecord;
 
   @override
   Widget build(BuildContext context) {
@@ -89,15 +87,15 @@ class _PatientProfileSuccessView extends StatelessWidget {
             ],
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            children: [
-              Text('Record: ${patientRecord.type}',
-                  style: Theme.of(context).textTheme.bodyText1),
-            ],
-          ),
-        ),
+        // Padding(
+        //   padding: const EdgeInsets.all(8.0),
+        //   child: Row(
+        //     children: [
+        //       Text('Record: ${patientRecord.type}',
+        //           style: Theme.of(context).textTheme.bodyText1),
+        //     ],
+        //   ),
+        //  ),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(

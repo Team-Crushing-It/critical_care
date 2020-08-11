@@ -28,7 +28,6 @@ class PatientProfileCubit extends Cubit<PatientProfileState> {
         state.copyWith(
           status: PatientProfileStatus.success,
           patientProfile: patient.toPatientProfile,
-          patientRecord: patient.toPatientRecord,
         ),
       );
       // in case things go wrong, call 911
@@ -50,17 +49,6 @@ extension on PatientModel {
       language: profile.language,
       race: profile.race.toString(),
       doctor: profile.primaryCareDoctorId,
-    );
-  }
-}
-
-extension on PatientModel {
-  PatientRecord get toPatientRecord {
-//convert patient model to patient profile
-    return PatientRecord(
-      type: records.type,
-      info: records.info,
-      status: records.status,
     );
   }
 }

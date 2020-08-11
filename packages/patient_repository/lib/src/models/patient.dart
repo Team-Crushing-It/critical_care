@@ -39,7 +39,7 @@ class PatientModel {
 
   // final List<PatientRecordModel> records;
 
-  final PatientRecordModel records;
+  final List<PatientRecordsModel> records;
 
 }
 
@@ -84,9 +84,9 @@ enum PatientStatusModel { critical, needsAttention, stable }
 /// {@template patient}
 /// Patient Record Domain Model
 /// {@endtemplate}
-class PatientRecordModel {
-///{@macro patient record}
-  const PatientRecordModel({
+class PatientRecordsModel {
+///{@macro patient records}
+  const PatientRecordsModel({
 
     @required this.type,
     @required this.info,

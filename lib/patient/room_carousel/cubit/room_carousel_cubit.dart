@@ -40,24 +40,27 @@ class RoomCarouselCubit extends Cubit<RoomCarouselState> {
     try {
       // get info from hospital
       final hospital = await _hospitalRepository.getHospital(hospitalId);
-      // get info for patients
+     
+     // this is a list of patients
       final patients = await Future.wait(
-        //  map the hospitals to rooms with patients. 
-        //  Here we are filling the rooms of the hospital
         hospital.rooms.map(
           (room) => _patientRepository.getPatient(room.patientId),
         ),
       );
-      // what is this doing??
+      
+      // this is a list of rooms that get's new things added
       final rooms = hospital.rooms.map((room) {
+        // this is a patient model
+        // this is just locating the patient that is in the specific room?
         final patient = patients.firstWhere(
           (patient) => patient.id == room.patientId,
           orElse: () => null,
         );
+        //  This adds patient to room, converting domains?
         return room.toRoom(patient);
       }).toList();
-      //  looks like we are creating a list of rooms. 
-      //  Are we correlating the ID's?
+
+      //  finally, looks like we are pushing a list of rooms
       emit(state.copyWith(
         status: RoomCarouselStatus.success,
         rooms: rooms,

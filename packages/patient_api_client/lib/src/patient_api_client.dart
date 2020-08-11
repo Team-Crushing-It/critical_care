@@ -21,6 +21,15 @@ class PatientApiClient {
     );
   }
 
+/// Retrieve a list of supported patient.
+  Future<PatientEntity> getPatientRecords(String patientId) {
+    /// TODO: Integrate with real API
+    return Future.delayed(
+      const Duration(seconds: 0),
+      () => PatientEntity(id: patientId),
+    );
+  }
+
   /// Stream of Arterial Blood Pressure Data for a given [patientId].
   Stream<ArtEntity> art(String patientId) {
     Timer.periodic(const Duration(seconds: 1), (_) {

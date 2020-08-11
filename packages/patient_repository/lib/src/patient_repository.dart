@@ -30,6 +30,16 @@ class PatientRepository {
     }
   }
 
+  Future<PatientModel> getPatientRecords(String patientId) async {
+    try {
+      final patientEntity =
+          await _patientApiClient.getPatientRecords(patientId);
+      return PatientModel.fromEntity(patientEntity);
+    } on Exception {
+      throw GetPatientFailure();
+    }
+  }
+
   Stream<Art> art(String patientId) {
     return _patientApiClient
         .art(patientId)

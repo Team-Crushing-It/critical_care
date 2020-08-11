@@ -6,77 +6,91 @@ PatientProfileModel getPatientProfile(String patientId) {
 }
 
 /// important stuff
-PatientRecordModel getPatientRecords(String patientId) {
-  return _fakePatientsRecord[patientId];
+List<PatientRecordsModel> getPatientRecords(String patientId) {
+  return _fakePatientRecords[patientId];
 }
 
 
-final _fakePatientsRecord = <String, PatientRecordModel>{
-  'patient-0': const PatientRecordModel(
-    type: 'Allergies',
+final _fakePatientRecords = <String, List<PatientRecordsModel>>{
+  'patient-0': [const PatientRecordsModel(
+    type: 'Medications',
     info: 'Peanut Allergy',
     status: 'recorded',
-  ),
-  'patient-1': const PatientRecordModel(
-    type: 'Allergies',
+  ), const PatientRecordsModel(
+    type: 'Medications',
     info: 'Peanut Allergy',
     status: 'recorded',
-  ),
-  'patient-2': const PatientRecordModel(
-    type: 'Allergies',
+  ), const PatientRecordsModel(
+    type: 'Medications',
     info: 'Peanut Allergy',
     status: 'recorded',
-  ),
-  'patient-3': const PatientRecordModel(
-    type: 'Allergies',
-    info: 'Peanut Allergy',
-    status: 'recorded',
-  ),
-  'patient-4': const PatientRecordModel(
-    type: 'Allergies',
-    info: 'Peanut Allergy',
-    status: 'recorded',
-  ),
-   'patient-5': const PatientRecordModel(
-    type: 'Allergies',
-    info: 'Peanut Allergy',
-    status: 'recorded',
-  ),
-  'patient-6': const PatientRecordModel(
-    type: 'Allergies',
-    info: 'Peanut Allergy',
-    status: 'recorded',
-  ),
-  'patient-7': const PatientRecordModel(
-    type: 'Allergies',
-    info: 'Peanut Allergy',
-    status: 'recorded',
-  ),
-  'patient-8': const PatientRecordModel(
-    type: 'Allergies',
-    info: 'Peanut Allergy',
-    status: 'recorded',
-  ),
-  'patient-9': const PatientRecordModel(
-    type: 'Allergies',
-    info: 'Peanut Allergy',
-    status: 'recorded',
-  ),
-  'patient-10': const PatientRecordModel(
-    type: 'Allergies',
-    info: 'Peanut Allergy',
-    status: 'recorded',
-  ),
-  'patient-11': const PatientRecordModel(
-    type: 'Allergies',
-    info: 'Peanut Allergy',
-    status: 'recorded',
-  ),
-  'patient-12': const PatientRecordModel(
-    type: 'Allergies',
-    info: 'Peanut Allergy',
-    status: 'recorded',
-  ),
+  ),]  
+  
+  // PatientRecordsModel(
+  //   type: 'Medications',
+  //   info: 'Peanut Allergy',
+  //   status: 'recorded',
+  // ),
+  // 'patient-1': const PatientRecordsModel(
+  //   type: 'Allergies',
+  //   info: 'Peanut Allergy',
+  //   status: 'recorded',
+  // ),
+  // 'patient-2': const PatientRecordsModel(
+  //   type: 'Allergies',
+  //   info: 'Peanut Allergy',
+  //   status: 'recorded',
+  // ),
+  // 'patient-3': const PatientRecordsModel(
+  //   type: 'Allergies',
+  //   info: 'Peanut Allergy',
+  //   status: 'recorded',
+  // ),
+  // 'patient-4': const PatientRecordsModel(
+  //   type: 'Allergies',
+  //   info: 'Peanut Allergy',
+  //   status: 'recorded',
+  // ),
+  //  'patient-5': const PatientRecordsModel(
+  //   type: 'Allergies',
+  //   info: 'Peanut Allergy',
+  //   status: 'recorded',
+  // ),
+  // 'patient-6': const PatientRecordsModel(
+  //   type: 'Allergies',
+  //   info: 'Peanut Allergy',
+  //   status: 'recorded',
+  // ),
+  // 'patient-7': const PatientRecordsModel(
+  //   type: 'Allergies',
+  //   info: 'Peanut Allergy',
+  //   status: 'recorded',
+  // ),
+  // 'patient-8': const PatientRecordsModel(
+  //   type: 'Allergies',
+  //   info: 'Peanut Allergy',
+  //   status: 'recorded',
+  // ),
+  // 'patient-9': const PatientRecordsModel(
+  //   type: 'Allergies',
+  //   info: 'Peanut Allergy',
+  //   status: 'recorded',
+  // ),
+  // 'patient-10': const PatientRecordsModel(
+  //   type: 'Allergies',
+  //   info: 'Peanut Allergy',
+  //   status: 'recorded',
+  // ),
+  // 'patient-11': const PatientRecordsModel(
+  //   type: 'Allergies',
+  //   info: 'Peanut Allergy',
+  //   status: 'recorded',
+  // ),
+  // 'patient-12': const PatientRecordsModel(
+  //   type: 'Allergies',
+  //   info: 'Peanut Allergy',
+  //   status: 'recorded',
+  // ),
 };
 
 //=====================================================
