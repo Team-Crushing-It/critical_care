@@ -1,8 +1,8 @@
 import 'package:criticalcare/patient/patient.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:criticalcare/authentication/authentication.dart';
-import 'package:criticalcare/home/home.dart';
+import 'package:enum_to_string/enum_to_string.dart';
+import 'dart:math';
 
 class PatientProfileView extends StatelessWidget {
   @override
@@ -15,7 +15,6 @@ class PatientProfileView extends StatelessWidget {
           case PatientProfileStatus.success:
             return _PatientProfileSuccessView(
               patientProfile: state.patientProfile,
-         
             );
           case PatientProfileStatus.failure:
           default:
@@ -37,7 +36,6 @@ class _PatientProfileSuccessView extends StatelessWidget {
   const _PatientProfileSuccessView({
     Key key,
     @required this.patientProfile,
-
   }) : super(key: key);
 
   final PatientProfile patientProfile;
@@ -54,65 +52,131 @@ class _PatientProfileSuccessView extends StatelessWidget {
             child: RichText(
               text: TextSpan(
                 text:
-                    '${patientProfile.name} - ${patientProfile.gender} - Age: ${patientProfile.age} ',
+                    '${patientProfile.name} - ${_cleanup(patientProfile.gender)} - Age: ${patientProfile.age}',
                 style: Theme.of(context).textTheme.headline6,
               ),
             ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            children: [
-              Text('Language: ${patientProfile.language}',
-                  style: Theme.of(context).textTheme.bodyText1),
-            ],
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          Text('Language: ${patientProfile.language}',
+                              style: Theme.of(context).textTheme.bodyText1),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          Text('Race: ${_cleanup(patientProfile.race)}',
+                              style: Theme.of(context).textTheme.bodyText1),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Text(
+                          'Primary Care Doctor: ${patientProfile.doctor.toDoc}',
+                          style: Theme.of(context).textTheme.bodyText1),
+                    ],
+                  ),
+                ),
+                Row(
+                  children: [
+                    // Padding(
+                    //   padding: const EdgeInsets.all(8.0),
+                    //   child: Row(
+                    //     children: [
+                    //       Text('Status: Stable',
+                    //           style: Theme.of(context).textTheme.bodyText1),
+                    //     ],
+                    //   ),
+                    // ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          Text('Awaiting: ${_awaiting()}',
+                              style: Theme.of(context).textTheme.bodyText1),
+                        ],
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+            //insert image here================================================
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SizedBox(
+                width: 100,
+                height: 100,
+                child: Image.network(
+                  patientProfile.photo,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            )
+          ],
         ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            children: [
-              Text('Date of Birth: ${patientProfile.dob}',
-                  style: Theme.of(context).textTheme.bodyText1),
-            ],
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            children: [
-              Text('Primary Care Doctor: ${patientProfile.doctor}',
-                  style: Theme.of(context).textTheme.bodyText1),
-            ],
-          ),
-        ),
-        // Padding(
-        //   padding: const EdgeInsets.all(8.0),
-        //   child: Row(
-        //     children: [
-        //       Text('Record: ${patientRecord.type}',
-        //           style: Theme.of(context).textTheme.bodyText1),
-        //     ],
-        //   ),
-        //  ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            children: [
-              IconButton(
-                key: const Key('homePage_logout_iconButton'),
-                icon:
-                    const Text("Logout", style: TextStyle(color: Colors.white)),
-                onPressed: () => context
-                    .bloc<AuthenticationBloc>()
-                    .add(AuthenticationLogoutRequested()),
-              )
-            ],
-          ),
-        )
       ],
     );
+  }
+
+  //Convert Enum to string and then uppercase the first letter
+  String _cleanup(String word) {
+    final r = EnumToString.parse(word);
+
+    return r[0].toUpperCase() + r.substring(1);
+  }
+
+  // function for spitting out fake awating status info
+  String _awaiting() {
+    final x = Random().nextInt(2);
+    switch (x) {
+      case 0:
+        return 'PA init Examination';
+      case 1:
+        return 'SX Toxicology Report';
+      case 2:
+        return 'RN Seriological Approval';
+      default:
+        return 'Intake';
+    }
+  }
+}
+
+// spit out a random doctor
+extension on String {
+  String get toDoc {
+    final x = Random().nextInt(2);
+
+    switch (x) {
+      case 0:
+        return 'Dr. Farnsworth';
+      case 1:
+        return 'Dr. Meade';
+      case 2:
+        return 'Dr. Tallenworth';
+      default:
+        return 'Dr. Reid';
+    }
   }
 }
 

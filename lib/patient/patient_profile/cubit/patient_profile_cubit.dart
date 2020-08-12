@@ -49,6 +49,7 @@ extension on PatientModel {
       language: profile.language,
       race: profile.race.toString(),
       doctor: profile.primaryCareDoctorId,
+      photo: profile.photoUrl,
     );
   }
 }

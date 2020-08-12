@@ -345,7 +345,7 @@ final _fakePatientsProfile = <String, PatientProfileModel>{
     age: 104,
     dateOfBirth: DateTime(1916, 1, 03),
     race: Race.asian,
-    language: 'Catonese',
+    language: 'Cantonese',
     gender: Gender.male,
     primaryCareDoctorId: 'doctor-0',
     photoUrl:
@@ -411,7 +411,7 @@ final _fakePatientsProfile = <String, PatientProfileModel>{
     age: 104,
     dateOfBirth: DateTime(1916, 1, 03),
     race: Race.asian,
-    language: 'Catonese',
+    language: 'Cantonese',
     gender: Gender.male,
     primaryCareDoctorId: 'doctor-0',
     photoUrl:

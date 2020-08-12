@@ -2,15 +2,17 @@ import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 
 class PatientProfile extends Equatable {
-  PatientProfile(
-      {@required this.id,
-      @required this.name,
-      @required this.age,
-      @required this.dob,
-      @required this.gender,
-      @required this.language,
-      @required this.race,
-      @required this.doctor});
+  PatientProfile({
+    @required this.id,
+    @required this.name,
+    @required this.age,
+    @required this.dob,
+    @required this.gender,
+    @required this.language,
+    @required this.race,
+    @required this.doctor,
+    @required this.photo,
+  });
 
   final String id;
   final String name;
@@ -20,6 +22,7 @@ class PatientProfile extends Equatable {
   final String language;
   final String race;
   final String doctor;
+  final String photo;
 
   PatientProfile copyWith({
     String id,
@@ -30,21 +33,22 @@ class PatientProfile extends Equatable {
     String language,
     String race,
     String doctor,
+    String photo,
   }) {
     return PatientProfile(
-      id: id ?? this.id,
-      name: name ?? this.name,
-      age: age ?? this.age,
-      dob: dob ?? this.dob,
-      gender: gender ?? this.gender,
-      language: language ?? this.language,
-      race: race ?? this.race,
-      doctor: doctor ?? this.doctor,
-    );
+        id: id ?? this.id,
+        name: name ?? this.name,
+        age: age ?? this.age,
+        dob: dob ?? this.dob,
+        gender: gender ?? this.gender,
+        language: language ?? this.language,
+        race: race ?? this.race,
+        doctor: doctor ?? this.doctor,
+        photo: photo ?? this.photo);
   }
 
   @override
   //compare different instances of patient profile
   List<Object> get props =>
-      [id, name, age, dob, gender, language, race, doctor];
+      [id, name, age, dob, gender, language, race, doctor, photo];
 }
