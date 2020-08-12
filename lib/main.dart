@@ -22,89 +22,111 @@ void main() {
 
 //===========================================================
 
-// import 'dart:async';
-// import 'dart:math';
-// import 'package:flutter/material.dart';
-// import 'package:oscilloscope/oscilloscope.dart';
+/*
+import 'dart:async';
+import 'dart:math';
+import 'package:flutter/material.dart';
+import 'package:oscilloscope/oscilloscope.dart';
 
-// void main() => runApp(new MyApp());
+void main() => runApp(new MyApp());
 
-// class MyApp extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return  MaterialApp(
-//       title: 'Oscilloscope Display Example',
-//       home: Shell(),
-//     );
-//   }
-// }
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Oscilloscope Display Example',
+      home: Shell(),
+    );
+  }
+}
 
-// class Shell extends StatefulWidget {
-//   @override
-//   _ShellState createState() => _ShellState();
-// }
+class Shell extends StatefulWidget {
+  @override
+  _ShellState createState() => _ShellState();
+}
 
-// class _ShellState extends State<Shell> {
-//   List<double> traceSine = [];
-//   double radians = 0.0;
-//   Timer _timer;
+List<double> chartDataListTemp = [
+  50,
+  50,
+  50,
+  65,
+  50,
+  100,
+  15,
+  65,
+  50,
+  50,
+  50,
+  50,
+  50,
+  50,
+  50,
+  50,
+  50,
+  50,
+  50
+];
 
-//   /// method to generate a Test  Wave Pattern Sets
-//   /// this gives us a value between +1  & -1 for sine & cosine
-//   void _generateTrace(Timer t) {
-//     // generate our  values
-//     var sv = sin((radians * pi));
+int counterForGraph = 0;
 
-//     // Add to the growing dataset
-//     setState(() {
-//       traceSine.add(sv);
-//     });
+class _ShellState extends State<Shell> {
+  List<double> traceSine = [];
+  double radians = 0.0;
+  Timer _timer;
 
-//     // adjust to recyle the radian value ( as 0 = 2Pi RADS)
-//     radians += 0.05;
-//     if (radians >= 2.0) {
-//       radians = 0.0;
-//     }
-//   }
+  /// method to generate a Test  Wave Pattern Sets
+  /// this gives us a value between +1  & -1 for sine & cosine
+  void _generateTrace(Timer t) {
+    // generate our  values
+    setState(() {
+      traceSine.add((chartDataListTemp[counterForGraph] - 50) / 10);
+    }); // adjust to recyle the radian value ( as 0 = 2Pi RADS)
+    radians += 0.05;
+    if (radians >= 2.0) {
+      radians = 0.0;
+    }
+    if (counterForGraph >= 18) {
+      counterForGraph = 0;
+    }
+    counterForGraph += 1;
+  }
 
-//   @override
-//   initState() {
-//     super.initState();
-//     // create our timer to generate test values
-//     _timer = Timer.periodic(const Duration(milliseconds: 60), _generateTrace);
-//   }
+  @override
+  initState() {
+    super.initState();
+    // create our timer to generate test values
+    _timer = Timer.periodic(const Duration(milliseconds: 100), _generateTrace);
+  }
 
-//   @override
-//   void dispose() {
-//     _timer.cancel();
-//     super.dispose();
-//   }
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
+  }
 
-//   @override
-//   Widget build(BuildContext context) {
-//     // Create A Scope Display for Sine
-//     Oscilloscope scopeOne = Oscilloscope(
-//       showYAxis: true,
-//       yAxisColor: Colors.orange,
-//       padding: 20.0,
-//       backgroundColor: Colors.black,
-//       traceColor: Colors.green,
-//       yAxisMax: 1.0,
-//       yAxisMin: -1.0,
-//       dataSet: traceSine,
-//     );
-
-  
-//     // Generate the Scaffold
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text("OscilloScope Demo"),
-//       ),
-//       body: Column(
-//         children: <Widget>[
-//          SizedBox(width:double.infinity, height: 200, child: scopeOne),
-//         ],
-//       ),
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    // Create A Scope Display for Sine
+    Oscilloscope scopeOne = Oscilloscope(
+      showYAxis: true,
+      yAxisColor: Colors.orange,
+      padding: 20.0,
+      backgroundColor: Colors.black,
+      traceColor: Colors.green,
+      yAxisMax: 1.0,
+      yAxisMin: -1.0,
+      dataSet: traceSine,
+    ); // Generate the Scaffold
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("OscilloScope Demo"),
+      ),
+      body: Column(
+        children: <Widget>[
+          SizedBox(width: double.infinity, height: 200, child: scopeOne),
+        ],
+      ),
+    );
+  }
+}
+*/

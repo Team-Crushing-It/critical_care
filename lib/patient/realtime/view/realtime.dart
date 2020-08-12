@@ -24,17 +24,17 @@ class RealtimeView extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Container(),
         ),
-        // Padding(
-        //   padding: const EdgeInsets.all(8.0),
-        //   child: SizedBox(
-        //     width: double.infinity,
-        //     // height: 100,
-        //     child: Image.network(
-        //       'https://cdn.discordapp.com/attachments/703406022953533552/743008787920584764/Realtime.png',
-        //       // BoxFit.contain,
-        //     ),
-        //   ),
-        // )
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SizedBox(
+            width: double.infinity,
+            // height: 100,
+            child: Image.network(
+              'https://cdn.discordapp.com/attachments/703406022953533552/743008787920584764/Realtime.png',
+              // BoxFit.contain,
+            ),
+          ),
+        )
       ],
     );
   }
