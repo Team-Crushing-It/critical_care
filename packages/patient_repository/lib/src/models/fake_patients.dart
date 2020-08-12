@@ -15,22 +15,22 @@ final _fakePatientRecords = <String, List<PatientRecordsModel>>{
     const PatientRecordsModel(
       type: 'Allergies',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Albuterol HFA 90mcg',
-      status: 'ordered',
+      status: 'Ordered',
     ),
     const PatientRecordsModel(
       type: 'Immunizations',
       info: 'COVID-19',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Lab Results',
       info: 'HDL Cholesterol 53.5',
-      status: 'recorded',
+      status: 'Recorded',
     ),
   ],
   'patient-1': [
@@ -38,71 +38,71 @@ final _fakePatientRecords = <String, List<PatientRecordsModel>>{
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Albuterol HFA 90mcg',
-      status: 'ordered',
+      status: 'Ordered',
     ),
      const PatientRecordsModel(
       type: 'Allergies',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Immunizations',
       info: 'COVID-19',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Lab Results',
       info: 'HDL Cholesterol 53.5',
-      status: 'recorded',
+      status: 'Recorded',
     ),
   ],
   'patient-2': [
     const PatientRecordsModel(
       type: 'Immunizations',
       info: 'COVID-19',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
   const PatientRecordsModel(
       type: 'Immunizations',
       info: 'COVID-19',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
   ],
   'patient-3': [
     const PatientRecordsModel(
       type: 'Immunizations',
       info: 'COVID-19',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Lab Results',
       info: 'HDL Cholesterol 53.5',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
   ],
 
@@ -110,219 +110,219 @@ final _fakePatientRecords = <String, List<PatientRecordsModel>>{
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Immunizations',
       info: 'COVID-19',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Lab Results',
       info: 'HDL Cholesterol 53.5',
-      status: 'recorded',
+      status: 'Recorded',
     ),
   ],
   'patient-5': [
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
   ],
   'patient-6': [
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
   ],
   'patient-7': [
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
   ],
   'patient-8': [
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
   ],
   'patient-9': [
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
   ],
   'patient-10': [
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
   ],
   'patient-11': [
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
   ],
   'patient-12': [
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Peanut Allergy',
-      status: 'recorded',
+      status: 'Recorded',
     ),
   ],
   // PatientRecordsModel(
   //   type: 'Medications',
   //   info: 'Peanut Allergy',
-  //   status: 'recorded',
+  //   status: 'Recorded',
   // ),
   // 'patient-1': const PatientRecordsModel(
   //   type: 'Allergies',
   //   info: 'Peanut Allergy',
-  //   status: 'recorded',
+  //   status: 'Recorded',
   // ),
   // 'patient-2': const PatientRecordsModel(
   //   type: 'Allergies',
   //   info: 'Peanut Allergy',
-  //   status: 'recorded',
+  //   status: 'Recorded',
   // ),
   // 'patient-3': const PatientRecordsModel(
   //   type: 'Allergies',
   //   info: 'Peanut Allergy',
-  //   status: 'recorded',
+  //   status: 'Recorded',
   // ),
   // 'patient-4': const PatientRecordsModel(
   //   type: 'Allergies',
   //   info: 'Peanut Allergy',
-  //   status: 'recorded',
+  //   status: 'Recorded',
   // ),
   //  'patient-5': const PatientRecordsModel(
   //   type: 'Allergies',
   //   info: 'Peanut Allergy',
-  //   status: 'recorded',
+  //   status: 'Recorded',
   // ),
   // 'patient-6': const PatientRecordsModel(
   //   type: 'Allergies',
   //   info: 'Peanut Allergy',
-  //   status: 'recorded',
+  //   status: 'Recorded',
   // ),
   // 'patient-7': const PatientRecordsModel(
   //   type: 'Allergies',
   //   info: 'Peanut Allergy',
-  //   status: 'recorded',
+  //   status: 'Recorded',
   // ),
   // 'patient-8': const PatientRecordsModel(
   //   type: 'Allergies',
   //   info: 'Peanut Allergy',
-  //   status: 'recorded',
+  //   status: 'Recorded',
   // ),
   // 'patient-9': const PatientRecordsModel(
   //   type: 'Allergies',
   //   info: 'Peanut Allergy',
-  //   status: 'recorded',
+  //   status: 'Recorded',
   // ),
   // 'patient-10': const PatientRecordsModel(
   //   type: 'Allergies',
   //   info: 'Peanut Allergy',
-  //   status: 'recorded',
+  //   status: 'Recorded',
   // ),
   // 'patient-11': const PatientRecordsModel(
   //   type: 'Allergies',
   //   info: 'Peanut Allergy',
-  //   status: 'recorded',
+  //   status: 'Recorded',
   // ),
   // 'patient-12': const PatientRecordsModel(
   //   type: 'Allergies',
   //   info: 'Peanut Allergy',
-  //   status: 'recorded',
+  //   status: 'Recorded',
   // ),
 };
 

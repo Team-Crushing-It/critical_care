@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 final theme = ThemeData(
+  iconTheme: IconThemeData(
+    color: Colors.white,
+    size: 16,
+  ),
   fontFamily: 'Verdana',
   primaryColor: const Color(0xFFDEDEE3),
   highlightColor: const Color(0xFF1C213E),
@@ -18,5 +22,9 @@ final theme = ThemeData(
         fontFamily: 'Varela Round', color: Color(0xFFDEDEE3), fontSize: 16),
     headline6: TextStyle(
         fontFamily: 'Verdana', fontSize: 16, color: Color(0xFFDEDEE3)),
+    headline4: TextStyle(
+        fontFamily: 'Verdana', color: Color(0xFFFFFFFF), fontSize: 14),
+    headline3: TextStyle(
+        fontFamily: 'Verdana', color: Colors.white24, fontSize: 14),
   ),
 );

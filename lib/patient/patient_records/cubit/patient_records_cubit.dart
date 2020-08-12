@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:criticalcare/patient/patient.dart';
 import 'package:equatable/equatable.dart';
 import 'package:patient_repository/patient_repository.dart';
 
