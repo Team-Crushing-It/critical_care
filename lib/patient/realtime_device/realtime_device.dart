@@ -1,0 +1,1 @@
+export 'view/realtime_device.dart';

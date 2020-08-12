@@ -14,10 +14,12 @@ class PatientModel {
     @required this.profile,
     @required this.status,
     @required this.records,
+    @required this.devices,
   })  : assert(id != null),
         assert(profile != null),
         assert(status != null),
-        assert(records != null);
+        assert(records != null),
+        assert(devices != null);
 
   /// Converts [PatientEntity] into [PatientModel].
   factory PatientModel.fromEntity(PatientEntity entity) {
@@ -26,7 +28,7 @@ class PatientModel {
       profile: getPatientProfile(entity.id),
       status: PatientStatusModel.values[Random().nextInt(3)],
       records: getPatientRecords(entity.id),
-
+      devices: getRealtimeDevice(entity.id),
     );
   }
 
@@ -41,6 +43,7 @@ class PatientModel {
 
   final List<PatientRecordsModel> records;
 
+  final List<RealtimeDeviceModel> devices;
 }
 
 enum Gender { male, female, other }
@@ -57,7 +60,6 @@ enum Race {
 class PatientProfileModel {
   /// somet documentation
   const PatientProfileModel({
-
     @required this.name,
     @required this.gender,
     @required this.race,
@@ -80,20 +82,18 @@ class PatientProfileModel {
 
 enum PatientStatusModel { critical, needsAttention, stable }
 
-
 /// {@template patient}
 /// Patient Record Domain Model
 /// {@endtemplate}
 class PatientRecordsModel {
-///{@macro patient records}
+  ///{@macro patient records}
   const PatientRecordsModel({
-
     @required this.type,
     @required this.info,
     @required this.status,
   });
 
-/// Converts [PatientRecordsEntity] into [PatienRecordstModel].
+  /// Converts [PatientRecordsEntity] into [PatienRecordstModel].
   factory PatientRecordsModel.fromEntity(PatientRecordsEntity entity) {
     return PatientRecordsModel(
       info: entity.id,
@@ -104,4 +104,37 @@ class PatientRecordsModel {
   final String type;
   final String info;
   final String status;
+}
+
+/// {@template patient}
+/// Realtime Device Domain Model
+/// {@endtemplate}
+class RealtimeDeviceModel {
+  ///{@macro realtime devices}
+  const RealtimeDeviceModel({
+    @required this.graph,
+    @required this.type,
+    @required this.unit,
+    @required this.range1,
+    @required this.range2,
+    @required this.value,
+  });
+
+  /// Converts [RealtimeDeviceEntity] into [RealtimeDeviceModel].
+  factory RealtimeDeviceModel.fromEntity(RealtimeDeviceEntity entity) {
+    return RealtimeDeviceModel(
+      graph: entity.id,
+      type: entity.id,
+      unit: entity.id,
+      range1: entity.id,
+      range2: entity.id,
+      value: entity.id,
+    );
+  }
+  final String graph;
+  final String type;
+  final String unit;
+  final String range1;
+  final String range2;
+  final String value;
 }

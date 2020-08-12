@@ -10,6 +10,365 @@ List<PatientRecordsModel> getPatientRecords(String patientId) {
   return _fakePatientRecords[patientId];
 }
 
+/// important stuff
+List<RealtimeDeviceModel> getRealtimeDevice(String patientId) {
+  return _fakeMedicalDevice[patientId];
+}
+
+final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
+  'patient-0': [
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230366696996995/graph_art.png',
+      type: 'Art',
+      unit: 'mmHg',
+      range1: '120',
+      range2: '80',
+      value: '120/80',
+    ),
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230369809301635/graph_LAP.png',
+      type: 'LAP',
+      unit: 'mmHg',
+      range1: '10',
+      range2: '0',
+      value: '7',
+    ),
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230364746645584/graph_hr.png',
+      type: 'HR',
+      unit: 'bpm',
+      range1: '',
+      range2: '',
+      value: '60',
+    ),
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230362875985989/graph_RESP.png',
+      type: 'RESP',
+      unit: 'rpm',
+      range1: '',
+      range2: '',
+      value: '20',
+    ),
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230361567494174/graph_o2.png',
+      type: 'O2',
+      unit: '%',
+      range1: '50',
+      range2: '10',
+      value: '19',
+    ),
+  ],
+  'patient-1': [
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230364746645584/graph_hr.png',
+      type: 'HR',
+      unit: 'bpm',
+      range1: '',
+      range2: '',
+      value: '60',
+    ),
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230362875985989/graph_RESP.png',
+      type: 'RESP',
+      unit: 'rpm',
+      range1: '',
+      range2: '',
+      value: '20',
+    ),
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230361567494174/graph_o2.png',
+      type: 'O2',
+      unit: '%',
+      range1: '50',
+      range2: '10',
+      value: '19',
+    ),
+  ],
+  'patient-2': [
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230362875985989/graph_RESP.png',
+      type: 'RESP',
+      unit: 'rpm',
+      range1: '',
+      range2: '',
+      value: '20',
+    ),
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230364746645584/graph_hr.png',
+      type: 'HR',
+      unit: 'bpm',
+      range1: '',
+      range2: '',
+      value: '60',
+    ),
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230361567494174/graph_o2.png',
+      type: 'O2',
+      unit: '%',
+      range1: '50',
+      range2: '10',
+      value: '19',
+    ),
+  ],
+  'patient-3': [
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230364746645584/graph_hr.png',
+      type: 'HR',
+      unit: 'bpm',
+      range1: '',
+      range2: '',
+      value: '60',
+    ),
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230362875985989/graph_RESP.png',
+      type: 'RESP',
+      unit: 'rpm',
+      range1: '',
+      range2: '',
+      value: '20',
+    ),
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230361567494174/graph_o2.png',
+      type: 'O2',
+      unit: '%',
+      range1: '50',
+      range2: '10',
+      value: '19',
+    ),
+  ],
+  'patient-4': [
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230364746645584/graph_hr.png',
+      type: 'HR',
+      unit: 'bpm',
+      range1: '',
+      range2: '',
+      value: '60',
+    ),
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230366696996995/graph_art.png',
+      type: 'Art',
+      unit: 'mmHg',
+      range1: '120',
+      range2: '80',
+      value: '120/80',
+    ),
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230369809301635/graph_LAP.png',
+      type: 'LAP',
+      unit: 'mmHg',
+      range1: '10',
+      range2: '0',
+      value: '7',
+    ),
+  ],
+  'patient-5': [
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230366696996995/graph_art.png',
+      type: 'Art',
+      unit: 'mmHg',
+      range1: '120',
+      range2: '80',
+      value: '120/80',
+    ),
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230369809301635/graph_LAP.png',
+      type: 'LAP',
+      unit: 'mmHg',
+      range1: '10',
+      range2: '0',
+      value: '7',
+    ),
+  ],
+  'patient-6': [
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230364746645584/graph_hr.png',
+      type: 'HR',
+      unit: 'bpm',
+      range1: '',
+      range2: '',
+      value: '60',
+    ),
+  ],
+  'patient-7': [
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230362875985989/graph_RESP.png',
+      type: 'RESP',
+      unit: 'rpm',
+      range1: '',
+      range2: '',
+      value: '20',
+    ),
+  ],
+  'patient-8': [
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230361567494174/graph_o2.png',
+      type: 'O2',
+      unit: '%',
+      range1: '50',
+      range2: '10',
+      value: '19',
+    ),
+  ],
+  'patient-9': [
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230362875985989/graph_RESP.png',
+      type: 'RESP',
+      unit: 'rpm',
+      range1: '',
+      range2: '',
+      value: '20',
+    ),
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230361567494174/graph_o2.png',
+      type: 'O2',
+      unit: '%',
+      range1: '50',
+      range2: '10',
+      value: '19',
+    ),
+  ],
+  'patient-10': [
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230364746645584/graph_hr.png',
+      type: 'HR',
+      unit: 'bpm',
+      range1: '',
+      range2: '',
+      value: '60',
+    ),
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230362875985989/graph_RESP.png',
+      type: 'RESP',
+      unit: 'rpm',
+      range1: '',
+      range2: '',
+      value: '20',
+    ),
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230361567494174/graph_o2.png',
+      type: 'O2',
+      unit: '%',
+      range1: '50',
+      range2: '10',
+      value: '19',
+    ),
+  ],
+  'patient-11': [
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230364746645584/graph_hr.png',
+      type: 'HR',
+      unit: 'bpm',
+      range1: '',
+      range2: '',
+      value: '60',
+    ),
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230362875985989/graph_RESP.png',
+      type: 'RESP',
+      unit: 'rpm',
+      range1: '',
+      range2: '',
+      value: '20',
+    ),
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230366696996995/graph_art.png',
+      type: 'Art',
+      unit: 'mmHg',
+      range1: '120',
+      range2: '80',
+      value: '120/80',
+    ),
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230369809301635/graph_LAP.png',
+      type: 'LAP',
+      unit: 'mmHg',
+      range1: '10',
+      range2: '0',
+      value: '7',
+    ),
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230361567494174/graph_o2.png',
+      type: 'O2',
+      unit: '%',
+      range1: '50',
+      range2: '10',
+      value: '19',
+    ),
+  ],
+  'patient-12': [
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230364746645584/graph_hr.png',
+      type: 'HR',
+      unit: 'bpm',
+      range1: '',
+      range2: '',
+      value: '60',
+    ),
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230362875985989/graph_RESP.png',
+      type: 'RESP',
+      unit: 'rpm',
+      range1: '',
+      range2: '',
+      value: '20',
+    ),
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230366696996995/graph_art.png',
+      type: 'Art',
+      unit: 'mmHg',
+      range1: '120',
+      range2: '80',
+      value: '120/80',
+    ),
+    const RealtimeDeviceModel(
+      graph:
+          'https://media.discordapp.net/attachments/703406022953533552/743230369809301635/graph_LAP.png',
+      type: 'LAP',
+      unit: 'mmHg',
+      range1: '10',
+      range2: '0',
+      value: '7',
+    ),
+  ],
+};
+
+//========================================
 final _fakePatientRecords = <String, List<PatientRecordsModel>>{
   'patient-0': [
     const PatientRecordsModel(

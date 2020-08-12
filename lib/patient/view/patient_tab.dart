@@ -1,4 +1,6 @@
 import 'package:criticalcare/patient/patient.dart';
+import 'package:criticalcare/patient/realtime_device/cubit/realtime_device_cubit.dart';
+import 'package:criticalcare/patient/realtime_device/view/realtime_device.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:patient_repository/patient_repository.dart';
@@ -21,13 +23,19 @@ class PatientTab extends StatelessWidget {
                 create: (context) => PatientRecordsCubit(
                   context.repository<PatientRepository>(),
                 ),
-              )
+              ),
+              BlocProvider<RealtimeDeviceCubit>(
+                create: (context) => RealtimeDeviceCubit(
+                  context.repository<PatientRepository>(),
+                ),
+              ),
+
             ],
             child: Column(
               children: [
                 RoomCarousel(),
                 PatientProfileView(),
-                RealtimeView(),
+                RealtimeDeviceView(),
                 PatientRecordsView(),
               ],
             ),

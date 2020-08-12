@@ -1,4 +1,5 @@
 import 'package:criticalcare/patient/patient.dart';
+import 'package:criticalcare/patient/realtime_device/cubit/realtime_device_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hospital_repository/hospital_repository.dart';
@@ -29,6 +30,11 @@ class RoomCarousel extends StatelessWidget {
           context
               .bloc<PatientRecordsCubit>()
               .getPatientRecords(state.selectedRoom.patientId);
+
+              // is this the right way to do this?
+          context
+              .bloc<RealtimeDeviceCubit>()
+              .getRealtimeDevice(state.selectedRoom.patientId);
         },
         child: RoomCarouselView(),
       ),
