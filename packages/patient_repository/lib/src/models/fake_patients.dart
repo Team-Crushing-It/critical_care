@@ -34,13 +34,12 @@ final _fakePatientRecords = <String, List<PatientRecordsModel>>{
     ),
   ],
   'patient-1': [
-
     const PatientRecordsModel(
       type: 'Medications',
       info: 'Albuterol HFA 90mcg',
       status: 'Ordered',
     ),
-     const PatientRecordsModel(
+    const PatientRecordsModel(
       type: 'Allergies',
       info: 'Peanut Allergy',
       status: 'Recorded',
@@ -67,7 +66,7 @@ final _fakePatientRecords = <String, List<PatientRecordsModel>>{
       info: 'Peanut Allergy',
       status: 'Recorded',
     ),
-  const PatientRecordsModel(
+    const PatientRecordsModel(
       type: 'Immunizations',
       info: 'COVID-19',
       status: 'Recorded',
@@ -338,7 +337,7 @@ final _fakePatientsProfile = <String, PatientProfileModel>{
     gender: Gender.male,
     primaryCareDoctorId: 'doctor-0',
     photoUrl:
-        'https://cdn.discordapp.com/attachments/715724285389308085/740723011249766550/unknown.png',
+        'https://cdn.discordapp.com/attachments/703406022953533552/743094210181464074/tenor_1.gif',
   ),
   'patient-1': PatientProfileModel(
     name: 'Bruce Lee',
@@ -349,7 +348,7 @@ final _fakePatientsProfile = <String, PatientProfileModel>{
     gender: Gender.male,
     primaryCareDoctorId: 'doctor-0',
     photoUrl:
-        'https://cdn.discordapp.com/attachments/703406022953533552/741451483698167828/unknown.png',
+        'https://cdn.discordapp.com/attachments/703406022953533552/743094346697539685/joey.gif',
   ),
   'patient-2': PatientProfileModel(
     name: 'Julia Roberts',
@@ -360,7 +359,7 @@ final _fakePatientsProfile = <String, PatientProfileModel>{
     gender: Gender.female,
     primaryCareDoctorId: 'doctor-0',
     photoUrl:
-        'https://cdn.discordapp.com/attachments/703406022953533552/741451538647613460/unknown.png',
+        'https://cdn.discordapp.com/attachments/703406022953533552/743094479829073920/girl.gif',
   ),
   'patient-3': PatientProfileModel(
     name: 'Al Capone',
@@ -371,7 +370,7 @@ final _fakePatientsProfile = <String, PatientProfileModel>{
     gender: Gender.male,
     primaryCareDoctorId: 'doctor-0',
     photoUrl:
-        'https://cdn.discordapp.com/attachments/715724285389308085/740723011249766550/unknown.png',
+        'https://cdn.discordapp.com/attachments/703406022953533552/743094210181464074/tenor_1.gif',
   ),
   'patient-4': PatientProfileModel(
     name: 'Jed Bartlett',
@@ -382,7 +381,7 @@ final _fakePatientsProfile = <String, PatientProfileModel>{
     gender: Gender.male,
     primaryCareDoctorId: 'doctor-0',
     photoUrl:
-        'https://cdn.discordapp.com/attachments/703406022953533552/741451483698167828/unknown.png',
+        'https://cdn.discordapp.com/attachments/703406022953533552/743094346697539685/joey.gif',
   ),
   'patient-5': PatientProfileModel(
     name: 'Joey Montana',
@@ -393,7 +392,7 @@ final _fakePatientsProfile = <String, PatientProfileModel>{
     gender: Gender.female,
     primaryCareDoctorId: 'doctor-0',
     photoUrl:
-        'https://cdn.discordapp.com/attachments/703406022953533552/741451538647613460/unknown.png',
+        'https://cdn.discordapp.com/attachments/703406022953533552/743094479829073920/girl.gif',
   ),
   'patient-6': PatientProfileModel(
     name: 'Juan Alvaro',
@@ -404,7 +403,7 @@ final _fakePatientsProfile = <String, PatientProfileModel>{
     gender: Gender.male,
     primaryCareDoctorId: 'doctor-0',
     photoUrl:
-        'https://cdn.discordapp.com/attachments/715724285389308085/740723011249766550/unknown.png',
+        'https://cdn.discordapp.com/attachments/703406022953533552/743094210181464074/tenor_1.gif',
   ),
   'patient-7': PatientProfileModel(
     name: 'Bruce Lee',
@@ -415,7 +414,7 @@ final _fakePatientsProfile = <String, PatientProfileModel>{
     gender: Gender.male,
     primaryCareDoctorId: 'doctor-0',
     photoUrl:
-        'https://cdn.discordapp.com/attachments/703406022953533552/741451483698167828/unknown.png',
+        'https://cdn.discordapp.com/attachments/703406022953533552/743094346697539685/joey.gif',
   ),
   'patient-8': PatientProfileModel(
     name: 'Julia Roberts',
@@ -426,7 +425,7 @@ final _fakePatientsProfile = <String, PatientProfileModel>{
     gender: Gender.female,
     primaryCareDoctorId: 'doctor-0',
     photoUrl:
-        'https://cdn.discordapp.com/attachments/703406022953533552/741451538647613460/unknown.png',
+        'https://cdn.discordapp.com/attachments/703406022953533552/743094479829073920/girl.gif',
   ),
   'patient-9': PatientProfileModel(
     name: 'Al Capone',
@@ -437,7 +436,7 @@ final _fakePatientsProfile = <String, PatientProfileModel>{
     gender: Gender.male,
     primaryCareDoctorId: 'doctor-0',
     photoUrl:
-        'https://cdn.discordapp.com/attachments/715724285389308085/740723011249766550/unknown.png',
+        'https://cdn.discordapp.com/attachments/703406022953533552/743094210181464074/tenor_1.gif',
   ),
   'patient-10': PatientProfileModel(
     name: 'Jed Bartlett',
@@ -448,7 +447,7 @@ final _fakePatientsProfile = <String, PatientProfileModel>{
     gender: Gender.male,
     primaryCareDoctorId: 'doctor-0',
     photoUrl:
-        'https://cdn.discordapp.com/attachments/703406022953533552/741451483698167828/unknown.png',
+        'https://cdn.discordapp.com/attachments/703406022953533552/743094346697539685/joey.gif',
   ),
   'patient-11': PatientProfileModel(
     name: 'Joey Montana',
@@ -459,7 +458,7 @@ final _fakePatientsProfile = <String, PatientProfileModel>{
     gender: Gender.female,
     primaryCareDoctorId: 'doctor-0',
     photoUrl:
-        'https://cdn.discordapp.com/attachments/703406022953533552/741451538647613460/unknown.png',
+        'https://cdn.discordapp.com/attachments/703406022953533552/743094479829073920/girl.gif',
   ),
   'patient-12': PatientProfileModel(
     name: 'Albert Einstein',
@@ -470,6 +469,6 @@ final _fakePatientsProfile = <String, PatientProfileModel>{
     gender: Gender.male,
     primaryCareDoctorId: 'doctor-0',
     photoUrl:
-        'https://cdn.discordapp.com/attachments/703406022953533552/741451483698167828/unknown.png',
+        'https://cdn.discordapp.com/attachments/703406022953533552/743094210181464074/tenor_1.gif',
   ),
 };
