@@ -27,7 +27,7 @@ class PatientTab extends StatelessWidget {
               children: [
                 RoomCarousel(),
                 PatientProfileView(),
-                // ReatltimeDataView(),
+                RealtimeView(),
                 PatientRecordsView(),
               ],
             ),
