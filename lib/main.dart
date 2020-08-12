@@ -22,244 +22,89 @@ void main() {
 
 //===========================================================
 
-// import 'package:charts_flutter/flutter.dart' as charts;
-// import 'package:flutter/material.dart';
 // import 'dart:async';
-// import 'dart:math' as math;
+// import 'dart:math';
+// import 'package:flutter/material.dart';
+// import 'package:oscilloscope/oscilloscope.dart';
 
-// /// Package imports
-// import 'package:flutter/foundation.dart';
-
-// final List<DataPoints> data = [];
-
-// /*
-// Art Graph
-// List<int> chartDataListTemp = [
-//   10,
-//   15,
-//   20,
-//   30,
-//   35,
-//   50,
-//   60,
-//   62,
-//   63,
-//   62,
-//   52,
-//   40,
-//   39,
-//   25,
-//   25,
-//   20,
-//   17,
-//   15,
-//   10,
-//   10,
-//   10
-// ];
-// */
-
-// /*
-// Lap Graph
-// List<int> chartDataListTemp = [
-//   4,
-//   5,
-//   6,
-//   5,
-//   4,
-//   3,
-//   2,
-//   2,
-//   1,
-//   3,
-//   4,
-//   5,
-//   7,
-//   8,
-//   9,
-//   6,
-//   4,
-//   2,
-//   3,
-//   4,
-//   4,
-// ];
-// */
-
-// //Heart Graph
-// List<int> chartDataListTemp = [
-//   50,
-//   50,
-//   50,
-//   70,
-//   50,
-//   50,
-//   40,
-//   100,
-//   15,
-//   50,
-//   50,
-//   50,
-//   50,
-//   65,
-//   50,
-//   50,
-//   50,
-//   50,
-//   50,
-//   50,
-//   50,
-// ];
-
-// /*
-// O2Fi Graph
-// List<int> chartDataListTemp = [
-//   25,
-//   25,
-//   25,
-//   25,
-//   25,
-//   25,
-//   25,
-//   25,
-//   25,
-//   25,
-//   25,
-//   25,
-//   25,
-//   25,
-//   25,
-//   25,
-//   25,
-//   25,
-//   25,
-//   25,
-//   25,
-// ];
-// */
-
-// class SimpleLineChart extends StatelessWidget {
-//   final List<charts.Series> seriesList;
-//   final bool animate;
-
-//   /// Creates a [LineChart] with sample data and no transition.
-//   factory SimpleLineChart.withSampleData() {
-//     return SimpleLineChart(
-//       _createSampleData(),
-//       animate: false,
-//     );
-//   }
-
-//   SimpleLineChart(this.seriesList, {this.animate});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return charts.LineChart(
-//       seriesList,
-//       animate: animate,
-//       //intFactory: const charts.LocalintFactory(),
-//     );
-//   }
-
-//   /// Create one series with sample hard coded data.
-//   static List<charts.Series<DataPoints, int>> _createSampleData() {
-//     return [
-//       charts.Series<DataPoints, int>(
-//         id: 'Sales',
-//         colorFn: (_, __) => charts.MaterialPalette.red.shadeDefault,
-//         domainFn: (DataPoints variable, _) => variable.x,
-//         measureFn: (DataPoints variable, _) => variable.y,
-//         data: data,
-//       )
-//     ];
-//   }
-// }
-
-// /// Sample time series data type.
-// class DataPoints {
-//   final int x;
-//   final int y;
-
-//   DataPoints(this.x, this.y);
-// }
-
-// void main() => runApp(MyApp());
+// void main() => runApp(new MyApp());
 
 // class MyApp extends StatelessWidget {
-//   // This widget is the root of your application.
-
 //   @override
 //   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Flutter Demo',
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//       ),
-//       home: MyHomePage(title: 'Flutter Demo Home Page'),
+//     return  MaterialApp(
+//       title: 'Oscilloscope Display Example',
+//       home: Shell(),
 //     );
 //   }
 // }
 
-// class MyHomePage extends StatefulWidget {
-//   MyHomePage({Key key, this.title}) : super(key: key);
-
-//   final String title;
-
+// class Shell extends StatefulWidget {
 //   @override
-//   _MyHomePageState createState() => _MyHomePageState();
+//   _ShellState createState() => _ShellState();
 // }
 
-// class _MyHomePageState extends State<MyHomePage> {
-//   @override
-//   void initState() {
-//     super.initState();
-//     final timer = Timer.periodic(
-//         const Duration(milliseconds: 300), (Timer t) => _incrementCounter());
-//   }
+// class _ShellState extends State<Shell> {
+//   List<double> traceSine = [];
+//   double radians = 0.0;
+//   Timer _timer;
 
-//   int _counter = 0;
-//   int _globalCounter = 0; //The global
+//   /// method to generate a Test  Wave Pattern Sets
+//   /// this gives us a value between +1  & -1 for sine & cosine
+//   void _generateTrace(Timer t) {
+//     // generate our  values
+//     var sv = sin((radians * pi));
 
-//   void _incrementCounter() {
+//     // Add to the growing dataset
 //     setState(() {
-//       _counter++;
-//       _globalCounter++;
-//       if (_globalCounter >= 21) {
-//         _globalCounter = 0;
-//         print("yoyo yo");
-//       }
-//       data.add(DataPoints(_counter, chartDataListTemp[_globalCounter]));
+//       traceSine.add(sv);
 //     });
+
+//     // adjust to recyle the radian value ( as 0 = 2Pi RADS)
+//     radians += 0.05;
+//     if (radians >= 2.0) {
+//       radians = 0.0;
+//     }
+//   }
+
+//   @override
+//   initState() {
+//     super.initState();
+//     // create our timer to generate test values
+//     _timer = Timer.periodic(const Duration(milliseconds: 60), _generateTrace);
+//   }
+
+//   @override
+//   void dispose() {
+//     _timer.cancel();
+//     super.dispose();
 //   }
 
 //   @override
 //   Widget build(BuildContext context) {
+//     // Create A Scope Display for Sine
+//     Oscilloscope scopeOne = Oscilloscope(
+//       showYAxis: true,
+//       yAxisColor: Colors.orange,
+//       padding: 20.0,
+//       backgroundColor: Colors.black,
+//       traceColor: Colors.green,
+//       yAxisMax: 1.0,
+//       yAxisMin: -1.0,
+//       dataSet: traceSine,
+//     );
+
+  
+//     // Generate the Scaffold
 //     return Scaffold(
-//       backgroundColor: Color(0xFF050B2C),
 //       appBar: AppBar(
-//         title: Text(widget.title),
+//         title: Text("OscilloScope Demo"),
 //       ),
-//       body: Center(
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: <Widget>[
-//             IconButton(
-//               icon: Icon(Icons.add),
-//               tooltip: 'Increment',
-//               onPressed: _incrementCounter,
-//             ),
-//             Expanded(flex: 5, child: SimpleLineChart.withSampleData()),
-//             Text(
-//               'You have pushed the button this many times:',
-//             ),
-//             Text(
-//               '$_counter',
-//               style: Theme.of(context).textTheme.display1,
-//             ),
-//           ],
-//         ),
+//       body: Column(
+//         children: <Widget>[
+//          SizedBox(width:double.infinity, height: 200, child: scopeOne),
+//         ],
 //       ),
 //     );
 //   }
 // }
-// // 
