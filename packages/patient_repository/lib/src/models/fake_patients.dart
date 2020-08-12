@@ -359,7 +359,7 @@ final _fakePatientsProfile = <String, PatientProfileModel>{
     gender: Gender.female,
     primaryCareDoctorId: 'doctor-0',
     photoUrl:
-        'https://cdn.discordapp.com/attachments/703406022953533552/743094479829073920/girl.gif',
+        'https://cdn.discordapp.com/attachments/725734300296675368/743111177353298055/cool.gif',
   ),
   'patient-3': PatientProfileModel(
     name: 'Al Capone',
@@ -392,7 +392,7 @@ final _fakePatientsProfile = <String, PatientProfileModel>{
     gender: Gender.female,
     primaryCareDoctorId: 'doctor-0',
     photoUrl:
-        'https://cdn.discordapp.com/attachments/703406022953533552/743094479829073920/girl.gif',
+        'https://cdn.discordapp.com/attachments/725734300296675368/743111177353298055/cool.gif',
   ),
   'patient-6': PatientProfileModel(
     name: 'Juan Alvaro',
@@ -425,7 +425,7 @@ final _fakePatientsProfile = <String, PatientProfileModel>{
     gender: Gender.female,
     primaryCareDoctorId: 'doctor-0',
     photoUrl:
-        'https://cdn.discordapp.com/attachments/703406022953533552/743094479829073920/girl.gif',
+        'https://cdn.discordapp.com/attachments/725734300296675368/743111177353298055/cool.gif',
   ),
   'patient-9': PatientProfileModel(
     name: 'Al Capone',
@@ -458,7 +458,7 @@ final _fakePatientsProfile = <String, PatientProfileModel>{
     gender: Gender.female,
     primaryCareDoctorId: 'doctor-0',
     photoUrl:
-        'https://cdn.discordapp.com/attachments/703406022953533552/743094479829073920/girl.gif',
+        'https://cdn.discordapp.com/attachments/725734300296675368/743111177353298055/cool.gif',
   ),
   'patient-12': PatientProfileModel(
     name: 'Albert Einstein',
