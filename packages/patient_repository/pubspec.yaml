@@ -1,0 +1,11 @@
+name: patient_repository
+description: Dart package which manages the patient domain.
+version: 1.0.0
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  meta: ^1.1.8
+  patient_api_client:
+    path: ../patient_api_client
