@@ -1,3 +1,4 @@
+/*
 import 'package:authentication_repository/authentication_repository.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
@@ -19,10 +20,9 @@ void main() {
     patientRepository: PatientRepository(),
   ));
 }
-
+*/
 //===========================================================
 
-/*
 import 'dart:async';
 import 'dart:math';
 import 'package:flutter/material.dart';
@@ -47,23 +47,144 @@ class Shell extends StatefulWidget {
 
 List<double> chartDataListTemp = [
   50,
+  50.0,
+  50.0,
+  50.0,
+  50.0,
   50,
   50,
+  50.0,
+  50,
+  50,
+  50.0,
+  50.0,
+  50.0,
+  50.0,
+  50,
+  50,
+  50.0,
+  50,
+  50,
+  53.75,
+  57.5,
+  57.5,
+  61.25,
   65,
+  65,
+  65,
+  61.25,
+  57.5,
+  57.5,
+  53.75,
   50,
+  50,
+  50.0,
+  50,
+  50,
+  62.5,
+  75.0,
+  75.0,
+  87.5,
   100,
+  100,
+  78.75,
+  57.5,
+  57.5,
+  36.25,
   15,
-  65,
+  15,
+  15,
+  27.5,
+  40.0,
+  40.0,
+  50.0,
+  50.0,
+  50.0,
+  50.0,
+  50.0,
+  50.0,
+  50.0,
   50,
   50,
   50,
+  50.0,
+  52.5,
+  60,
+  60,
+  60,
+  56.25,
+  55.5,
+  55.5,
+  52.75,
   50,
   50,
+  50.0,
   50,
   50,
+  50.0,
+  50.0,
+  50.0,
+  50.0,
   50,
   50,
+  50.0,
   50,
+  50,
+  50.0,
+  50.0,
+  50.0,
+  50.0,
+  50,
+  50,
+  50.0,
+  50,
+  50,
+  50.0,
+  50.0,
+  50.0,
+  50.0,
+  50,
+  50,
+  50.0,
+  50,
+  50,
+  50.0,
+  50.0,
+  50.0,
+  50.0,
+  50,
+  50,
+  50.0,
+  50,
+  50,
+  50.0,
+  50.0,
+  50.0,
+  50.0,
+  50,
+  50,
+  50.0,
+  50,
+  50,
+  50.0,
+  50.0,
+  50.0,
+  50.0,
+  50,
+  50,
+  50.0,
+  50.0,
+  50.0,
+  50.0,
+  50,
+  50,
+  50.0,
+  50,
+  50,
+  50.0,
+  50.0,
+  50.0,
+  50.0,
   50
 ];
 
@@ -85,7 +206,7 @@ class _ShellState extends State<Shell> {
     if (radians >= 2.0) {
       radians = 0.0;
     }
-    if (counterForGraph >= 18) {
+    if (counterForGraph >= chartDataListTemp.length - 1) {
       counterForGraph = 0;
     }
     counterForGraph += 1;
@@ -113,8 +234,8 @@ class _ShellState extends State<Shell> {
       padding: 20.0,
       backgroundColor: Colors.black,
       traceColor: Colors.green,
-      yAxisMax: 1.0,
-      yAxisMin: -1.0,
+      yAxisMax: 5.0,
+      yAxisMin: -5.0,
       dataSet: traceSine,
     ); // Generate the Scaffold
     return Scaffold(
@@ -129,4 +250,3 @@ class _ShellState extends State<Shell> {
     );
   }
 }
-*/
