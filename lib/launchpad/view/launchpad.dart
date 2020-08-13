@@ -1,5 +1,7 @@
 import 'package:criticalcare/patient/view/patient_tab.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:criticalcare/authentication/authentication.dart';
 
 class Launchpad extends StatefulWidget {
   static Route route() {
@@ -67,61 +69,68 @@ class _MyBottomNavBar extends StatelessWidget {
     final boxWidth = (MediaQuery.of(context).size.width) / 5;
     return Row(children: [
       // =========================== home tab===============================
-      SizedBox(
-        width: boxWidth,
-        height: boxWidth - 10,
-        child: Container(
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: Theme.of(context).backgroundColor,
-            ),
-            color: tab == Tab.home
-                ? Theme.of(context).toggleableActiveColor
-                : const Color(0xFFCCCCCC),
-          ),
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              SizedBox(
-                width: boxWidth - 7,
-                height: boxWidth - 17,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.4),
-                    borderRadius: const BorderRadius.all(Radius.circular(3)),
-                  ),
-                ),
+      InkWell(
+        onTap: () {
+          context
+              .bloc<AuthenticationBloc>()
+              .add(AuthenticationLogoutRequested());
+        },
+        child: SizedBox(
+          width: boxWidth,
+          height: boxWidth - 10,
+          child: Container(
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Theme.of(context).backgroundColor,
               ),
-              Stack(
-                alignment: Alignment.topCenter,
-                children: [
-                  Positioned(
-                    top: 0,
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 4.0),
-                      child: Image.asset(
-                        'assets/icon_home.png',
-                        key: const Key('icon_home'),
-                        width: 42,
-                      ),
+              color: tab == Tab.home
+                  ? Theme.of(context).toggleableActiveColor
+                  : const Color(0xFFCCCCCC),
+            ),
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                SizedBox(
+                  width: boxWidth - 7,
+                  height: boxWidth - 17,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.4),
+                      borderRadius: const BorderRadius.all(Radius.circular(3)),
                     ),
                   ),
-                  Positioned(
-                    top: 40,
-                    bottom: 0,
-                    child: RichText(
-                      text: TextSpan(
-                        text: 'Home',
-                        style: TextStyle(
-                          color: Theme.of(context).backgroundColor,
-                          fontSize: 14,
+                ),
+                Stack(
+                  alignment: Alignment.topCenter,
+                  children: [
+                    Positioned(
+                      top: 0,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 4.0),
+                        child: Image.asset(
+                          'assets/icon_home.png',
+                          key: const Key('icon_home'),
+                          width: 42,
                         ),
                       ),
                     ),
-                  )
-                ],
-              ),
-            ],
+                    Positioned(
+                      top: 40,
+                      bottom: 0,
+                      child: RichText(
+                        text: TextSpan(
+                          text: 'Home',
+                          style: TextStyle(
+                            color: Theme.of(context).backgroundColor,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

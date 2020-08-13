@@ -52,12 +52,16 @@ class _EmailInput extends StatelessWidget {
       buildWhen: (previous, current) => previous.email != current.email,
       builder: (context, state) {
         return TextField(
+          style: TextStyle(color: Colors.white, fontSize: 20),
           key: const Key('loginForm_emailInput_textField'),
           onChanged: (email) => context.bloc<LoginCubit>().emailChanged(email),
           decoration: InputDecoration(
-            labelText: 'email',
-            errorText: state.email.invalid ? 'invalid email' : null,
-          ),
+              enabledBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.white),
+              ),
+              labelText: 'Email',
+              errorText: state.email.invalid ? 'invalid email' : null,
+              labelStyle: TextStyle(color: Colors.white, fontSize: 20)),
         );
       },
     );
@@ -71,13 +75,18 @@ class _PasswordInput extends StatelessWidget {
       buildWhen: (previous, current) => previous.password != current.password,
       builder: (context, state) {
         return TextField(
+          style: TextStyle(color: Colors.white, fontSize: 20),
           key: const Key('loginForm_passwordInput_textField'),
           onChanged: (password) =>
               context.bloc<LoginCubit>().passwordChanged(password),
           obscureText: true,
           decoration: InputDecoration(
-            labelText: 'password',
+            enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: Colors.white),
+            ),
+            labelText: 'Password',
             errorText: state.password.invalid ? 'invalid password' : null,
+            labelStyle: TextStyle(color: Colors.white, fontSize: 20),
           ),
         );
       },
@@ -95,11 +104,12 @@ class _LoginButton extends StatelessWidget {
             ? const CircularProgressIndicator()
             : RaisedButton(
                 key: const Key('loginForm_continue_raisedButton'),
-                child: const Text('LOGIN'),
+                child:
+                    const Text('LOGIN', style: TextStyle(color: Colors.white)),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30.0),
                 ),
-                color: const Color(0xFFFFD600),
+                color: Colors.white,
                 onPressed: state.status.isValidated
                     ? () => context.bloc<LoginCubit>().logInWithCredentials()
                     : null,
