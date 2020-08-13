@@ -21,12 +21,8 @@ import './action_state.dart';
 import './util.dart';
 
 class EvenMoreRealtime extends StatefulWidget {
-  const EvenMoreRealtime({
-    Key key,
-    @required this.device,
-  }) : super(key: key);
+  
 
-  final RealtimeDeviceModel device;
 
   @override
   State<StatefulWidget> createState() {
@@ -36,10 +32,11 @@ class EvenMoreRealtime extends StatefulWidget {
 
 class EvenMoreRealtimeState extends ActionState<EvenMoreRealtime>
     implements OnChartValueSelectedListener {
+
+      
   LineChartController controller;
   var random = Random(1);
   var isMultipleRun = false;
-
 
   @override
   void initState() {
@@ -236,6 +233,23 @@ class EvenMoreRealtimeState extends ActionState<EvenMoreRealtime>
     ..setDrawValues(false);
     return set;
   }
-  
 }
 
+extension on String {
+  Color get toColor {
+    switch (this) {
+      case 'Art':
+        return const Color(0xFFD00404);
+      case 'LAP':
+        return const Color(0xFFD00404);
+      case 'HR':
+        return const Color(0xFF05FF2D);
+      case 'RESP':
+        return const Color(0xFFFFF500);
+      case 'O2':
+        return const Color(0xFFFF6E04);
+      default:
+        return Colors.blueGrey;
+    }
+  }
+}

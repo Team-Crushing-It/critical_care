@@ -111,7 +111,7 @@ class __DeviceViewState extends State<_DeviceView> {
 
   @override
   Widget build(BuildContext context) {
-    var type = widget.device.type;
+    final type = widget.device.type;
 
     return Column(
       children: [
@@ -225,7 +225,7 @@ class __DeviceViewState extends State<_DeviceView> {
             color: const Color(0xFFC4C4C4).withOpacity(0.1),
             width: double.infinity,
             height: 100,
-            child: const SmallChart(type: type),
+            child:  EvenMoreRealtime(),
           ),
         ),
         const Divider(
