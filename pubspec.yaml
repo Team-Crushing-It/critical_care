@@ -42,7 +42,7 @@ flutter:
   fonts:
     - family: DIN-Bold
       fonts:
-        - asset: fonts/D-DIN-Bold.otf
+        - asset: fonts/DINAlternateBold.ttf
     - family: Varela Round
       fonts:
         - asset: fonts/VarelaRound-Regular.ttf
