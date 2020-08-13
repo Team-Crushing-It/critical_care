@@ -13,45 +13,14 @@ class Launchpad extends StatefulWidget {
 enum Tab { home, schedule, patients, messages, alert }
 
 class _LaunchpadState extends State<Launchpad> {
-  int _currentIndex = 2;
+  final _currentIndex = 2;
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: _LaunchpadBody(tab: Tab.values[_currentIndex]),
-        bottomNavigationBar: BottomNavigationBar(
-          // backgroundColor: Theme.of(context).primaryColor,
-        backgroundColor: Colors.grey,
-          type: BottomNavigationBarType.fixed,
-
-          currentIndex: _currentIndex,
-          // onTap: (index) => setState(() => _currentIndex = index),
-          onTap: (index) => setState(() => print(index)),
-          items: [
-            const BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              title: Text('Home'),
-            ),
-            const BottomNavigationBarItem(
-              icon: Icon(Icons.schedule),
-              title: Text('Schedule'),
-            ),
-            const BottomNavigationBarItem(
-              icon: Icon(Icons.dashboard),
-              title: Text('Patients'),
-            ),
-            const BottomNavigationBarItem(
-              icon: Icon(Icons.message),
-              title: Text('Messages'),
-            ),
-            const BottomNavigationBarItem(
-              icon: Icon(Icons.warning, color: Colors.white),
-              title: Text('Alert'),
-              backgroundColor: Colors.redAccent,
-            ),
-          ],
-        ),
+        bottomNavigationBar: _MyBottomNavBar(tab: Tab.values[_currentIndex]),
       ),
     );
   }
@@ -69,7 +38,7 @@ class _LaunchpadBody extends StatelessWidget {
         // return HomeTab();
         return RichText(
           text: TextSpan(
-            text: 'Records',
+            text: 'Home',
             style: Theme.of(context).textTheme.headline6,
           ),
         );
@@ -88,16 +57,347 @@ class _LaunchpadBody extends StatelessWidget {
   }
 }
 
-//  Stack(
-//             alignment: Alignment.center,
-//             children: [
-//               SizedBox(
-//                 width: 54,
-//                 height: 54,
-//                 child: Container(
-//                   decoration: BoxDecoration(
-//                     color: Colors.white.withOpacity(0.4),
-//                     borderRadius: const BorderRadius.all(Radius.circular(3)),
-//                   ),
-//                 ),
-//               ),
+class _MyBottomNavBar extends StatelessWidget {
+  const _MyBottomNavBar({Key key, this.tab}) : super(key: key);
+
+  final Tab tab;
+
+  @override
+  Widget build(BuildContext context) {
+    final boxWidth = (MediaQuery.of(context).size.width) / 5;
+    return Row(children: [
+      // =========================== home tab===============================
+      SizedBox(
+        width: boxWidth,
+        height: boxWidth - 10,
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Theme.of(context).backgroundColor,
+            ),
+            color: tab == Tab.home
+                ? Theme.of(context).toggleableActiveColor
+                : const Color(0xFFCCCCCC),
+          ),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              SizedBox(
+                width: boxWidth - 7,
+                height: boxWidth - 17,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.4),
+                    borderRadius: const BorderRadius.all(Radius.circular(3)),
+                  ),
+                ),
+              ),
+              Stack(
+                alignment: Alignment.topCenter,
+                children: [
+                  Positioned(
+                    top: 0,
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 4.0),
+                      child: Image.asset(
+                        'assets/icon_home.png',
+                        key: const Key('icon_home'),
+                        width: 42,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: 40,
+                    bottom: 0,
+                    child: RichText(
+                      text: TextSpan(
+                        text: 'Home',
+                        style: TextStyle(
+                          color: Theme.of(context).backgroundColor,
+                          fontSize: 14,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+      // =========================== Schedule tab===============================
+      SizedBox(
+        width: boxWidth,
+        height: boxWidth - 10,
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Theme.of(context).backgroundColor,
+            ),
+            color: tab == Tab.schedule
+                ? Theme.of(context).toggleableActiveColor
+                : const Color(0xFFCCCCCC),
+          ),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              SizedBox(
+                width: boxWidth - 7,
+                height: boxWidth - 17,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.4),
+                    borderRadius: const BorderRadius.all(Radius.circular(3)),
+                  ),
+                ),
+              ),
+              Stack(
+                alignment: Alignment.topCenter,
+                children: [
+                  Positioned(
+                    top: 0,
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 4.0),
+                      child: Image.asset(
+                        'assets/icon_schedule.png',
+                        key: const Key('icon_schedule'),
+                        width: 40,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: 40,
+                    bottom: 0,
+                    child: RichText(
+                      text: TextSpan(
+                        text: 'Schedule',
+                        style: TextStyle(
+                          color: Theme.of(context).backgroundColor,
+                          fontSize: 14,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+      // =========================== Patient tab===============================
+      SizedBox(
+        width: boxWidth,
+        height: boxWidth - 10,
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Theme.of(context).backgroundColor,
+            ),
+            color: tab == Tab.patients
+                ? Theme.of(context).toggleableActiveColor
+                : const Color(0xFFCCCCCC),
+          ),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              SizedBox(
+                width: boxWidth - 7,
+                height: boxWidth - 17,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.4),
+                    borderRadius: const BorderRadius.all(Radius.circular(3)),
+                  ),
+                ),
+              ),
+              Stack(
+                alignment: Alignment.topCenter,
+                children: [
+                  Positioned(
+                    top: 0,
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 4.0),
+                      child: Image.asset(
+                        'assets/icon_patients.png',
+                        key: const Key('icon_patient'),
+                        width: boxWidth - 30,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: 40,
+                    bottom: 0,
+                    child: RichText(
+                      text: TextSpan(
+                        text: 'Patients',
+                        style: TextStyle(
+                          color: tab == Tab.patients
+                              ? const Color(0xFF05FF2D)
+                              : Theme.of(context).backgroundColor,
+                          fontSize: 14,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+      // =========================== Messages tab===============================
+      SizedBox(
+        width: boxWidth,
+        height: boxWidth - 10,
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Theme.of(context).backgroundColor,
+            ),
+            color: tab == Tab.messages
+                ? Theme.of(context).toggleableActiveColor
+                : const Color(0xFFCCCCCC),
+          ),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              SizedBox(
+                width: boxWidth - 7,
+                height: boxWidth - 17,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.4),
+                    borderRadius: const BorderRadius.all(Radius.circular(3)),
+                  ),
+                ),
+              ),
+              Stack(
+                alignment: Alignment.topCenter,
+                children: [
+                  Positioned(
+                    top: 0,
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 4.0),
+                      child: Image.asset(
+                        'assets/icon_messages.png',
+                        key: const Key('icon_messages'),
+                        width: boxWidth - 30,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: 40,
+                    bottom: 0,
+                    child: RichText(
+                      text: TextSpan(
+                        text: 'Messages',
+                        style: TextStyle(
+                          color: Theme.of(context).backgroundColor,
+                          fontSize: 14,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+      // =========================== Alert tab===============================
+      SizedBox(
+        width: boxWidth,
+        height: boxWidth - 10,
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Theme.of(context).backgroundColor,
+            ),
+            color: Colors.red,
+          ),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              SizedBox(
+                width: boxWidth - 10,
+                height: boxWidth - 20,
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      width: 2.0,
+                      color: Colors.white,
+                    ),
+                    color: Colors.transparent,
+                    borderRadius: const BorderRadius.all(Radius.circular(3)),
+                  ),
+                ),
+              ),
+              Stack(
+                alignment: Alignment.topCenter,
+                children: [
+                  Positioned(
+                    top: 0,
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 4.0),
+                      child: Image.asset(
+                        'assets/icon_alert.png',
+                        key: const Key('icon_alert'),
+                        width: boxWidth - 30,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: 40,
+                    bottom: 0,
+                    child: RichText(
+                      text: TextSpan(
+                        text: 'Alert',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    ]);
+  }
+}
+
+// BottomNavigationBar(
+//           // backgroundColor: Theme.of(context).primaryColor,
+//         backgroundColor: Colors.grey,
+//           type: BottomNavigationBarType.fixed,
+
+//           currentIndex: _currentIndex,
+//           // onTap: (index) => setState(() => _currentIndex = index),
+//           onTap: (index) => setState(() => print(index)),
+//           items: [
+//             const BottomNavigationBarItem(
+//               icon: Icon(Icons.home),
+//               title: Text('Home'),
+//             ),
+//             const BottomNavigationBarItem(
+//               icon: Icon(Icons.schedule),
+//               title: Text('Schedule'),
+//             ),
+//             const BottomNavigationBarItem(
+//               icon: Icon(Icons.dashboard),
+//               title: Text('Patients'),
+//             ),
+//             const BottomNavigationBarItem(
+//               icon: Icon(Icons.message),
+//               title: Text('Messages'),
+//             ),
+//             const BottomNavigationBarItem(
+//               icon: Icon(Icons.warning, color: Colors.white),
+//               title: Text('Alert'),
+//               backgroundColor: Colors.redAccent,
+//             ),
+//           ],
+//         ),
