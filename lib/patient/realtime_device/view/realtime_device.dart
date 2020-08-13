@@ -132,41 +132,47 @@ class _DeviceView extends StatelessWidget {
               ),
             ),
             // SizedBox(width: 11),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(device.type,
-                        style: Theme.of(context)
-                            .textTheme
-                            .headline2
-                            .copyWith(color: device.type.toColor)),
-                    Text(device.unit,
-                        style: Theme.of(context)
-                            .textTheme
-                            .headline1
-                            .copyWith(color: device.type.toColor)),
-                    Text(device.range1,
-                        style: Theme.of(context)
-                            .textTheme
-                            .headline1
-                            .copyWith(color: device.type.toColor)),
-                    Text(device.range2,
-                        style: Theme.of(context)
-                            .textTheme
-                            .headline1
-                            .copyWith(color: device.type.toColor)),
-                  ],
-                ),
-                SizedBox(width: 10),
-                Text(device.value,
-                    style: Theme.of(context)
-                        .textTheme
-                        .subtitle1
-                        .copyWith(color: device.type.toColor)),
-              ],
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  SizedBox(
+                    width: 50,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(device.type,
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline2
+                                .copyWith(color: device.type.toColor)),
+                        Text(device.unit,
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline1
+                                .copyWith(color: device.type.toColor)),
+                        Text(device.range1,
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline1
+                                .copyWith(color: device.type.toColor)),
+                        Text(device.range2,
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline1
+                                .copyWith(color: device.type.toColor)),
+                      ],
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  Text(device.value,
+                      style: Theme.of(context)
+                          .textTheme
+                          .subtitle1
+                          .copyWith(color: device.type.toColor)),
+                ],
+              ),
             ),
           ],
         ),
