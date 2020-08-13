@@ -2,6 +2,7 @@ import 'package:criticalcare/patient/realtime_device/cubit/realtime_device_cubit
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:patient_repository/patient_repository.dart';
+import 'package:criticalcare/patient/realtime_device/widgets/widgets.dart';
 
 class RealtimeDeviceView extends StatelessWidget {
   @override
@@ -86,7 +87,7 @@ class _RealtimeDeviceSuccessView extends StatelessWidget {
 
 // This is where you begin===========================================================================
 
-class _DeviceView extends StatelessWidget {
+class _DeviceView extends StatefulWidget {
   const _DeviceView({
     Key key,
     @required this.device,
@@ -95,49 +96,68 @@ class _DeviceView extends StatelessWidget {
   final RealtimeDeviceModel device;
 
   @override
+  __DeviceViewState createState() => __DeviceViewState();
+}
+
+class __DeviceViewState extends State<_DeviceView> {
+  bool _active = false;
+  
+
+  void _handleTap() {
+    setState(() {
+      _active = !_active;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
+    var type = widget.device.type;
+
     return Column(
       children: [
         Row(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 10,
-                top: 10,
-                right: 10,
-              ),
-              child: SizedBox(
-                width: 100,
-                height: 80,
-                child: Stack(children: [
-                  Image.network(
-                    device.graph,
-                    fit: BoxFit.cover,
-                  ),
-                  Container(
-                      alignment: Alignment(0.9, -0.8),
-                      child: Text(
-                        device.range1,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 7.0),
-                      )),
-                  Container(
+            Container(
+              height: 90,
+              color: _active
+                  ? const Color(0xFFC4C4C4).withOpacity(0.1)
+                  : Colors.transparent,
+              child: InkWell(
+                onTap: _handleTap,
+                child: SizedBox(
+                  width: 100,
+                  height: 80,
+                  child: Stack(alignment: Alignment.center, children: [
+                    Image.network(
+                      widget.device.graph,
+                      fit: BoxFit.cover,
+                    ),
+                    Container(
+                        alignment: Alignment(0.9, -0.8),
+                        child: Text(
+                          widget.device.range1,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 7.0),
+                        )),
+                    Container(
                       alignment: Alignment(0.9, 0.78),
                       child: Text(
-                        device.range2,
+                        widget.device.range2,
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 7.0),
-                      )),
-                ]),
+                      ),
+                    ),
+                  ]),
+                ),
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(
-                left: 8.0,
+                left: 0.0,
               ),
               child: SizedBox(
                 // width: 200,
@@ -153,26 +173,30 @@ class _DeviceView extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              Text(device.type,
+                              Text(widget.device.type,
                                   style: Theme.of(context)
                                       .textTheme
                                       .headline2
-                                      .copyWith(color: device.type.toColor)),
-                              Text('(${device.unit})',
+                                      .copyWith(
+                                          color: widget.device.type.toColor)),
+                              Text('(${widget.device.unit})',
                                   style: Theme.of(context)
                                       .textTheme
                                       .headline1
-                                      .copyWith(color: device.type.toColor)),
-                              Text(device.range1,
+                                      .copyWith(
+                                          color: widget.device.type.toColor)),
+                              Text(widget.device.range1,
                                   style: Theme.of(context)
                                       .textTheme
                                       .headline1
-                                      .copyWith(color: device.type.toColor)),
-                              Text(device.range2,
+                                      .copyWith(
+                                          color: widget.device.type.toColor)),
+                              Text(widget.device.range2,
                                   style: Theme.of(context)
                                       .textTheme
                                       .headline1
-                                      .copyWith(color: device.type.toColor)),
+                                      .copyWith(
+                                          color: widget.device.type.toColor)),
                             ],
                           ),
                         ),
@@ -182,11 +206,11 @@ class _DeviceView extends StatelessWidget {
                           left: 15.0,
                           right: 15.0,
                         ),
-                        child: Text(device.value,
+                        child: Text(widget.device.value,
                             style: Theme.of(context)
                                 .textTheme
                                 .subtitle1
-                                .copyWith(color: device.type.toColor)),
+                                .copyWith(color: widget.device.type.toColor)),
                       ),
                     ],
                   ),
@@ -194,6 +218,15 @@ class _DeviceView extends StatelessWidget {
               ),
             ),
           ],
+        ),
+        Visibility(
+          visible: _active,
+          child: Container(
+            color: const Color(0xFFC4C4C4).withOpacity(0.1),
+            width: double.infinity,
+            height: 100,
+            child: const SmallChart(type: type),
+          ),
         ),
         const Divider(
           color: Color(0xFF303551),

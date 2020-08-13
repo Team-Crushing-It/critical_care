@@ -108,7 +108,7 @@ class _MyBottomNavBar extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.only(top: 4.0),
                         child: Image.asset(
-                          'assets/icon_home.png',
+                          'assets/img/icon_home.png',
                           key: const Key('icon_home'),
                           width: 42,
                         ),
@@ -170,7 +170,7 @@ class _MyBottomNavBar extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 4.0),
                       child: Image.asset(
-                        'assets/icon_schedule.png',
+                        'assets/img/icon_schedule.png',
                         key: const Key('icon_schedule'),
                         width: 40,
                       ),
@@ -231,7 +231,7 @@ class _MyBottomNavBar extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 4.0),
                       child: Image.asset(
-                        'assets/icon_patients.png',
+                        'assets/img/icon_patients.png',
                         key: const Key('icon_patient'),
                         width: boxWidth - 30,
                       ),
@@ -292,7 +292,7 @@ class _MyBottomNavBar extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 4.0),
                       child: Image.asset(
-                        'assets/icon_messages.png',
+                        'assets/img/icon_messages.png',
                         key: const Key('icon_messages'),
                         width: boxWidth - 30,
                       ),
@@ -355,7 +355,7 @@ class _MyBottomNavBar extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 4.0),
                       child: Image.asset(
-                        'assets/icon_alert.png',
+                        'assets/img/icon_alert.png',
                         key: const Key('icon_alert'),
                         width: boxWidth - 30,
                       ),
