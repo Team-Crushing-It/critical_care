@@ -85,7 +85,6 @@ class _RealtimeDeviceSuccessView extends StatelessWidget {
   }
 }
 
-
 // This is where you begin===========================================================================
 
 class _DeviceView extends StatelessWidget {
@@ -98,6 +97,82 @@ class _DeviceView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(device.type, style: Theme.of(context).textTheme.headline4);
+    return Row(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(left: 8.0, top: 0.5),
+          child: SizedBox(
+            width: 100,
+            height: 100,
+            child: Image.network(
+              device.graph,
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        SizedBox(width: 11),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text(device.type,
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline2
+                        .copyWith(color: device.type.toColor)),
+                Text(device.unit,
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline1
+                        .copyWith(color: device.type.toColor)),
+                Text(device.range1,
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline1
+                        .copyWith(color: device.type.toColor)),
+                Text(device.range2,
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline1
+                        .copyWith(color: device.type.toColor)),
+              ],
+            ),
+            SizedBox(width: 10),
+            Text(device.value,
+                style: Theme.of(context)
+                    .textTheme
+                    .subtitle1
+                    .copyWith(color: device.type.toColor)),
+            SizedBox(width: 6),
+            Text("(100)",
+                style: Theme.of(context)
+                    .textTheme
+                    .subtitle2
+                    .copyWith(color: device.type.toColor)),
+          ],
+        )
+      ],
+    );
+  }
+}
+
+extension on String {
+  Color get toColor {
+    switch (this) {
+      case 'Art':
+        return const Color(0xFFD00404);
+      case 'LAP':
+        return const Color(0xFFD00404);
+      case 'HR':
+        return const Color(0xFF05FF2D);
+      case 'RESP':
+        return const Color(0xFFFFF500);
+      case 'O2':
+        return const Color(0xFFFF6E04);
+      default:
+        return Colors.blueGrey;
+    }
   }
 }
