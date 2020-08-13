@@ -101,10 +101,14 @@ class _DeviceView extends StatelessWidget {
         Row(
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 33.0, top: 10),
+              padding: const EdgeInsets.only(
+                left: 10,
+                top: 10,
+                right: 10,
+              ),
               child: SizedBox(
                 width: 100,
-                height: 75,
+                height: 80,
                 child: Stack(children: [
                   Image.network(
                     device.graph,
@@ -131,54 +135,69 @@ class _DeviceView extends StatelessWidget {
                 ]),
               ),
             ),
-            // SizedBox(width: 11),
             Padding(
-              padding: const EdgeInsets.only(left: 8.0),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  SizedBox(
-                    width: 50,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Text(device.type,
+              padding: const EdgeInsets.only(
+                left: 8.0,
+              ),
+              child: SizedBox(
+                // width: 200,
+                height: 90,
+                child: Container(
+                  color: const Color(0xFFC4C4C4).withOpacity(0.03),
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: 50,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 12.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Text(device.type,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headline2
+                                      .copyWith(color: device.type.toColor)),
+                              Text('(${device.unit})',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headline1
+                                      .copyWith(color: device.type.toColor)),
+                              Text(device.range1,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headline1
+                                      .copyWith(color: device.type.toColor)),
+                              Text(device.range2,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headline1
+                                      .copyWith(color: device.type.toColor)),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 15.0,
+                          right: 15.0,
+                        ),
+                        child: Text(device.value,
                             style: Theme.of(context)
                                 .textTheme
-                                .headline2
+                                .subtitle1
                                 .copyWith(color: device.type.toColor)),
-                        Text(device.unit,
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline1
-                                .copyWith(color: device.type.toColor)),
-                        Text(device.range1,
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline1
-                                .copyWith(color: device.type.toColor)),
-                        Text(device.range2,
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline1
-                                .copyWith(color: device.type.toColor)),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                  SizedBox(width: 10),
-                  Text(device.value,
-                      style: Theme.of(context)
-                          .textTheme
-                          .subtitle1
-                          .copyWith(color: device.type.toColor)),
-                ],
+                ),
               ),
             ),
           ],
         ),
-        Divider(
-          color: Color(0xFFC4C4C4),
-          height: 25,
+        const Divider(
+          color: Color(0xFF303551),
+          height: 1,
           thickness: 1,
           endIndent: 0,
         ),

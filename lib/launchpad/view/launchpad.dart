@@ -15,7 +15,7 @@ class Launchpad extends StatefulWidget {
 enum Tab { home, schedule, patients, messages, alert }
 
 class _LaunchpadState extends State<Launchpad> {
-  final _currentIndex = 0;
+  final _currentIndex = 2;
 
   @override
   Widget build(BuildContext context) {
@@ -121,7 +121,7 @@ class _MyBottomNavBar extends StatelessWidget {
                         text: TextSpan(
                           text: 'Home',
                           style: TextStyle(
-                            color: tab == Tab.patients
+                            color: tab == Tab.home
                                 ? const Color(0xFF05FF2D)
                                 : Theme.of(context).backgroundColor,
                             fontSize: 14,
@@ -183,7 +183,7 @@ class _MyBottomNavBar extends StatelessWidget {
                       text: TextSpan(
                         text: 'Schedule',
                         style: TextStyle(
-                          color: tab == Tab.patients
+                          color: tab == Tab.schedule
                               ? const Color(0xFF05FF2D)
                               : Theme.of(context).backgroundColor,
                           fontSize: 14,
@@ -305,7 +305,7 @@ class _MyBottomNavBar extends StatelessWidget {
                       text: TextSpan(
                         text: 'Messages',
                         style: TextStyle(
-                          color: tab == Tab.patients
+                          color: tab == Tab.messages
                               ? const Color(0xFF05FF2D)
                               : Theme.of(context).backgroundColor,
                           fontSize: 14,
