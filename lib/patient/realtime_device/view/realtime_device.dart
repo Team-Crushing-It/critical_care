@@ -99,16 +99,29 @@ class _DeviceView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 8.0, top: 0.5),
-          child: SizedBox(
-            width: 100,
-            height: 100,
-            child: Image.network(
-              device.graph,
-              fit: BoxFit.cover,
+        Stack(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0, top: 0.5),
+              child: SizedBox(
+                width: 100,
+                height: 100,
+                child: Image.network(
+                  device.graph,
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
-          ),
+            Container(
+                alignment: Alignment.topRight,
+                child: Text(
+                  'Text',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 6.0),
+                )),
+          ],
         ),
         SizedBox(width: 11),
         Row(
@@ -144,12 +157,6 @@ class _DeviceView extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .subtitle1
-                    .copyWith(color: device.type.toColor)),
-            SizedBox(width: 6),
-            Text("(100)",
-                style: Theme.of(context)
-                    .textTheme
-                    .subtitle2
                     .copyWith(color: device.type.toColor)),
           ],
         )
