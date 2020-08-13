@@ -9,36 +9,33 @@ class PatientTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          // Provide BLoC to both carousel and profile
-          child: MultiBlocProvider(
-            providers: [
-              BlocProvider<PatientProfileCubit>(
-                create: (context) => PatientProfileCubit(
-                  context.repository<PatientRepository>(),
-                ),
+      body: SingleChildScrollView(
+        // Provide BLoC to both carousel and profile
+        child: MultiBlocProvider(
+          providers: [
+            BlocProvider<PatientProfileCubit>(
+              create: (context) => PatientProfileCubit(
+                context.repository<PatientRepository>(),
               ),
-              BlocProvider<PatientRecordsCubit>(
-                create: (context) => PatientRecordsCubit(
-                  context.repository<PatientRepository>(),
-                ),
-              ),
-              BlocProvider<RealtimeDeviceCubit>(
-                create: (context) => RealtimeDeviceCubit(
-                  context.repository<PatientRepository>(),
-                ),
-              ),
-
-            ],
-            child: Column(
-              children: [
-                RoomCarousel(),
-                PatientProfileView(),
-                RealtimeDeviceView(),
-                PatientRecordsView(),
-              ],
             ),
+            BlocProvider<PatientRecordsCubit>(
+              create: (context) => PatientRecordsCubit(
+                context.repository<PatientRepository>(),
+              ),
+            ),
+            BlocProvider<RealtimeDeviceCubit>(
+              create: (context) => RealtimeDeviceCubit(
+                context.repository<PatientRepository>(),
+              ),
+            ),
+          ],
+          child: Column(
+            children: [
+              RoomCarousel(),
+              PatientProfileView(),
+              RealtimeDeviceView(),
+              PatientRecordsView(),
+            ],
           ),
         ),
       ),

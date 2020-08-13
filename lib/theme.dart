@@ -27,12 +27,12 @@ final theme = ThemeData(
     headline3:
         TextStyle(fontFamily: 'Verdana', color: Colors.white24, fontSize: 14),
     headline2: TextStyle(
-        fontFamily: 'DIN Alternate', color: Colors.white24, fontSize: 19),
+        fontFamily: 'DIN-Bold', color: Colors.white24, fontSize: 19),
     headline1: TextStyle(
-        fontFamily: 'DIN Alternate', color: Colors.white24, fontSize: 11),
+        fontFamily: 'DIN-Bold', color: Colors.white24, fontSize: 11),
     subtitle1: TextStyle(
-        fontFamily: 'DIN Alternate', color: Colors.white24, fontSize: 45),
+        fontFamily: 'DIN-Bold', color: Colors.white24, fontSize: 45),
     subtitle2: TextStyle(
-        fontFamily: 'DIN Alternate', color: Colors.white24, fontSize: 21),
+        fontFamily: 'DIN-Bold', color: Colors.white24, fontSize: 21),
   ),
 );

@@ -25,13 +25,12 @@ class RoomCarousel extends StatelessWidget {
               .bloc<PatientProfileCubit>()
               .getPatientProfile(state.selectedRoom.patientId);
 
-
           // is this the right way to do this?
           context
               .bloc<PatientRecordsCubit>()
               .getPatientRecords(state.selectedRoom.patientId);
 
-              // is this the right way to do this?
+          // is this the right way to do this?
           context
               .bloc<RealtimeDeviceCubit>()
               .getRealtimeDevice(state.selectedRoom.patientId);
@@ -150,7 +149,7 @@ class _RoomView extends StatelessWidget {
           decoration: BoxDecoration(
             color: isSelected
                 ? Theme.of(context).toggleableActiveColor
-                : Colors.grey[300],
+                : const Color(0xFFCCCCCC),
             border: Border.all(
               color: Theme.of(context)
                   .backgroundColor, //                   <--- border color
@@ -161,17 +160,13 @@ class _RoomView extends StatelessWidget {
             child: Stack(
               alignment: Alignment.center,
               children: [
-                Visibility(
-                  visible: isSelected,
-                  child: SizedBox(
-                    width: 54,
-                    height: 54,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.4),
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(3)),
-                      ),
+                SizedBox(
+                  width: 54,
+                  height: 54,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.4),
+                      borderRadius: const BorderRadius.all(Radius.circular(3)),
                     ),
                   ),
                 ),

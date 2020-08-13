@@ -40,9 +40,9 @@ flutter:
   assets:
     - assets/
   fonts:
-    - family: Din
+    - family: DIN-Bold
       fonts:
-        - asset: fonts/DINAlternateRegular.otf
+        - asset: fonts/D-DIN-Bold.otf
     - family: Varela Round
       fonts:
         - asset: fonts/VarelaRound-Regular.ttf
