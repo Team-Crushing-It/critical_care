@@ -25,8 +25,8 @@ class LoginForm extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Image.asset(
-              'assets/bloc_logo_small.png',
-              height: 120,
+              'assets/critical_logo.png',
+              width: 600,
             ),
             const Padding(padding: EdgeInsets.all(16.0)),
             _EmailInput(),
@@ -109,7 +109,7 @@ class _LoginButton extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30.0),
                 ),
-                color: Colors.white,
+                color: Colors.blue,
                 onPressed: state.status.isValidated
                     ? () => context.bloc<LoginCubit>().logInWithCredentials()
                     : null,
@@ -127,11 +127,11 @@ class _GoogleLoginButton extends StatelessWidget {
       key: const Key('loginForm_googleLogin_raisedButton'),
       label: const Text(
         'SIGN IN WITH GOOGLE',
-        style: TextStyle(color: Colors.white),
+        style: TextStyle(color: Colors.black),
       ),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
       icon: const Icon(FontAwesomeIcons.google, color: Colors.white),
-      color: theme.accentColor,
+      color: Colors.white,
       onPressed: () => context.bloc<LoginCubit>().logInWithGoogle(),
     );
   }
@@ -147,6 +147,7 @@ class _SignUpButton extends StatelessWidget {
         'CREATE ACCOUNT',
         style: TextStyle(color: theme.primaryColor),
       ),
+      color: Colors.red,
       onPressed: () => Navigator.of(context).push<void>(SignUpPage.route()),
     );
   }
