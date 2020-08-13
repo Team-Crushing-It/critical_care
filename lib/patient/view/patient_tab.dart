@@ -4,6 +4,7 @@ import 'package:criticalcare/patient/realtime_device/view/realtime_device.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:patient_repository/patient_repository.dart';
+import 'package:criticalcare/authentication/authentication.dart';
 
 class PatientTab extends StatelessWidget {
   @override
@@ -35,6 +36,18 @@ class PatientTab extends StatelessWidget {
               PatientProfileView(),
               RealtimeDeviceView(),
               PatientRecordsView(),
+              InkWell(
+                onTap: () {
+                  context
+                      .bloc<AuthenticationBloc>()
+                      .add(AuthenticationLogoutRequested());
+                },
+                child: SizedBox(
+                  height: 100,
+                  width: 100,
+                  child: Text('logout'),
+                ),
+              )
             ],
           ),
         ),

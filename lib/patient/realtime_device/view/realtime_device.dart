@@ -225,7 +225,7 @@ class __DeviceViewState extends State<_DeviceView> {
             color: const Color(0xFFC4C4C4).withOpacity(0.1),
             width: double.infinity,
             height: 100,
-            child:  EvenMoreRealtime(),
+            child:  LargeChart(type: type),
           ),
         ),
         const Divider(

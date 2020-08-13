@@ -17,22 +17,22 @@ import 'package:mp_chart/mp/core/utils/color_utils.dart';
 
 import 'package:patient_repository/patient_repository.dart';
 
-import './action_state.dart';
-import './util.dart';
+import 'action_state.dart';
+import 'util.dart';
 
 
-class SmallChart extends StatefulWidget {
-  const SmallChart({
+class LargeChart extends StatefulWidget {
+  const LargeChart({
     Key key,
     @required this.type,
   }) : super(key: key);
 
   final String type;
   @override
-  _SmallChartState createState() => _SmallChartState();
+  _LargeChartState createState() => _LargeChartState();
 }
 
-class _SmallChartState extends State<SmallChart> 
+class _LargeChartState extends State<LargeChart> 
 implements OnChartValueSelectedListener
 {
   LineChartController controller;
@@ -50,7 +50,6 @@ implements OnChartValueSelectedListener
   Widget build(BuildContext context) {
     return Scaffold(
       body: getBody(),
-  
     );
   }
 
@@ -224,7 +223,7 @@ Widget getBody() {
   LineDataSet _createSet() {
     LineDataSet set = LineDataSet(null, "")
     ..setAxisDependency(AxisDependency.LEFT)
-    ..setColor1(ColorUtils.getHoloBlue())
+    ..setColor1(widget.type.toColor)
     ..setCircleColor(Colors.transparent)
     ..setLineWidth(2.0)
     ..setDrawCircles(false)
@@ -239,3 +238,21 @@ Widget getBody() {
   }
 }
 
+extension on String {
+  Color get toColor {
+    switch (this) {
+      case 'Art':
+        return const Color(0xFFD00404);
+      case 'LAP':
+        return const Color(0xFFD00404);
+      case 'HR':
+        return const Color(0xFF05FF2D);
+      case 'RESP':
+        return const Color(0xFFFFF500);
+      case 'O2':
+        return const Color(0xFFFF6E04);
+      default:
+        return Colors.blueGrey;
+    }
+  }
+}

@@ -1,2 +1,3 @@
 export 'chart.dart';
-export 'single_chart.dart';
+export 'large_chart.dart';
+export 'small_chart.dart';
