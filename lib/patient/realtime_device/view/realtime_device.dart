@@ -131,7 +131,7 @@ class _DeviceView extends StatelessWidget {
                 ]),
               ),
             ),
-            SizedBox(width: 11),
+            // SizedBox(width: 11),
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
