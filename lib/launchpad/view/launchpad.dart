@@ -15,7 +15,7 @@ class Launchpad extends StatefulWidget {
 enum Tab { home, schedule, patients, messages, alert }
 
 class _LaunchpadState extends State<Launchpad> {
-  final _currentIndex = 2;
+  final _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -37,13 +37,13 @@ class _LaunchpadBody extends StatelessWidget {
   Widget build(BuildContext context) {
     switch (tab) {
       case Tab.home:
-        // return HomeTab();
-        return RichText(
-          text: TextSpan(
-            text: 'Home',
-            style: Theme.of(context).textTheme.headline6,
-          ),
-        );
+      // return HomeTab();
+      // return RichText(
+      //   text: TextSpan(
+      //     text: 'Home',
+      //     style: Theme.of(context).textTheme.headline6,
+      //   ),
+      // );
 
       case Tab.schedule:
       // return ScheduleTab();
@@ -121,7 +121,9 @@ class _MyBottomNavBar extends StatelessWidget {
                         text: TextSpan(
                           text: 'Home',
                           style: TextStyle(
-                            color: Theme.of(context).backgroundColor,
+                            color: tab == Tab.patients
+                                ? const Color(0xFF05FF2D)
+                                : Theme.of(context).backgroundColor,
                             fontSize: 14,
                           ),
                         ),
@@ -181,7 +183,9 @@ class _MyBottomNavBar extends StatelessWidget {
                       text: TextSpan(
                         text: 'Schedule',
                         style: TextStyle(
-                          color: Theme.of(context).backgroundColor,
+                          color: tab == Tab.patients
+                              ? const Color(0xFF05FF2D)
+                              : Theme.of(context).backgroundColor,
                           fontSize: 14,
                         ),
                       ),
@@ -301,7 +305,9 @@ class _MyBottomNavBar extends StatelessWidget {
                       text: TextSpan(
                         text: 'Messages',
                         style: TextStyle(
-                          color: Theme.of(context).backgroundColor,
+                          color: tab == Tab.patients
+                              ? const Color(0xFF05FF2D)
+                              : Theme.of(context).backgroundColor,
                           fontSize: 14,
                         ),
                       ),
