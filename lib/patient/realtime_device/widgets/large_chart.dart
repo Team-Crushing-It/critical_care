@@ -92,7 +92,7 @@ class _LargeChartState extends State<LargeChart>
             ..setAxisMaximum(100)
             ..setAxisMinimum(0)
             ..setLabelCount1(2);
-          // ..drawLabels = false;
+            // ..drawLabels = false;
         },
         axisRightSettingFunction: (axisRight, controller) {
           axisRight.enabled = false;
@@ -115,63 +115,6 @@ class _LargeChartState extends State<LargeChart>
     }
   }
 
-//Art
-/*
-  List<double> chartDataListTemp = [
-    1.5 * 10,
-    1.5 * 15,
-    1.5 * 20,
-    1.5 * 30,
-    1.5 * 35,
-    1.5 * 50,
-    1.5 * 60,
-    1.5 * 62,
-    1.5 * 66,
-    1.5 * 62,
-    1.5 * 52,
-    1.5 * 40,
-    1.5 * 39,
-    1.5 * 25,
-    1.5 * 25,
-    1.5 * 20,
-    1.5 * 17,
-    1.5 * 15,
-    1.5 * 10,
-  ];
-*/
-
-//Lap
-/*
-  List<int> chartDataListTemp = [
-    10 * 4,
-    10 * 5,
-    10 * 5,
-    10 * 4,
-    10 * 3,
-    10 * 2,
-    10 * 1,
-    10 * 3,
-    10 * 4,
-    10 * 4,
-    10 * 7,
-    10 * 8,
-    10 * 9,
-    10 * 8,
-    10 * 4,
-    10 * 4,
-    10 * 2,
-    10 * 2,
-    10 * 2,
-    10 * 3,
-    10 * 4,
-    10 * 4,
-    10 * 4,
-    10 * 4,
-  ];
-*/
-
-//Heart
-/*
   List<int> chartDataListTemp = [
     50,
     50,
@@ -193,25 +136,6 @@ class _LargeChartState extends State<LargeChart>
     50,
     50,
   ];
-  */
-
-//O2Fi
-
-  List<int> chartDataListTemp = [
-    2 * 25,
-    2 * 25,
-    2 * 25,
-    2 * 25,
-    2 * 25,
-    2 * 25,
-    2 * 25,
-    2 * 25,
-    2 * 25,
-    2 * 25,
-    2 * 25,
-    2 * 25,
-  ];
-
   int counterforgraph = 0;
   void _addEntry() {
     LineData data = controller.data;
