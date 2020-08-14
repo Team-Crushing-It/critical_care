@@ -143,6 +143,7 @@ class RealtimeDeviceModel {
     @required this.range2,
     @required this.value,
     @required this.data,
+    this.visible,
   });
 
   /// Converts [RealtimeDeviceEntity] into [RealtimeDeviceModel].
@@ -155,7 +156,7 @@ class RealtimeDeviceModel {
       range2: entity.id,
       value: entity.id,
       data: const <int>[],
-      
+      visible: entity.id,
     );
   }
   // ignore: public_member_api_docs
@@ -172,4 +173,6 @@ class RealtimeDeviceModel {
   final String value;
   // ignore: public_member_api_docs
   final List<int> data;
+  // ignore: public_member_api_docs
+  final String visible;
 }

@@ -46,6 +46,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         23,
         15,
       ],
+      visible: 'true',
     ),
     const RealtimeDeviceModel(
       graph:
@@ -81,6 +82,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         10 * 4,
         10 * 4,
       ],
+      visible: 'true',
     ),
     const RealtimeDeviceModel(
       graph:
@@ -111,6 +113,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         50,
         50,
       ],
+      visible: 'true',
     ),
     const RealtimeDeviceModel(
       graph:
@@ -141,6 +144,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         50,
         50,
       ],
+      visible: 'true',
     ),
     const RealtimeDeviceModel(
       graph:
@@ -163,7 +167,14 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         2 * 25,
         2 * 25,
         2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
       ],
+      visible: 'true',
     ),
   ],
   'patient-1': [
@@ -196,6 +207,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         50,
         50,
       ],
+      visible: 'true',
     ),
     const RealtimeDeviceModel(
       graph:
@@ -226,6 +238,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         50,
         50,
       ],
+      visible: 'true',
     ),
     const RealtimeDeviceModel(
       graph:
@@ -248,7 +261,14 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         2 * 25,
         2 * 25,
         2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
       ],
+      visible: 'true',
     ),
   ],
   'patient-2': [
@@ -281,6 +301,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         50,
         50,
       ],
+      visible: 'true',
     ),
     const RealtimeDeviceModel(
       graph:
@@ -311,6 +332,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         50,
         50,
       ],
+      visible: 'true',
     ),
     const RealtimeDeviceModel(
       graph:
@@ -333,7 +355,17 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         2 * 25,
         2 * 25,
         2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
       ],
+      visible: 'true',
     ),
   ],
   'patient-3': [
@@ -366,6 +398,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         50,
         50,
       ],
+      visible: 'true',
     ),
     const RealtimeDeviceModel(
       graph:
@@ -396,6 +429,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         50,
         50,
       ],
+      visible: 'true',
     ),
     const RealtimeDeviceModel(
       graph:
@@ -418,7 +452,14 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         2 * 25,
         2 * 25,
         2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
       ],
+      visible: 'true',
     ),
   ],
   'patient-4': [
@@ -451,6 +492,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         50,
         50,
       ],
+      visible: 'true',
     ),
     const RealtimeDeviceModel(
       graph:
@@ -481,6 +523,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         23,
         15,
       ],
+      visible: 'true',
     ),
     const RealtimeDeviceModel(
       graph:
@@ -516,6 +559,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         10 * 4,
         10 * 4,
       ],
+      visible: 'true',
     ),
   ],
   'patient-5': [
@@ -548,6 +592,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         23,
         15,
       ],
+      visible: 'true',
     ),
     const RealtimeDeviceModel(
       graph:
@@ -583,6 +628,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         10 * 4,
         10 * 4,
       ],
+      visible: 'true',
     ),
   ],
   'patient-6': [
@@ -615,6 +661,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         50,
         50,
       ],
+      visible: 'true',
     ),
   ],
   'patient-7': [
@@ -647,6 +694,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         50,
         50,
       ],
+      visible: 'true',
     ),
   ],
   'patient-8': [
@@ -671,7 +719,14 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         2 * 25,
         2 * 25,
         2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
       ],
+      visible: 'true',
     ),
   ],
   'patient-9': [
@@ -704,6 +759,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         50,
         50,
       ],
+      visible: 'true',
     ),
     const RealtimeDeviceModel(
       graph:
@@ -726,7 +782,14 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         2 * 25,
         2 * 25,
         2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
       ],
+      visible: 'true',
     ),
   ],
   'patient-10': [
@@ -759,6 +822,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         50,
         50,
       ],
+      visible: 'true',
     ),
     const RealtimeDeviceModel(
       graph:
@@ -789,6 +853,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         50,
         50,
       ],
+      visible: 'true',
     ),
     const RealtimeDeviceModel(
       graph:
@@ -811,7 +876,14 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         2 * 25,
         2 * 25,
         2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
       ],
+      visible: 'true',
     ),
   ],
   'patient-11': [
@@ -844,6 +916,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         50,
         50,
       ],
+      visible: 'true',
     ),
     const RealtimeDeviceModel(
       graph:
@@ -874,6 +947,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         50,
         50,
       ],
+      visible: 'true',
     ),
     const RealtimeDeviceModel(
       graph:
@@ -904,6 +978,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         23,
         15,
       ],
+      visible: 'true',
     ),
     const RealtimeDeviceModel(
       graph:
@@ -939,6 +1014,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         10 * 4,
         10 * 4,
       ],
+      visible: 'true',
     ),
     const RealtimeDeviceModel(
       graph:
@@ -961,7 +1037,14 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         2 * 25,
         2 * 25,
         2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
+        2 * 25,
       ],
+      visible: 'true',
     ),
   ],
   'patient-12': [
@@ -994,6 +1077,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         50,
         50,
       ],
+      visible: 'true',
     ),
     const RealtimeDeviceModel(
       graph:
@@ -1024,6 +1108,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         50,
         50,
       ],
+      visible: 'true',
     ),
     const RealtimeDeviceModel(
       graph:
@@ -1054,6 +1139,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         23,
         15,
       ],
+      visible: 'true',
     ),
     const RealtimeDeviceModel(
       graph:
@@ -1089,6 +1175,7 @@ final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
         10 * 4,
         10 * 4,
       ],
+      visible: 'true',
     ),
   ],
 };

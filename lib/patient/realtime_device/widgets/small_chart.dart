@@ -160,7 +160,7 @@ class _SmallChartState extends State<SmallChart>
 
     isMultipleRun = true;
     var i = 0;
-    Timer.periodic(const Duration(milliseconds: 110), (timer) {
+    Timer.periodic(const Duration(milliseconds: 10), (timer) {
       _addEntry();
       if (i++ > 18) {
         timer.cancel();

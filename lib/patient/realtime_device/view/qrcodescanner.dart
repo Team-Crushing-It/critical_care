@@ -4,7 +4,16 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:qrscan/qrscan.dart' as scanner;
 
+import 'package:patient_repository/patient_repository.dart';
+
 class QrCodeScanner extends StatefulWidget {
+  const QrCodeScanner({
+    Key key,
+    @required this.test,
+  }) : super(key: key);
+
+  final VoidCallback test;
+
   @override
   _QrCodeScannerState createState() => _QrCodeScannerState();
 }
@@ -15,6 +24,7 @@ class _QrCodeScannerState extends State<QrCodeScanner> {
 
   @override
   initState() {
+    _scan();
     super.initState();
   }
 
@@ -49,8 +59,8 @@ class _QrCodeScannerState extends State<QrCodeScanner> {
 
   Future _scan() async {
     barcode = await scanner.scan();
-    // ignore: unnecessary_this
-    setState(() => this.barcode = barcode);
+    widget.test();
+    Navigator.pop(context);
   }
 
   Future _scanPhoto() async {

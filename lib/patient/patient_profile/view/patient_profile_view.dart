@@ -53,7 +53,7 @@ class _PatientProfileSuccessView extends StatelessWidget {
               text: TextSpan(
                 text:
                     // ignore: lines_longer_than_80_chars
-                    '$patientProfile.name - ${_cleanup(patientProfile.gender)} - Age: $patientProfile.age',
+                    '${patientProfile.name} - ${_cleanup(patientProfile.gender)} - Age: ${patientProfile.age}',
                 style: Theme.of(context).textTheme.headline6,
               ),
             ),

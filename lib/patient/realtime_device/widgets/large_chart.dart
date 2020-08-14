@@ -139,7 +139,7 @@ class _LargeChartState extends State<LargeChart>
       controller
         ..setVisibleXRangeMaximum(70)
         ..setVisibleXRangeMinimum(70)
-         ..moveViewToX(data.getEntryCount().toDouble())
+        ..moveViewToX(data.getEntryCount().toDouble())
         ..state?.setStateIfNotDispose();
 
       // chart.setVisibleYRange(30, AxisDependency.LEFT);
