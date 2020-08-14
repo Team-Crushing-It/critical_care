@@ -24,9 +24,14 @@ class LargeChart extends StatefulWidget {
   const LargeChart({
     Key key,
     @required this.type,
+    // @required this.data,
   }) : super(key: key);
 
   final String type;
+
+  // final List<int> data;
+
+  
   @override
   _LargeChartState createState() => _LargeChartState();
 }
