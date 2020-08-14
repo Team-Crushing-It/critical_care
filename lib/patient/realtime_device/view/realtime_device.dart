@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:patient_repository/patient_repository.dart';
 import 'package:criticalcare/patient/realtime_device/widgets/widgets.dart';
 
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 class RealtimeDeviceView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -47,6 +49,10 @@ class _RealtimeDeviceSuccessView extends StatelessWidget {
 
   final List<RealtimeDeviceModel> devices;
 
+  void _handleTapCamera() {
+    print('camera plz');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -80,6 +86,17 @@ class _RealtimeDeviceSuccessView extends StatelessWidget {
             },
           ).toList(),
         ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: InkWell(
+            onTap: _handleTapCamera,
+            child: const FaIcon(
+              FontAwesomeIcons.plus,
+              color: Colors.white,
+              size: 36,
+            ),
+          ),
+        ),
       ],
     );
   }
@@ -101,7 +118,6 @@ class _DeviceView extends StatefulWidget {
 
 class __DeviceViewState extends State<_DeviceView> {
   bool _active = false;
-  
 
   void _handleTap() {
     setState(() {
@@ -225,7 +241,7 @@ class __DeviceViewState extends State<_DeviceView> {
             color: const Color(0xFFC4C4C4).withOpacity(0.1),
             width: double.infinity,
             height: 100,
-            child:  LargeChart(type: type),
+            child: LargeChart(type: type),
           ),
         ),
         const Divider(

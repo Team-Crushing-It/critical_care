@@ -63,7 +63,8 @@ Widget getBody() {
     return Stack(
       children: <Widget>[
         SizedBox(
-          height:200,
+          height:90,
+          width: 100,
           child: LineChart(controller),
         ),
       ],
@@ -94,11 +95,12 @@ Widget getBody() {
             ..textColor = ColorUtils.WHITE
             ..axisMaximum = 10.0
             ..axisMinimum = 0.0
-            ..drawGridLines = true
+            ..drawGridLines = false
             ..setAxisMaximum(100)
             ..setAxisMinimum(0)
-            ..setLabelCount1(2);
-            // ..drawLabels = false;
+            ..setLabelCount1(2)
+            ..drawLabels = false
+            ..enabled = false;
             
 
         },
@@ -106,8 +108,8 @@ Widget getBody() {
           axisRight.enabled = false;
         },
         drawGridBackground: false,
-        dragXEnabled: true,
-        dragYEnabled: true,
+        dragXEnabled: false,
+        dragYEnabled: false,
         scaleXEnabled: true,
         scaleYEnabled: true,
         backgroundColor: const Color(0xFFC4C4C4).withOpacity(0.1),
