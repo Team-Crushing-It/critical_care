@@ -130,9 +130,6 @@ class __DeviceViewState extends State<_DeviceView> {
 
   @override
   Widget build(BuildContext context) {
-    final type = widget.device.type;
-    final index = widget.index;
-
     return Column(
       children: [
         Row(
