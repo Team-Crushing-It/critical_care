@@ -80,6 +80,7 @@ class _RealtimeDeviceSuccessView extends StatelessWidget {
                   // height: 1,
                   child: _DeviceView(
                     device: device,
+                    index : devices.indexOf(device),
                   ),
                 ),
               );
@@ -108,9 +109,11 @@ class _DeviceView extends StatefulWidget {
   const _DeviceView({
     Key key,
     @required this.device,
+    @required this.index,
   }) : super(key: key);
 
   final RealtimeDeviceModel device;
+  final num index;
 
   @override
   __DeviceViewState createState() => __DeviceViewState();
@@ -128,6 +131,7 @@ class __DeviceViewState extends State<_DeviceView> {
   @override
   Widget build(BuildContext context) {
     final type = widget.device.type;
+    final index = widget.index;
 
     return Column(
       children: [
@@ -240,7 +244,7 @@ class __DeviceViewState extends State<_DeviceView> {
           child: Container(
             color: const Color(0xFFC4C4C4).withOpacity(0.1),
             width: double.infinity,
-            height: 100,
+            height: 150,
             child: LargeChart(type: type),
           ),
         ),

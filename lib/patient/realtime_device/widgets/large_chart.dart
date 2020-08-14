@@ -157,7 +157,10 @@ class _LargeChartState extends State<LargeChart>
       data.notifyDataChanged();
 
       // limit the number of visible entries
-      controller.setVisibleXRangeMaximum(70);
+      controller
+        ..setVisibleXRangeMaximum(70)
+        ..setVisibleXRangeMinimum(70);
+
       // chart.setVisibleYRange(30, AxisDependency.LEFT);
 
       // move to the latest entry
