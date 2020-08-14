@@ -130,7 +130,8 @@ class RealtimeDeviceModel {
       range1: entity.id,
       range2: entity.id,
       value: entity.id,
-      data: entity.id,
+      data: const <int>[],
+      
     );
   }
   final String graph;
@@ -139,5 +140,5 @@ class RealtimeDeviceModel {
   final String range1;
   final String range2;
   final String value;
-  final String data;
+  final List<int> data;
 }

@@ -132,7 +132,6 @@ class __DeviceViewState extends State<_DeviceView> {
   Widget build(BuildContext context) {
     final type = widget.device.type;
     final index = widget.index;
-    
 
     return Column(
       children: [
@@ -247,7 +246,8 @@ class __DeviceViewState extends State<_DeviceView> {
             color: const Color(0xFFC4C4C4).withOpacity(0.1),
             width: double.infinity,
             height: 150,
-            child: LargeChart(type: type
+            child: LargeChart(
+              device: widget.device,
             ),
           ),
         ),

@@ -23,11 +23,11 @@ import 'util.dart';
 class LargeChart extends StatefulWidget {
   const LargeChart({
     Key key,
-    @required this.type,
+    @required this.device,
     // @required this.data,
   }) : super(key: key);
 
-  final String type;
+  final RealtimeDeviceModel device;
 
   // final List<int> data;
 
@@ -156,7 +156,7 @@ class _LargeChartState extends State<LargeChart>
       data.addEntry(
           Entry(
               x: set.getEntryCount().toDouble(),
-              y: chartDataListTemp[counterforgraph].toDouble()),
+              y: widget.device.data[counterforgraph].toDouble()),
           0);
       data.notifyDataChanged();
 
@@ -203,7 +203,7 @@ class _LargeChartState extends State<LargeChart>
   LineDataSet _createSet() {
     LineDataSet set = LineDataSet(null, "")
       ..setAxisDependency(AxisDependency.LEFT)
-      ..setColor1(widget.type.toColor)
+      ..setColor1(widget.device.type.toColor)
       ..setCircleColor(Colors.transparent)
       ..setLineWidth(2.0)
       ..setDrawCircles(false)
