@@ -74,6 +74,7 @@
 //       });
 
 //       test('calls createUserWithEmailAndPassword', () async {
+// ignore: lines_longer_than_80_chars
 //         await authenticationRepository.signUp(email: email, password: password);
 //         verify(firebaseAuth.createUserWithEmailAndPassword(
 //           email: email,
@@ -81,6 +82,7 @@
 //         )).called(1);
 //       });
 
+// ignore: lines_longer_than_80_chars
 //       test('succeeds when createUserWithEmailAndPassword succeeds', () async {
 //         expect(
 //           authenticationRepository.signUp(email: email, password: password),
@@ -113,6 +115,7 @@
 //         ).thenAnswer((_) async => googleSignInAccount);
 //       });
 
+// ignore: lines_longer_than_80_chars
 //       test('calls signIn authentication, and signInWithCredential', () async {
 //         await authenticationRepository.logInWithGoogle();
 //         verify(googleSignIn.signIn()).called(1);

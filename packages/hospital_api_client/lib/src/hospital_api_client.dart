@@ -9,6 +9,7 @@ class HospitalApiClient {
 
   /// Retrieves [HospitalEntity] with given [hospitalId].
   Future<HospitalEntity> getHospital(String hospitalId) {
+    // ignore: todo
     /// TODO: Integrate with real API
     return Future.delayed(
       const Duration(seconds: 1),

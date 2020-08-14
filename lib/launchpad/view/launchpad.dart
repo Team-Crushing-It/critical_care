@@ -365,7 +365,7 @@ class _MyBottomNavBar extends StatelessWidget {
                     top: 40,
                     bottom: 0,
                     child: RichText(
-                      text: TextSpan(
+                      text: const TextSpan(
                         text: 'Alert',
                         style: TextStyle(
                           color: Colors.white,

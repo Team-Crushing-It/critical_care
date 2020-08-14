@@ -14,6 +14,7 @@ class PatientApiClient {
 
   /// Retrieve a list of supported patient.
   Future<PatientEntity> getPatient(String patientId) {
+    // ignore: todo
     /// TODO: Integrate with real API
     return Future.delayed(
       const Duration(seconds: 0),
@@ -23,6 +24,7 @@ class PatientApiClient {
 
 /// Retrieve a list of supported patient.
   Future<PatientEntity> getPatientRecords(String patientId) {
+    // ignore: todo
     /// TODO: Integrate with real API
     return Future.delayed(
       const Duration(seconds: 0),

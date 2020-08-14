@@ -22,7 +22,7 @@ class _QrCodeScannerState extends State<QrCodeScanner> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Scan Device QRCode'),
+        title: const Text('Scan Device QRCode'),
       ),
       body: Center(
         child: Column(
@@ -35,10 +35,12 @@ class _QrCodeScannerState extends State<QrCodeScanner> {
               child: Image.memory(bytes),
             ),
             Text('RESULT  $barcode'),
-            RaisedButton(onPressed: _scan, child: Text("Scan")),
-            RaisedButton(onPressed: _scanPhoto, child: Text("Scan Photo")),
+            RaisedButton(onPressed: _scan, child: const Text('Scan')),
             RaisedButton(
-                onPressed: _generateBarCode, child: Text("Generate Barcode")),
+                onPressed: _scanPhoto, child: const Text('Scan Photo')),
+            RaisedButton(
+                onPressed: _generateBarCode,
+                child: const Text('Generate Barcode')),
           ],
         ),
       ),
@@ -46,18 +48,22 @@ class _QrCodeScannerState extends State<QrCodeScanner> {
   }
 
   Future _scan() async {
-    String barcode = await scanner.scan();
+    barcode = await scanner.scan();
+    // ignore: unnecessary_this
     setState(() => this.barcode = barcode);
   }
 
   Future _scanPhoto() async {
-    String barcode = await scanner.scanPhoto();
+    barcode = await scanner.scanPhoto();
+    // ignore: unnecessary_this
     setState(() => this.barcode = barcode);
   }
 
   Future _generateBarCode() async {
+    // ignore: omit_local_variable_types
     Uint8List result = await scanner
         .generateBarCode('https://github.com/leyan95/qrcode_scanner');
+    // ignore: unnecessary_this
     this.setState(() => this.bytes = result);
   }
 }

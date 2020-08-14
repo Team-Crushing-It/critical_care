@@ -52,16 +52,16 @@ class _EmailInput extends StatelessWidget {
       buildWhen: (previous, current) => previous.email != current.email,
       builder: (context, state) {
         return TextField(
-          style: TextStyle(color: Colors.white, fontSize: 20),
+          style: const TextStyle(color: Colors.white, fontSize: 20),
           key: const Key('loginForm_emailInput_textField'),
           onChanged: (email) => context.bloc<LoginCubit>().emailChanged(email),
           decoration: InputDecoration(
-              enabledBorder: UnderlineInputBorder(
+              enabledBorder: const UnderlineInputBorder(
                 borderSide: BorderSide(color: Colors.white),
               ),
               labelText: 'Email',
               errorText: state.email.invalid ? 'invalid email' : null,
-              labelStyle: TextStyle(color: Colors.white, fontSize: 20)),
+              labelStyle: const TextStyle(color: Colors.white, fontSize: 20)),
         );
       },
     );
@@ -75,18 +75,18 @@ class _PasswordInput extends StatelessWidget {
       buildWhen: (previous, current) => previous.password != current.password,
       builder: (context, state) {
         return TextField(
-          style: TextStyle(color: Colors.white, fontSize: 20),
+          style: const TextStyle(color: Colors.white, fontSize: 20),
           key: const Key('loginForm_passwordInput_textField'),
           onChanged: (password) =>
               context.bloc<LoginCubit>().passwordChanged(password),
           obscureText: true,
           decoration: InputDecoration(
-            enabledBorder: UnderlineInputBorder(
+            enabledBorder: const UnderlineInputBorder(
               borderSide: BorderSide(color: Colors.white),
             ),
             labelText: 'Password',
             errorText: state.password.invalid ? 'invalid password' : null,
-            labelStyle: TextStyle(color: Colors.white, fontSize: 20),
+            labelStyle: const TextStyle(color: Colors.white, fontSize: 20),
           ),
         );
       },
@@ -122,7 +122,7 @@ class _LoginButton extends StatelessWidget {
 class _GoogleLoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
+   
     return RaisedButton.icon(
       key: const Key('loginForm_googleLogin_raisedButton'),
       label: const Text(

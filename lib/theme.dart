@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 final theme = ThemeData(
-  iconTheme: IconThemeData(
+  iconTheme: const IconThemeData(
     color: Colors.white,
     size: 16,
   ),

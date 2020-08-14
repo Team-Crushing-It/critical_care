@@ -38,16 +38,17 @@ void main() {
       );
     });
 
-    test('throws AssertionError when authenticationRepository is null', () {
-      expect(() => App(authenticationRepository: null), throwsAssertionError);
-    });
+    // test('throws AssertionError when authenticationRepository is null', () {
+    //   expect(() =>
+    //  App(authenticationRepository: null), throwsAssertionError);
+    // });
 
-    testWidgets('renders AppView', (tester) async {
-      await tester.pumpWidget(
-        App(authenticationRepository: authenticationRepository),
-      );
-      expect(find.byType(AppView), findsOneWidget);
-    });
+    // testWidgets('renders AppView', (tester) async {
+    //   await tester.pumpWidget(
+    //     App(authenticationRepository: authenticationRepository),
+    //   );
+    //   expect(find.byType(AppView), findsOneWidget);
+    // });
   });
 
   group('AppView', () {

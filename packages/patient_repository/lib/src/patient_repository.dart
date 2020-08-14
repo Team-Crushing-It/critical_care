@@ -30,6 +30,7 @@ class PatientRepository {
     }
   }
 
+  // ignore: public_member_api_docs
   Future<PatientModel> getPatientRecords(String patientId) async {
     try {
       final patientEntity = await _patientApiClient.getPatient(patientId);
@@ -39,6 +40,7 @@ class PatientRepository {
     }
   }
 
+  // ignore: public_member_api_docs
   Future<PatientModel> getRealtimeDevice(String patientId) async {
     try {
       final patientEntity = await _patientApiClient.getPatient(patientId);
@@ -48,6 +50,7 @@ class PatientRepository {
     }
   }
 
+  // ignore: public_member_api_docs
   Stream<Art> art(String patientId) {
     return _patientApiClient
         .art(patientId)

@@ -41,16 +41,16 @@ class _EmailInput extends StatelessWidget {
       buildWhen: (previous, current) => previous.email != current.email,
       builder: (context, state) {
         return TextField(
-          style: TextStyle(color: Colors.white),
+          style: const TextStyle(color: Colors.white),
           key: const Key('signUpForm_emailInput_textField'),
           onChanged: (email) => context.bloc<SignUpCubit>().emailChanged(email),
           decoration: InputDecoration(
-            enabledBorder: UnderlineInputBorder(
+            enabledBorder: const UnderlineInputBorder(
               borderSide: BorderSide(color: Colors.white),
             ),
             labelText: 'Create Email',
             errorText: state.email.invalid ? 'invalid email' : null,
-            labelStyle: TextStyle(color: Colors.white, fontSize: 20),
+            labelStyle: const TextStyle(color: Colors.white, fontSize: 20),
           ),
         );
       },
@@ -65,18 +65,18 @@ class _PasswordInput extends StatelessWidget {
       buildWhen: (previous, current) => previous.password != current.password,
       builder: (context, state) {
         return TextField(
-          style: TextStyle(color: Colors.white),
+          style: const TextStyle(color: Colors.white),
           key: const Key('signUpForm_passwordInput_textField'),
           onChanged: (password) =>
               context.bloc<SignUpCubit>().passwordChanged(password),
           obscureText: true,
           decoration: InputDecoration(
-            enabledBorder: UnderlineInputBorder(
+            enabledBorder: const UnderlineInputBorder(
               borderSide: BorderSide(color: Colors.white),
             ),
             labelText: 'Create Password',
             errorText: state.password.invalid ? 'invalid password' : null,
-            labelStyle: TextStyle(color: Colors.white, fontSize: 20),
+            labelStyle: const TextStyle(color: Colors.white, fontSize: 20),
           ),
         );
       },

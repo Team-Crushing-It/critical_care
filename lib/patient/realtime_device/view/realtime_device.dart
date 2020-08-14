@@ -103,7 +103,7 @@ class _RealtimeDeviceSuccessView extends StatelessWidget {
   }
 }
 
-// This is where you begin===========================================================================
+// This is where you begin=================================
 
 class _DeviceView extends StatefulWidget {
   const _DeviceView({
@@ -151,19 +151,19 @@ class __DeviceViewState extends State<_DeviceView> {
                     // ),
                     IgnorePointer(child: SmallChart(device: widget.device)),
                     Container(
-                        alignment: Alignment(0.9, -0.8),
+                        alignment: const Alignment(0.9, -0.8),
                         child: Text(
                           widget.device.range1,
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 7.0),
                         )),
                     Container(
-                      alignment: Alignment(0.9, 0.78),
+                      alignment: const Alignment(0.9, 0.78),
                       child: Text(
                         widget.device.range2,
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 7.0),

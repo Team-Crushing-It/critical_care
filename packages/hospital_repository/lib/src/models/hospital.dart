@@ -100,7 +100,10 @@ class RoomModel {
     this.patientId,
   });
 
+  // ignore: public_member_api_docs
   final String id;
+  // ignore: public_member_api_docs
   final String name;
+  // ignore: public_member_api_docs
   final String patientId;
 }

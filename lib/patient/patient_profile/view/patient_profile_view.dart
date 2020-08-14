@@ -1,8 +1,8 @@
+import 'dart:math';
 import 'package:criticalcare/patient/patient.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:enum_to_string/enum_to_string.dart';
-import 'dart:math';
 
 class PatientProfileView extends StatelessWidget {
   @override
@@ -52,7 +52,8 @@ class _PatientProfileSuccessView extends StatelessWidget {
             child: RichText(
               text: TextSpan(
                 text:
-                    '${patientProfile.name} - ${_cleanup(patientProfile.gender)} - Age: ${patientProfile.age}',
+                    // ignore: lines_longer_than_80_chars
+                    '$patientProfile.name - ${_cleanup(patientProfile.gender)} - Age: $patientProfile.age',
                 style: Theme.of(context).textTheme.headline6,
               ),
             ),

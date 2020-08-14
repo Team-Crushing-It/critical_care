@@ -35,24 +35,35 @@ class PatientModel {
   /// Unique identifier for a given [PatientModel].
   final String id;
 
+  // ignore: public_member_api_docs
   final PatientProfileModel profile;
 
+  // ignore: public_member_api_docs
   final PatientStatusModel status;
 
   // final List<PatientRecordModel> records;
 
+  // ignore: public_member_api_docs
   final List<PatientRecordsModel> records;
 
+  // ignore: public_member_api_docs
   final List<RealtimeDeviceModel> devices;
 }
 
+// ignore: public_member_api_docs
 enum Gender { male, female, other }
 
+// ignore: public_member_api_docs
 enum Race {
+  // ignore: public_member_api_docs
   latino,
+  // ignore: public_member_api_docs
   white,
+  // ignore: public_member_api_docs
   black,
+  // ignore: public_member_api_docs
   asian,
+  // ignore: public_member_api_docs
   other,
 }
 
@@ -70,16 +81,25 @@ class PatientProfileModel {
     @required this.photoUrl,
   });
 
+  // ignore: public_member_api_docs
   final String name;
+  // ignore: public_member_api_docs
   final Gender gender;
+  // ignore: public_member_api_docs
   final Race race;
+  // ignore: public_member_api_docs
   final String language;
+  // ignore: public_member_api_docs
   final int age;
+  // ignore: public_member_api_docs
   final DateTime dateOfBirth;
+  // ignore: public_member_api_docs
   final String primaryCareDoctorId;
+  // ignore: public_member_api_docs
   final String photoUrl;
 }
 
+// ignore: public_member_api_docs
 enum PatientStatusModel { critical, needsAttention, stable }
 
 /// {@template patient}
@@ -93,6 +113,7 @@ class PatientRecordsModel {
     @required this.status,
   });
 
+  // ignore: comment_references
   /// Converts [PatientRecordsEntity] into [PatienRecordstModel].
   factory PatientRecordsModel.fromEntity(PatientRecordsEntity entity) {
     return PatientRecordsModel(
@@ -101,8 +122,11 @@ class PatientRecordsModel {
       status: entity.id,
     );
   }
+  // ignore: public_member_api_docs
   final String type;
+  // ignore: public_member_api_docs
   final String info;
+  // ignore: public_member_api_docs
   final String status;
 }
 
@@ -134,11 +158,18 @@ class RealtimeDeviceModel {
       
     );
   }
+  // ignore: public_member_api_docs
   final String graph;
+  // ignore: public_member_api_docs
   final String type;
+  // ignore: public_member_api_docs
   final String unit;
+  // ignore: public_member_api_docs
   final String range1;
+  // ignore: public_member_api_docs
   final String range2;
+  // ignore: public_member_api_docs
   final String value;
+  // ignore: public_member_api_docs
   final List<int> data;
 }
