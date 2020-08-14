@@ -4,8 +4,6 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:qrscan/qrscan.dart' as scanner;
 
-import 'package:patient_repository/patient_repository.dart';
-
 class QrCodeScanner extends StatefulWidget {
   const QrCodeScanner({
     Key key,

@@ -8,8 +8,6 @@ import 'package:criticalcare/patient/realtime_device/widgets/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class RealtimeDeviceView extends StatelessWidget {
-  final bool globe = false;
-
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<RealtimeDeviceCubit, RealtimeDeviceState>(
@@ -74,6 +72,7 @@ class __RealtimeDeviceSuccessViewState
   }
 
   void onReturn() {
+    print('onReturn');
     setState(() {
       widget.devices.add(
         const RealtimeDeviceModel(
@@ -210,142 +209,134 @@ class __DeviceViewState extends State<_DeviceView> {
 
   @override
   Widget build(BuildContext context) {
-    final _visible = widget.index == widget.last ? false : true;
+  
 
     return Container(
-      child: Visibility(
-        visible: _visible,
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Container(
-                  height: 90,
-                  color: const Color(0xFFC4C4C4).withOpacity(0.1),
-                  child: InkWell(
-                    onTap: _handleTap,
-                    child: SizedBox(
-                      width: 100,
-                      height: 80,
-                      child: Stack(alignment: Alignment.center, children: [
-                        // Image.network(
-                        //   widget.device.graph,
-                        //   fit: BoxFit.cover,
-                        // ),
-                        IgnorePointer(
-                            ignoring: true,
-                            child: SmallChart(device: widget.device)),
-                        Container(
-                            alignment: const Alignment(0.9, -0.8),
-                            child: Text(
-                              widget.device.range1,
-                              style: const TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 7.0),
-                            )),
-                        Container(
-                          alignment: const Alignment(0.9, 0.78),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Container(
+                height: 90,
+                color: const Color(0xFFC4C4C4).withOpacity(0.1),
+                child: InkWell(
+                  onTap: _handleTap,
+                  child: SizedBox(
+                    width: 100,
+                    height: 80,
+                    child: Stack(alignment: Alignment.center, children: [
+                      // Image.network(
+                      //   widget.device.graph,
+                      //   fit: BoxFit.cover,
+                      // ),
+                      IgnorePointer(
+                          ignoring: true,
+                          child: SmallChart(device: widget.device)),
+                      Container(
+                          alignment: const Alignment(0.9, -0.8),
                           child: Text(
-                            widget.device.range2,
+                            widget.device.range1,
                             style: const TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 7.0),
-                          ),
+                          )),
+                      Container(
+                        alignment: const Alignment(0.9, 0.78),
+                        child: Text(
+                          widget.device.range2,
+                          style: const TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 7.0),
                         ),
-                      ]),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    left: 0.0,
-                  ),
-                  child: SizedBox(
-                    // width: 200,
-                    height: 90,
-                    child: Container(
-                      color: const Color(0xFFC4C4C4).withOpacity(0.03),
-                      child: Row(
-                        children: [
-                          SizedBox(
-                            width: 50,
-                            child: Padding(
-                              padding: const EdgeInsets.only(top: 12.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  Text(widget.device.type,
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .headline2
-                                          .copyWith(
-                                              color:
-                                                  widget.device.type.toColor)),
-                                  Text('(${widget.device.unit})',
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .headline1
-                                          .copyWith(
-                                              color:
-                                                  widget.device.type.toColor)),
-                                  Text(widget.device.range1,
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .headline1
-                                          .copyWith(
-                                              color:
-                                                  widget.device.type.toColor)),
-                                  Text(widget.device.range2,
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .headline1
-                                          .copyWith(
-                                              color:
-                                                  widget.device.type.toColor)),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                              left: 15.0,
-                              right: 15.0,
-                            ),
-                            child: Text(widget.device.value,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .subtitle1
-                                    .copyWith(
-                                        color: widget.device.type.toColor)),
-                          ),
-                        ],
                       ),
-                    ),
+                    ]),
                   ),
-                ),
-              ],
-            ),
-            Visibility(
-              visible: _active,
-              child: Container(
-                color: const Color(0xFFC4C4C4).withOpacity(0.1),
-                width: double.infinity,
-                height: 150,
-                child: LargeChart(
-                  device: widget.device,
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 0.0,
+                ),
+                child: SizedBox(
+                  // width: 200,
+                  height: 90,
+                  child: Container(
+                    color: const Color(0xFFC4C4C4).withOpacity(0.03),
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          width: 50,
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 12.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Text(widget.device.type,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .headline2
+                                        .copyWith(
+                                            color: widget.device.type.toColor)),
+                                Text('(${widget.device.unit})',
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .headline1
+                                        .copyWith(
+                                            color: widget.device.type.toColor)),
+                                Text(widget.device.range1,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .headline1
+                                        .copyWith(
+                                            color: widget.device.type.toColor)),
+                                Text(widget.device.range2,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .headline1
+                                        .copyWith(
+                                            color: widget.device.type.toColor)),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 15.0,
+                            right: 15.0,
+                          ),
+                          child: Text(widget.device.value,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .subtitle1
+                                  .copyWith(color: widget.device.type.toColor)),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Visibility(
+            visible: _active,
+            child: Container(
+              color: const Color(0xFFC4C4C4).withOpacity(0.1),
+              width: double.infinity,
+              height: 150,
+              child: LargeChart(
+                device: widget.device,
+              ),
             ),
-            const Divider(
-              color: Color(0xFF303551),
-              height: 1,
-              thickness: 1,
-              endIndent: 0,
-            ),
-          ],
-        ),
+          ),
+          const Divider(
+            color: Color(0xFF303551),
+            height: 1,
+            thickness: 1,
+            endIndent: 0,
+          ),
+        ],
       ),
     );
   }
