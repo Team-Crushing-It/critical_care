@@ -5,6 +5,7 @@ import 'package:patient_repository/patient_repository.dart';
 import 'package:criticalcare/patient/realtime_device/widgets/widgets.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import './qrcodescanner.dart';
 
 class RealtimeDeviceView extends StatelessWidget {
   @override
@@ -132,7 +133,6 @@ class __DeviceViewState extends State<_DeviceView> {
   Widget build(BuildContext context) {
     final type = widget.device.type;
     final index = widget.index;
-    
 
     return Column(
       children: [
@@ -247,8 +247,7 @@ class __DeviceViewState extends State<_DeviceView> {
             color: const Color(0xFFC4C4C4).withOpacity(0.1),
             width: double.infinity,
             height: 150,
-            child: LargeChart(type: type
-            ),
+            child: LargeChart(type: type),
           ),
         ),
         const Divider(
