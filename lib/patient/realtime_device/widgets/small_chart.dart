@@ -24,10 +24,10 @@ import 'util.dart';
 class SmallChart extends StatefulWidget {
   const SmallChart({
     Key key,
-    @required this.type,
+    @required this.device,
   }) : super(key: key);
 
-  final String type;
+  final RealtimeDeviceModel device;
   @override
   _SmallChartState createState() => _SmallChartState();
 }
@@ -48,6 +48,7 @@ implements OnChartValueSelectedListener
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       body: getBody(),
     );
@@ -73,10 +74,8 @@ Widget getBody() {
 
 
 
-
   void _initController() {
-    var desc = Description()
-      ..enabled = false;
+    var desc = Description()..enabled = false;
     controller = LineChartController(
         xAxisSettingFunction: (xAxis, controller) {
           xAxis
@@ -86,9 +85,9 @@ Widget getBody() {
             ..avoidFirstLastClipping = true
             ..enabled = false;
         },
-      legendSettingFunction: (legend, controller) {
-        legend.enabled = false;
-      },
+        legendSettingFunction: (legend, controller) {
+          legend.enabled = false;
+        },
         axisLeftSettingFunction: (axisLeft, controller) {
           axisLeft
             ..typeface = Util.LIGHT
@@ -99,20 +98,17 @@ Widget getBody() {
             ..setAxisMaximum(100)
             ..setAxisMinimum(0)
             ..setLabelCount1(2)
-            ..drawLabels = false
-            ..enabled = false;
-            
-
+            ..drawLabels = false;
         },
         axisRightSettingFunction: (axisRight, controller) {
           axisRight.enabled = false;
         },
         drawGridBackground: false,
-        dragXEnabled: false,
-        dragYEnabled: false,
+        dragXEnabled: true,
+        dragYEnabled: true,
         scaleXEnabled: true,
         scaleYEnabled: true,
-        backgroundColor: const Color(0xFFC4C4C4).withOpacity(0.1),
+        backgroundColor: Colors.transparent,
         selectionListener: this,
         pinchZoomEnabled: false,
         description: desc);
@@ -125,8 +121,28 @@ Widget getBody() {
     }
   }
 
-
-
+  List<int> chartDataListTemp = [
+    50,
+    50,
+    50,
+    65,
+    50,
+    45,
+    100,
+    15,
+    50,
+    50,
+    65,
+    50,
+    50,
+    50,
+    50,
+    50,
+    50,
+    50,
+    50,
+  ];
+  int counterforgraph = 0;
 
   void _addEntry() {
     LineData data = controller.data;
@@ -143,12 +159,16 @@ Widget getBody() {
       data.addEntry(
           Entry(
               x: set.getEntryCount().toDouble(),
-              y: (random.nextDouble() * 40) + 30.0),
+              y: chartDataListTemp[counterforgraph].toDouble()),
           0);
+
       data.notifyDataChanged();
 
       // limit the number of visible entries
-      controller.setVisibleXRangeMaximum(10);
+      controller
+        ..setVisibleXRangeMaximum(18)
+        ..setVisibleXRangeMinimum(18);
+
       // chart.setVisibleYRange(30, AxisDependency.LEFT);
 
       // move to the latest entry
@@ -156,49 +176,11 @@ Widget getBody() {
 
       controller.state?.setStateIfNotDispose();
     }
-  }
 
-  void _updateEntry(){
-    LineData data = controller.data;
-
-    if (data != null) {
-      ILineDataSet set = data.getDataSetByIndex(0);
-      // set.addEntry(...); // can be called as well
-
-      if (set == null) {
-        set = _createSet();
-        data.addDataSet(set);
-      }
-
-      if(set.getEntryCount() == 0){
-        return;
-      }
-
-      //for test ChartData's updateEntryByIndex
-      var index = (random.nextDouble() * set.getEntryCount()).toInt();
-      var x =  set.getEntryForIndex(index).x;
-      data.updateEntryByIndex(index, Entry(x: x,
-
-
-      //  Insert Specific matrix data here
-      //============================================================================
-
-
-          y: (random.nextDouble() * 40) + 30.0), 0);
-
-
-      //============================================================================
-      data.notifyDataChanged();
-
-      // limit the number of visible entries
-      controller.setVisibleXRangeMaximum(120);
-      // chart.setVisibleYRange(30, AxisDependency.LEFT);
-
-      // move to the latest entry
-      controller.moveViewToX(data.getEntryCount().toDouble());
-
-      controller.state?.setStateIfNotDispose();
+    if (counterforgraph >= chartDataListTemp.length - 1) {
+      counterforgraph = 0;
     }
+    counterforgraph += 1;
   }
 
   void _clearChart() {
@@ -213,9 +195,9 @@ Widget getBody() {
 
     isMultipleRun = true;
     var i = 0;
-    Timer.periodic(Duration(milliseconds: 100), (timer) {
+    Timer.periodic(Duration(milliseconds: 110), (timer) {
       _addEntry();
-      if (i++ > 100) {
+      if (i++ > 18) {
         timer.cancel();
         isMultipleRun = false;
       }
@@ -224,18 +206,18 @@ Widget getBody() {
 
   LineDataSet _createSet() {
     LineDataSet set = LineDataSet(null, "")
-    ..setAxisDependency(AxisDependency.LEFT)
-    ..setColor1(widget.type.toColor)
-    ..setCircleColor(Colors.transparent)
-    ..setLineWidth(2.0)
-    ..setDrawCircles(false)
-    ..setCircleRadius(0.0)
-    ..setFillAlpha(65)
-    ..setFillColor(ColorUtils.getHoloBlue())
-    ..setHighLightColor(Color.fromARGB(255, 244, 117, 117))
-    ..setValueTextColor(ColorUtils.WHITE)
-    ..setValueTextSize(9.0)
-    ..setDrawValues(false);
+      ..setAxisDependency(AxisDependency.LEFT)
+      ..setColor1(widget.device.type.toColor)
+      ..setCircleColor(Colors.transparent)
+      ..setLineWidth(2.0)
+      ..setDrawCircles(false)
+      ..setCircleRadius(0.0)
+      ..setFillAlpha(65)
+      ..setFillColor(ColorUtils.getHoloBlue())
+      ..setHighLightColor(Color.fromARGB(255, 244, 117, 117))
+      ..setValueTextColor(Colors.transparent)
+      ..setValueTextSize(9.0)
+      ..setDrawValues(false);
     return set;
   }
 }

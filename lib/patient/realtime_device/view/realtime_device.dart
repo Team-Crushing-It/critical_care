@@ -80,7 +80,7 @@ class _RealtimeDeviceSuccessView extends StatelessWidget {
                   // height: 1,
                   child: _DeviceView(
                     device: device,
-                    index : devices.indexOf(device),
+                    index: devices.indexOf(device),
                   ),
                 ),
               );
@@ -148,10 +148,11 @@ class __DeviceViewState extends State<_DeviceView> {
                   width: 100,
                   height: 80,
                   child: Stack(alignment: Alignment.center, children: [
-                    Image.network(
-                      widget.device.graph,
-                      fit: BoxFit.cover,
-                    ),
+                    // Image.network(
+                    //   widget.device.graph,
+                    //   fit: BoxFit.cover,
+                    // ),
+                    IgnorePointer(child: SmallChart(device: widget.device)),
                     Container(
                         alignment: Alignment(0.9, -0.8),
                         child: Text(
