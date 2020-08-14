@@ -31,7 +31,6 @@ class LargeChart extends StatefulWidget {
 
   // final List<int> data;
 
-  
   @override
   _LargeChartState createState() => _LargeChartState();
 }
@@ -97,7 +96,7 @@ class _LargeChartState extends State<LargeChart>
             ..setAxisMaximum(100)
             ..setAxisMinimum(0)
             ..setLabelCount1(2);
-            // ..drawLabels = false;
+          // ..drawLabels = false;
         },
         axisRightSettingFunction: (axisRight, controller) {
           axisRight.enabled = false;
@@ -121,25 +120,25 @@ class _LargeChartState extends State<LargeChart>
   }
 
   List<int> chartDataListTemp = [
-    50,
-    50,
-    50,
-    65,
-    50,
-    45,
-    100,
     15,
-    50,
-    50,
-    65,
-    50,
-    50,
-    50,
-    50,
-    50,
-    50,
-    50,
-    50,
+    23,
+    30,
+    45,
+    53,
+    75,
+    90,
+    93,
+    99,
+    93,
+    78,
+    60,
+    59,
+    38,
+    38,
+    30,
+    26,
+    23,
+    15,
   ];
   int counterforgraph = 0;
   void _addEntry() {
