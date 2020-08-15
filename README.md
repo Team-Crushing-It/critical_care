@@ -16,6 +16,6 @@ See our live demo and hackathon submittal @ https://youtu.be/D5T3_cqTmkw
 The data experience, data interface (DX/DI) is a new field borne out of the need for a clear and complete platform for distributed research and understanding complex problems. Applied to healthcare and built to HIPAA standards, Critical Care to empower doctors and patients with real-time monitoring, remote care and self-learning insights for both in-patient and out-patient care.
 
 ## Our Design
-[4](/assets/homepage.png)
+![1](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/stack.png)
 
 Our Home Page gives a quick overview, gives you feedback about your water usage, shares relevant news stories about water and has a view of the realtime data points regarding your water.
