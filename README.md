@@ -18,6 +18,7 @@ Healthcare workers use a simple interface to see all patients in a department
 
 ## Monitor Realtime
 Real-time data is accessible to doctors and nurses
+
 ![3](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/2.gif)
 
 ## Scan QR to Add New Medical Device
