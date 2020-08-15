@@ -31,3 +31,5 @@ This platform can add additional devices securely using through the Hedera Hashg
 
 ## Why is this important?
 Just by using the app, Medical Professionals train the data. Through a redesign of the DX/DI, Critical Care maps real-time data against medical records and this self-training platform can fuel life-saving AI.
+
+![5](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/gifFast_random_app.gif)
