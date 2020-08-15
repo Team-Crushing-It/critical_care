@@ -1,9 +1,12 @@
 # Critical Care
 
+See the video demo ! https://www.youtube.com/watch?v=M2Z5IG3n_vI
+Try the prototype !  https://www.figma.com/proto/n13R0QRNOucRPmpL2FGPtk/Critical-Care?node-id=271%3A825&scaling=scale-down
+
 ![1](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/Logo.png)
 
-See the video !
-Give it a try! 
+
+
 
 
 COVID exacerbates an issue that existed long before this pandemic - the misunderstanding of design resolution. At each layer of design - the device, application, and organizational layers - the current tools are ill-suited for generation and consumption of data-driven research, an issue which has prevented us from leveraging our best tools to learn about disease and it's underlying causes.
