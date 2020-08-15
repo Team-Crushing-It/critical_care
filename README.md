@@ -18,4 +18,5 @@ The data experience, data interface (DX/DI) is a new field borne out of the need
 ## Our Design
 ![1](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/stack.png)
 
-Our Home Page gives a quick overview, gives you feedback about your water usage, shares relevant news stories about water and has a view of the realtime data points regarding your water.
+## Demo
+![1](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/demo.png)
