@@ -16,9 +16,8 @@ Through a redesign of the data experience, data interfaces (DX/DI), Critical Car
 Healthcare workers use a simple interface to see all patients in a department
 ![2](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/1.gif)
 
-
 ## Monitor Realtime
-Realtime data is directly assessable to doctors and nurses
+Real-time data is accessible to doctors and nurses
 ![3](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/2.gif)
 
 ## Scan QR to Add New Medical Device
