@@ -16,6 +16,9 @@ COVID exacerbates an issue that existed long before this pandemic - the misunder
 
 Through a redesign of the data experience, data interfaces (DX/DI), Critical Care empowers healthcare workers with a platform for real-time monitoring, remote care and self-learning insights. Doctors can see realtime their patients and administer care remotely. In doing so, they map realtime-data against current medical records, training a platform for unprecedented data-driven health research
 
+
+Designed with Flutter and 💙BLoC
+
 ## Quickly oversee patients
 Healthcare workers use a simple interface to see all patients in a department
 ![2](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/1.gif)
