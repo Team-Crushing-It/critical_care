@@ -28,3 +28,6 @@ Real-time data is accessible to doctors and nurses
 ## Scan QR to Add New Medical Device
 This platform can add additional devices securely using through the Hedera Hashgraph trust layer
 ![4](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/3.gif)
+
+## Why is this important?
+Just by using the app, Medical Professionals train the data. Through a redesign of the DX/DI, Critical Care maps real-time data against medical records and this self-training platform can fuel life-saving AI.
