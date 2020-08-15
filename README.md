@@ -1,6 +1,6 @@
 # Critical Care
 
-![1](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/logo.png)
+![1](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/Logo.png)
 
 See the video !
 Give it a try! 
@@ -23,4 +23,4 @@ Realtime data is directly assessable to doctors and nurses
 
 ## Scan QR to Add New Medical Device
 This platform can add additional devices securely using through the Hedera Hashgraph trust layer
-![4](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/d3.gifg)
+![4](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/3.gif)
