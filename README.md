@@ -1,6 +1,6 @@
 # Critical Care
 
-![1](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/icon/icon.png)
+![1](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/logo.png)
 
 See the video !
 Give it a try! 
@@ -14,13 +14,13 @@ Through a redesign of the data experience, data interfaces (DX/DI), Critical Car
 
 ## Quickly oversee patients
 Healthcare workers use a simple interface to see all patients in a department
-![1](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/stack.png)
+![2](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/1.gif)
 
 
 ## Monitor Realtime
 Realtime data is directly assessable to doctors and nurses
-![1](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/stack.png)
+![3](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/2.gif)
 
 ## Scan QR to Add New Medical Device
 This platform can add additional devices securely using through the Hedera Hashgraph trust layer
-![1](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/demo.png)
+![4](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/d3.gifg)
