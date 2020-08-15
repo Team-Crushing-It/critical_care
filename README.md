@@ -1,8 +1,5 @@
 # Critical Care
 
-See the video demo ! https://www.youtube.com/watch?v=M2Z5IG3n_vI
-
-Try the prototype !  https://www.figma.com/proto/n13R0QRNOucRPmpL2FGPtk/Critical-Care?node-id=271%3A825&scaling=scale-down
 
 ![1](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/Logo.png)
 
@@ -18,6 +15,10 @@ Through a redesign of the data experience, data interfaces (DX/DI), Critical Car
 
 
 Designed with Flutter and 💙BLoC
+
+See the video demo ! https://www.youtube.com/watch?v=M2Z5IG3n_vI
+
+Try the prototype !  https://www.figma.com/proto/n13R0QRNOucRPmpL2FGPtk/Critical-Care?node-id=271%3A825&scaling=scale-down
 
 ## Quickly oversee patients
 Healthcare workers use a simple interface to see all patients in a department
