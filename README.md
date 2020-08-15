@@ -1,22 +1,27 @@
-# Critical Care!
-
-Know your water quality, how much you use and challenge your friends to save every 💧! 
-
+# Critical Care
 
 ![1](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/icon/icon.png)
 
+See the video !
+Give it a try! 
+
+
 ## The Issue
+COVID exacerbates an issue that existed long before this pandemic - the misunderstanding of design resolution. At each layer of design - the device, application, and organizational layers - the current tools are ill-suited for generation and consumption of data-driven research, an issue which has prevented us from leveraging our best tools to learn about disease and it's underlying causes.
 
-Community transmission, the race to a vaccine, and the shortage of ventilators are all symptoms of how little we know about where this virus is, how it works and how to best treat it. As COVID resurges to it's highest numbers, it exacerbates an issue that was prevalent long before this pandemic - the issue of misunderstanding the problem we're facing.
 
-See our live demo and hackathon submittal @ https://youtu.be/D5T3_cqTmkw
 
 ## Our Magic Solution
 
-The data experience, data interface (DX/DI) is a new field borne out of the need for a clear and complete platform for distributed research and understanding complex problems. Applied to healthcare and built to HIPAA standards, Critical Care to empower doctors and patients with real-time monitoring, remote care and self-learning insights for both in-patient and out-patient care.
+Through a redesign of the data experience, data interfaces (DX/DI), Critical Care empowers healthcare workers with a platform for real-time monitoring, remote care and self-learning insights. Doctors can see realtime their patients and administer care remotely. In doing so, they map realtime-data against current medical records, training a platform for unprecedented data-driven health research
 
-## Our Design
+## How It Works: Monitor Realtime
+Healthcare workers use a simple interface to see all patients in a department
+
 ![1](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/stack.png)
 
-## Demo
+
+## How It Works: Quickly oversee patients
+This platform can add additional devices securely using through the Hedera Hashgraph trust layer
 ![1](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/demo.png)
+
