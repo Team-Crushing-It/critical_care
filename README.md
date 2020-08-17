@@ -29,7 +29,7 @@ Real-time data is accessible to doctors and nurses
 This platform can add additional devices securely using through the Hedera Hashgraph trust layer
 ![4](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/3.gif)
 
-## Why is this important?
-Just by using the app, Medical Professionals train the data. Through a redesign of the DX/DI, Critical Care maps real-time data against medical records and this self-training platform can fuel life-saving AI.
+## Self-learning Insights
+By correlating real-time data to medical records, the users train a dataset that can revolutionize heath AI
 
 ![5](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/gifFast_random_app.gif)
