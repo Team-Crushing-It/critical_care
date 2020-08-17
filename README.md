@@ -1,7 +1,7 @@
 # Critical Care
 
 
-![1](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/CriticalCare.gif)
+![1](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/CriticalCare.gif.gif)
 
 
 
