@@ -33,11 +33,24 @@ class _SmallChartState extends State<SmallChart>
   var random = Random(1);
   var isMultipleRun = false;
 
+  RealtimeDeviceModel _device;
+
   @override
   void initState() {
+    _device = widget.device;
+
     _initController();
     _addMultiple();
     super.initState();
+  }
+
+  @override
+  void didUpdateWidget(SmallChart oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    if (oldWidget.device != _device) {
+      _device = oldWidget.device;
+    }
   }
 
   @override

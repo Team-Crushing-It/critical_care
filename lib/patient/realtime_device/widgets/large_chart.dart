@@ -37,11 +37,23 @@ class _LargeChartState extends State<LargeChart>
   var random = Random(1);
   var isMultipleRun = false;
 
+  RealtimeDeviceModel _device;
+
   @override
   void initState() {
+    _device = widget.device;
     _initController();
     _addMultiple();
     super.initState();
+  }
+
+  @override
+  void didUpdateWidget(LargeChart oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    if (oldWidget.device != _device) {
+      _device = oldWidget.device;
+    }
   }
 
   @override
@@ -114,6 +126,7 @@ class _LargeChartState extends State<LargeChart>
       controller.data = data;
     }
   }
+
   int counterforgraph = 0;
   void _addEntry() {
     var data = controller.data;

@@ -16,6 +16,10 @@ List<RealtimeDeviceModel> getRealtimeDevice(String patientId) {
   return _fakeMedicalDevice[patientId];
 }
 
+//ConvertApiPatientProfileToDomain
+//convert data to firebase to profile
+// only job is to stitch data together. from different places.
+
 final _fakeMedicalDevice = <String, List<RealtimeDeviceModel>>{
   'patient-0': [
     const RealtimeDeviceModel(
