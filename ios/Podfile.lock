@@ -99,12 +99,12 @@ PODS:
   - nanopb/encode (1.30905.0)
   - path_provider (0.0.1):
     - Flutter
-  - permission_handler (3.3.0):
+  - "permission_handler (5.0.1+1)":
     - Flutter
   - PromisesObjC (1.2.10)
-  - qrscan (0.0.1):
+  - qrcode (0.0.1):
     - Flutter
-  - url_launcher (0.0.1):
+  - qrscan (0.0.1):
     - Flutter
 
 DEPENDENCIES:
@@ -115,8 +115,8 @@ DEPENDENCIES:
   - image_gallery_saver (from `.symlinks/plugins/image_gallery_saver/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
   - permission_handler (from `.symlinks/plugins/permission_handler/ios`)
+  - qrcode (from `.symlinks/plugins/qrcode/ios`)
   - qrscan (from `.symlinks/plugins/qrscan/ios`)
-  - url_launcher (from `.symlinks/plugins/url_launcher/ios`)
 
 SPEC REPOS:
   trunk:
@@ -151,10 +151,10 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/path_provider/ios"
   permission_handler:
     :path: ".symlinks/plugins/permission_handler/ios"
+  qrcode:
+    :path: ".symlinks/plugins/qrcode/ios"
   qrscan:
     :path: ".symlinks/plugins/qrscan/ios"
-  url_launcher:
-    :path: ".symlinks/plugins/url_launcher/ios"
 
 SPEC CHECKSUMS:
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
@@ -177,10 +177,10 @@ SPEC CHECKSUMS:
   image_gallery_saver: 259eab68fb271cfd57d599904f7acdc7832e7ef2
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
-  permission_handler: 67637977b227d62d46bfbf524f335f8568de5a73
+  permission_handler: eac8e15b4a1a3fba55b761d19f3f4e6b005d15b6
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
+  qrcode: 703d52352679d9b4284555e9a09c2157062f1989
   qrscan: 42f49ba37d3c423a3b140434003e821135cfc4c3
-  url_launcher: 6fef411d543ceb26efce54b05a0a40bfd74cbbef
 
 PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
 

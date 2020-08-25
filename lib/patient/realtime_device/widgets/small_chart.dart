@@ -46,11 +46,17 @@ class _SmallChartState extends State<SmallChart>
 
   @override
   void didUpdateWidget(SmallChart oldWidget) {
-    super.didUpdateWidget(oldWidget);
+    print('didUpdate');
+
+    print('old: ${oldWidget.device.type}');
+    print('new: ${_device.type}');
 
     if (oldWidget.device != _device) {
-      _device = oldWidget.device;
+      setState(() {
+        _device = oldWidget.device;
+      });
     }
+    super.didUpdateWidget(oldWidget);
   }
 
   @override

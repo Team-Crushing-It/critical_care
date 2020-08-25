@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:patient_repository/patient_repository.dart';
 import 'package:criticalcare/authentication/authentication.dart';
+import 'package:permission_handler/permission_handler.dart';
+import './permission_widget.dart';
 
 class PatientTab extends StatelessWidget {
   @override
@@ -36,18 +38,19 @@ class PatientTab extends StatelessWidget {
               PatientProfileView(),
               RealtimeDeviceView(),
               PatientRecordsView(),
-              InkWell(
-                onTap: () {
-                  context
-                      .bloc<AuthenticationBloc>()
-                      .add(AuthenticationLogoutRequested());
-                },
-                child: const SizedBox(
-                  height: 100,
-                  width: 100,
-                  child: Text('logout'),
-                ),
-              )
+              // InkWell(
+              //   onTap: () {
+              //     // context
+              //     //     .bloc<AuthenticationBloc>()
+              //     //     .add(AuthenticationLogoutRequested());
+
+              //     const PermissionWidget(Permission.camera);
+              //   },
+              //   child: const PermissionWidget(Permission.camera)
+              // )
+              const PermissionWidget(Permission.camera),
+              const PermissionWidget(Permission.mediaLibrary),
+              const PermissionWidget(Permission.photos),
             ],
           ),
         ),

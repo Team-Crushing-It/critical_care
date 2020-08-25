@@ -22,18 +22,12 @@ class RoomCarousel extends StatelessWidget {
         },
         listener: (context, state) {
           context
-              .bloc<PatientProfileCubit>()
-              .getPatientProfile(state.selectedRoom.patientId);
-
-          // is this the right way to do this?
-          context
-              .bloc<PatientRecordsCubit>()
-              .getPatientRecords(state.selectedRoom.patientId);
-
-          // is this the right way to do this?
-          context
-              .bloc<RealtimeDeviceCubit>()
-              .getRealtimeDevice(state.selectedRoom.patientId);
+            ..bloc<PatientProfileCubit>()
+                .getPatientProfile(state.selectedRoom.patientId)
+            ..bloc<PatientRecordsCubit>()
+                .getPatientRecords(state.selectedRoom.patientId)
+            ..bloc<RealtimeDeviceCubit>()
+                .getRealtimeDevice(state.selectedRoom.patientId);
         },
         child: RoomCarouselView(),
       ),

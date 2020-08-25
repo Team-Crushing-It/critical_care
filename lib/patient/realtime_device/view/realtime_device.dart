@@ -6,6 +6,7 @@ import 'package:patient_repository/patient_repository.dart';
 import 'package:criticalcare/patient/realtime_device/widgets/widgets.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'QRCode.dart';
 
 class RealtimeDeviceView extends StatelessWidget {
   @override
@@ -66,48 +67,50 @@ class __RealtimeDeviceSuccessViewState
     Navigator.push<dynamic>(
       widget.context,
       MaterialPageRoute<dynamic>(
-        builder: (context) => QrCodeScanner(test: onReturn),
+        builder: (context) => QRCode(test: onReturn),
       ),
     );
   }
 
-  void onReturn() {
+  Future<void> onReturn() {
     print('onReturn');
-    setState(() {
-      widget.devices.add(
-        const RealtimeDeviceModel(
-          graph:
-              'https://media.discordapp.net/attachments/703406022953533552/743230366696996995/graph_art.png',
-          type: 'Art',
-          unit: 'mmHg',
-          range1: '120',
-          range2: '80',
-          value: '120/80',
-          data: [
-            15,
-            23,
-            30,
-            45,
-            53,
-            75,
-            90,
-            93,
-            99,
-            93,
-            78,
-            60,
-            59,
-            38,
-            38,
-            30,
-            26,
-            23,
-            15,
-          ],
-          visible: 'true',
-        ),
-      );
-    });
+    setState(
+      () {
+        widget.devices.add(
+          const RealtimeDeviceModel(
+            graph:
+                'https://media.discordapp.net/attachments/703406022953533552/743230366696996995/graph_art.png',
+            type: 'Art',
+            unit: 'mmHg',
+            range1: '120',
+            range2: '80',
+            value: '120/80',
+            data: [
+              15,
+              23,
+              30,
+              45,
+              53,
+              75,
+              90,
+              93,
+              99,
+              93,
+              78,
+              60,
+              59,
+              38,
+              38,
+              30,
+              26,
+              23,
+              15,
+            ],
+            visible: 'true',
+          ),
+        );
+      },
+    );
   }
 
   @override
@@ -171,13 +174,11 @@ class _DeviceView extends StatefulWidget {
     @required this.device,
     @required this.index,
     @required this.last,
-    @required this.globe,
   }) : super(key: key);
 
   final RealtimeDeviceModel device;
   final num index;
   final num last;
-  final bool globe;
 
   @override
   __DeviceViewState createState() => __DeviceViewState();
@@ -209,8 +210,6 @@ class __DeviceViewState extends State<_DeviceView> {
 
   @override
   Widget build(BuildContext context) {
-  
-
     return Container(
       child: Column(
         children: [

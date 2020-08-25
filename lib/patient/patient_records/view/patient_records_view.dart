@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:patient_repository/patient_repository.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-
 class PatientRecordsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -70,12 +69,12 @@ class _PatientRecordsSuccessView extends StatelessWidget {
           Row(
             children: [
               Column(
-                crossAxisAlignment: CrossAxisAlignment.start, 
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
                     padding:
                         const EdgeInsets.only(left: 30.0, top: 10, bottom: 5),
-                    child: Text('August ${Random().nextInt(10)+1}, 2020',
+                    child: Text('August ${Random().nextInt(10) + 1}, 2020',
                         style: Theme.of(context).textTheme.headline4),
                   ),
                   Padding(
@@ -154,18 +153,20 @@ class _RecordHeader extends StatelessWidget {
           topLeft: Radius.circular(4.0), topRight: Radius.circular(4.0)),
       child: Container(
         decoration: BoxDecoration(
-            color: type.toColor,
-            gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                stops: [
-                  0.0,
-                  0.15,
-                ],
-                colors: [
-                  Colors.grey[400],
-                  type.toColor,
-                ])),
+          color: type.toColor,
+          // gradient: LinearGradient(
+          //   begin: Alignment.topCenter,
+          //   end: Alignment.bottomCenter,
+          //   stops: [
+          //     0.0,
+          //     0.15,
+          //   ],
+          //   colors: [
+          //     Colors.grey[400],
+          //     type.toColor,
+          //   ],
+          // ),
+        ),
         child: Padding(
           padding: const EdgeInsets.all(2.0),
           child: Row(
