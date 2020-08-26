@@ -59,7 +59,7 @@ class _QrCodeScannerState extends State<QrCodeScanner> {
     barcode = await scanner.scan();
     widget.test();
 
-    Navigator.pop(context);
+    Navigator.of(context).pop();
   }
 
   Future _scanPhoto() async {

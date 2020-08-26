@@ -1,5 +1,5 @@
 import 'package:criticalcare/patient/realtime_device/cubit/realtime_device_cubit.dart';
-import 'package:criticalcare/patient/realtime_device/view/qrcodescanner.dart';
+// import 'package:criticalcare/patient/realtime_device/view/qrcodescanner.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:patient_repository/patient_repository.dart';
@@ -72,39 +72,39 @@ class __RealtimeDeviceSuccessViewState
     );
   }
 
-  Future<void> onReturn() {
+  void onReturn() {
     print('onReturn');
     setState(
       () {
         widget.devices.add(
           const RealtimeDeviceModel(
             graph:
-                'https://media.discordapp.net/attachments/703406022953533552/743230366696996995/graph_art.png',
-            type: 'Art',
-            unit: 'mmHg',
-            range1: '120',
-            range2: '80',
-            value: '120/80',
+                'https://media.discordapp.net/attachments/703406022953533552/743230364746645584/graph_hr.png',
+            type: 'HR',
+            unit: 'bpm',
+            range1: '',
+            range2: '',
+            value: '60',
             data: [
-              15,
-              23,
-              30,
+              50,
+              50,
+              50,
+              65,
+              50,
               45,
-              53,
-              75,
-              90,
-              93,
-              99,
-              93,
-              78,
-              60,
-              59,
-              38,
-              38,
-              30,
-              26,
-              23,
+              100,
               15,
+              50,
+              50,
+              65,
+              50,
+              50,
+              50,
+              50,
+              50,
+              50,
+              50,
+              50,
             ],
             visible: 'true',
           ),

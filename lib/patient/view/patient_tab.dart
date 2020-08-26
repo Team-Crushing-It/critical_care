@@ -4,7 +4,6 @@ import 'package:criticalcare/patient/realtime_device/view/realtime_device.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:patient_repository/patient_repository.dart';
-import 'package:criticalcare/authentication/authentication.dart';
 import 'package:permission_handler/permission_handler.dart';
 import './permission_widget.dart';
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qrcode/qrcode.dart';
+import 'package:flutter/scheduler.dart';
 
 class QRCode extends StatefulWidget {
   const QRCode({
@@ -13,10 +14,10 @@ class QRCode extends StatefulWidget {
   _QRCodeState createState() => _QRCodeState();
 }
 
-class _QRCodeState extends State<QRCode> with TickerProviderStateMixin {
-  QRCaptureController _captureController = QRCaptureController();
-  Animation<Alignment> _animation;
-  AnimationController _animationController;
+class _QRCodeState extends State<QRCode> {
+  final QRCaptureController _captureController = QRCaptureController();
+  // Animation<Alignment> _animation;
+  // AnimationController _animationController;
 
   bool _popBack = false;
 
@@ -25,85 +26,70 @@ class _QRCodeState extends State<QRCode> with TickerProviderStateMixin {
   String _captureText = '';
 
   Future<dynamic> _popTime() async {
-    await Future<dynamic>.delayed(const Duration(milliseconds: 1500));
+    await Future<dynamic>.delayed(const Duration(milliseconds: 500));
     widget.test();
+
+    Navigator.of(context).pop();
   }
 
   @override
-  void initState() {
+  initState() {
+    _captureController.onCapture(
+      (data) {
+        print('onCapture----$data');
+        setState(() {
+          _captureText = data;
+
+          if (!_popBack) {
+            _popBack = true;
+            _popTime();
+          }
+        });
+      },
+    );
+
     super.initState();
-
-    _captureController.onCapture((data) {
-      print('onCapture----$data');
-
-      widget.test();
-      Navigator.pop(context);
-
-      setState(() {
-        _captureText = data;
-      });
-    });
-
-    _animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 1));
-    _animation =
-        AlignmentTween(begin: Alignment.topCenter, end: Alignment.bottomCenter)
-            .animate(_animationController)
-              ..addListener(() {
-                setState(() {});
-              })
-              ..addStatusListener((status) {
-                if (status == AnimationStatus.completed) {
-                  _animationController.reverse();
-                } else if (status == AnimationStatus.dismissed) {
-                  _animationController.forward();
-                }
-              });
-    _animationController.forward();
   }
 
   @override
   void dispose() {
-    _animationController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Stack(
-          alignment: Alignment.center,
-          children: <Widget>[
-            Container(
-              width: 250,
-              height: 250,
-              child: QRCaptureView(
-                controller: _captureController,
+    return Scaffold(
+      body: Stack(
+        alignment: Alignment.center,
+        children: <Widget>[
+          Container(
+            width: 250,
+            height: 250,
+            child: QRCaptureView(
+              controller: _captureController,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 56),
+            child: AspectRatio(
+              aspectRatio: 264 / 258.0,
+              child: Stack(
+                // alignment: _animation.value,
+                children: <Widget>[
+                  Image.asset('images/sao@3x.png'),
+                  Image.asset('images/tiao@3x.png')
+                ],
               ),
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 56),
-              child: AspectRatio(
-                aspectRatio: 264 / 258.0,
-                child: Stack(
-                  alignment: _animation.value,
-                  children: <Widget>[
-                    Image.asset('images/sao@3x.png'),
-                    Image.asset('images/tiao@3x.png')
-                  ],
-                ),
-              ),
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: _buildToolBar(),
-            ),
-            Container(
-              child: Text('$_captureText'),
-            )
-          ],
-        ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: _buildToolBar(),
+          ),
+          Container(
+            child: Text('$_captureText'),
+          )
+        ],
       ),
     );
   }
@@ -117,7 +103,7 @@ class _QRCodeState extends State<QRCode> with TickerProviderStateMixin {
           onPressed: () {
             _captureController.pause();
           },
-          child: Text('pause'),
+          child: const Text('pause'),
         ),
         FlatButton(
           onPressed: () {
@@ -128,13 +114,13 @@ class _QRCodeState extends State<QRCode> with TickerProviderStateMixin {
             }
             _isTorchOn = !_isTorchOn;
           },
-          child: Text('torch'),
+          child: const Text('torch'),
         ),
         FlatButton(
           onPressed: () {
             _captureController.resume();
           },
-          child: Text('resume'),
+          child: const Text('resume'),
         ),
       ],
     );
