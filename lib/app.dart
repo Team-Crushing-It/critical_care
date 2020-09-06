@@ -55,6 +55,7 @@ class _AppViewState extends State<AppView> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: theme,
       navigatorKey: _navigatorKey,
       builder: (context, child) {
@@ -84,5 +85,3 @@ class _AppViewState extends State<AppView> {
     );
   }
 }
-
-
