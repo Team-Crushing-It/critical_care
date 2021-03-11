@@ -15,7 +15,7 @@ Accelerated by COVID-19, Critical Care was borne out of the need to facilitate i
  ![5](https://github.com/Team-Crushing-It/critical_care/blob/master/assets/gifFast_random_app.gif)
  
  </th>
-<th align="right">
+<th align="left">
  
  # Realtime Data
 
